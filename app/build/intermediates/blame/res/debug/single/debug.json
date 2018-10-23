@@ -1,0 +1,950 @@
+[
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_help_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/help_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/raw_audio.zip.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/raw/audio.zip"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw600dp_ic_action_search.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw600dp/ic_action_search.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_twitterhead9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/twitterhead9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_icon.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/icon.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_shape.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/shape.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_push_up_out.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/push_up_out.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_but_editbgtwt9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/but_editbgtwt9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_hold.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/hold.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_settings_ic_yel9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/settings_ic_yel9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_pushout.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/pushout.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw600dp_logo.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw600dp/logo.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_zoom_ic9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/zoom_ic9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_search_button_click.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/search_button_click.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_week5.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/week5.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_indexing_ic_yel9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/indexing_ic_yel9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw720dp_launching.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw720dp/launching.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_prev_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/prev_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_list_header.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/list_header.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_info_button_click.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/info_button_click.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_week6.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/week6.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_textfield9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/textfield9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw600dp_all_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw600dp/all_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_know.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/know.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_cardname.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/cardname.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_audio.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/audio.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_week3.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/week3.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_prev_d.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/prev_d.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_textfield19.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/textfield19.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_delete9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/delete9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_hyperspace_out.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/hyperspace_out.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout-large-hdpi_pharm.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout-large-hdpi/pharm.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_zoom.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/zoom.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_cancel_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/cancel_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_today_reading.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/today_reading.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_search9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/search9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_icon_facebook40.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/icon_facebook40.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_index_button_click.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/index_button_click.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_next_d.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/next_d.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_help_ic_yel9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/help_ic_yel9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/raw_abacavir.mp3.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/raw/abacavir.mp3"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_logo.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/logo.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_big_grey_btn.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/big_grey_btn.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_background2.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/background2.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_settings_ic9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/settings_ic9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_mynotes.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/mynotes.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_setting.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/setting.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_beforecard.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/beforecard.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_hyperspace_in.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/hyperspace_in.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_next_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/next_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_voicenotemicview.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/voicenotemicview.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_week1.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/week1.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_shake.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/shake.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_activity_list_card_name.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/activity_list_card_name.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_zoom_exit.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/zoom_exit.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_voicenoteslistrow.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/voicenoteslistrow.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_7.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_7.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_launching.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/launching.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_intro.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/intro.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_background.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/background.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_flip_back.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/flip_back.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_read_icon.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/read_icon.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-mdpi_today_reading.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-mdpi/today_reading.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_unmark.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/unmark.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_sequense_order_view.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/sequense_order_view.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_arrow.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/arrow.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_flip.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/flip.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_section_02.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/section_02.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_type_notes_row.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/type_notes_row.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw720dp_ic_action_search.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw720dp/ic_action_search.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_butn_publish9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/butn_publish9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_voicenotedetailview.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/voicenotedetailview.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_layout_wave_scale.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/layout_wave_scale.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_layout_animation_table.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/layout_animation_table.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bg_intro.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bg_intro.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_section_02.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/section_02.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_back_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/back_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_week2.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/week2.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_indexing_ic9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/indexing_ic9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_allcardcustomshape.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/allcardcustomshape.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_1.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_1.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/raw_schlossbergnew.zip.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/raw/schlossbergnew.zip"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw600dp_launching.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw600dp/launching.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_newsettings.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/newsettings.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-mdpi_all_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-mdpi/all_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-mdpi_launching.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-mdpi/launching.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw600dp_bookmark_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw600dp/bookmark_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_dnt_knw.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/dnt_knw.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_section_03.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/section_03.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_pharmphlash_splash9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/pharmphlash_splash9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_top_bg.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_top_bg.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_cycle_7.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/cycle_7.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_section_03.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/section_03.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw600dp_all_songs.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw600dp/all_songs.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_background7.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/background7.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_listitem_search.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/listitem_search.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_info.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/info.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-mdpi_bookmark_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-mdpi/bookmark_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_butn_tweet9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/butn_tweet9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_bookmarkedcardshape.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/bookmarkedcardshape.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_all_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/all_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_layout_animation_row_right_slide.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/layout_animation_row_right_slide.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_settings_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/settings_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_customlistshape.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/customlistshape.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_push_up_in.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/push_up_in.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_butn_skip9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/butn_skip9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_btn_default.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/btn_default.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_week7.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/week7.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_layout_random_fade.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/layout_random_fade.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_button9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/button9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_urologic_ic.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_urologic_ic.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_licenceview.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/licenceview.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_background1.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/background1.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bg_bookmark.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bg_bookmark.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_twitterbg.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/twitterbg.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_blue_arw.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/blue_arw.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_introcardcustomshape.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/introcardcustomshape.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-mdpi_all_songs.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-mdpi/all_songs.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_help_button_click.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/help_button_click.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_6.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_6.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_statusdialog.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/statusdialog.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_info_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/info_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bottom_note_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bottom_note_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_indexsearch.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/indexsearch.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_logo1.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/logo1.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_search_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/search_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_customshape.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/customshape.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_comment.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/comment.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_default_scrn_start_loading.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/default_scrn_start_loading.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_3.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_3.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_layout_bottom_to_top_slide.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/layout_bottom_to_top_slide.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_slide_right.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/slide_right.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_config.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/config.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_big_yel_bg.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/big_yel_bg.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bookmarktop_ic.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bookmarktop_ic.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_background6.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/background6.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_next.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/next.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_layout_grid_fade.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/layout_grid_fade.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_btn_bg_green.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/btn_bg_green.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_customprogress.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/customprogress.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_big_grey_btns.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/big_grey_btns.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_fade.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/fade.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_zoom_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/zoom_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_exter_window_ic9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/exter_window_ic9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_pharm.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/pharm.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_4.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_4.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_searchcards.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/searchcards.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_video.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/video.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_twitterdialog.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/twitterdialog.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_ic_action_search.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/ic_action_search.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_top_bar_bg.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/top_bar_bg.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw720dp_today_reading.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw720dp/today_reading.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw720dp_bookmark_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw720dp/bookmark_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_help_ic9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/help_ic9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw720dp_logo.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw720dp/logo.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_info.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/info.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_mycomments.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/mycomments.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_mic.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/mic.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_layout_animation_row_left_slide.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/layout_animation_row_left_slide.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_done9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/done9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bluebtn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bluebtn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_bookmark_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/bookmark_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_setting_button_click.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/setting_button_click.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_5.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_5.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_sequential_textview.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/sequential_textview.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_index.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/index.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout-large-mdpi_pharm.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout-large-mdpi/pharm.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_carddetail.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/carddetail.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw720dp_all_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw720dp/all_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_facebookdialog.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/facebookdialog.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_iknowtop_ic.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/iknowtop_ic.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_2.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_2.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_today_reading.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/today_reading.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bookmark_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bookmark_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_off.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/off.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_section_04.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/section_04.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_all_songs.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/all_songs.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-mdpi_logo.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-mdpi/logo.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_section_04.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/section_04.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_buttonfocused9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/buttonfocused9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bg_today_reading.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bg_today_reading.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_butn_editbg9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/butn_editbg9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_background5.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/background5.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_dosing.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/dosing.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deckoptionbg.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deckoptionbg.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_logo.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/logo.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_section_01.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/section_01.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_plus_ic9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/plus_ic9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_push_left_in.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/push_left_in.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_slide_top_to_bottom.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/slide_top_to_bottom.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_testimg.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/testimg.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_edit9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/edit9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-large-hdpi_section_01.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-large-hdpi/section_01.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_help.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/help.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_infobgoption.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/infobgoption.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bar_bg_footer_left.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bar_bg_footer_left.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_layout_grid_inverse_fade.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/layout_grid_inverse_fade.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_grey_border.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/grey_border.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bg_all_card.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bg_all_card.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_fbhearer9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/fbhearer9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_wave_scale.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/wave_scale.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_default_scrn_start.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/default_scrn_start.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_on.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/on.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_aftercard.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/aftercard.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_slide_left.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/slide_left.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_index_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/index_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_arrown.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/arrown.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_commentdetails.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/commentdetails.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_all_cards.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/all_cards.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_background3.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/background3.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_8.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_8.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_left_bg.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/left_bg.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw600dp_today_reading.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw600dp/today_reading.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_infooptionbg.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/infooptionbg.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_list_item.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/list_item.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_prev.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/prev.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_zoom_ic_yel9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/zoom_ic_yel9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_deck_9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/deck_9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_exter_window_ic_yel9.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/exter_window_ic_yel9.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw720dp_all_songs.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw720dp/all_songs.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_background4.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/background4.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_zoom_enter.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/zoom_enter.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/anim_push_left_out.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/anim/push_left_out.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/menu_intro.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/menu/intro.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bottom_noted_btn.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bottom_noted_btn.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_launching.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/launching.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_flip_front.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/flip_front.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout-sw720dp_pharm.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout-sw720dp/pharm.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_footer_bar_bg.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/footer_bar_bg.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_bookmark.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/bookmark.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable-sw720dp_icon.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable-sw720dp/icon.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout-sw600dp_pharm.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout-sw600dp/pharm.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_week4.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/week4.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/drawable_all_songs.png.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/drawable/all_songs.png"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_deckviewcellrow.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/deckviewcellrow.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/layout_fcmain.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/layout/fcmain.xml"
+    },
+    {
+        "merged": "/home/d/Office_Project/Omer_Kindle/app/build/intermediates/res/merged/debug/menu_activity_list_card_name.xml.flat",
+        "source": "/home/d/Office_Project/Omer_Kindle/app/src/main/res/menu/activity_list_card_name.xml"
+    }
+]

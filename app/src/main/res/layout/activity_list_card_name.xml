@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff">
+    
+    <RelativeLayout
+	 	android:id="@+id/deckCards"
+	    android:layout_width="fill_parent"
+	    android:layout_height="50dp"
+	    android:background="#99000000"
+	    android:cacheColorHint="#99000000">
+
+		<Button  
+		    android:id="@+id/back_but"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:paddingRight="5dp"
+			android:layout_marginLeft="5dp"
+			android:background="@drawable/back_btn"/>
+		
+		<TextView  
+		    android:id="@+id/deckName"
+		    android:layout_width="wrap_content" 
+		    android:layout_height="wrap_content"
+			android:textStyle="bold"
+			 android:gravity="center"
+			 android:textSize="18dp"
+			 android:paddingLeft="5dp"
+			 android:singleLine="true"
+			 android:layout_centerHorizontal="true"
+			 android:layout_centerVertical="true"
+			android:textColor="#ffffff"  
+		    android:text="Cards"/>
+   	</RelativeLayout>
+
+    <ListView
+        android:id="@+id/listCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:paddingTop="50dp"
+        android:clipToPadding="false"       
+        android:background="@android:color/transparent"
+         android:cacheColorHint="@android:color/transparent"
+          android:divider="@android:color/white"
+	     android:dividerHeight="1px"
+	     android:layout_marginTop="1px"
+		android:layout_marginBottom="1px"
+	    android:scrollbars="none"
+        />
+
+</RelativeLayout>
