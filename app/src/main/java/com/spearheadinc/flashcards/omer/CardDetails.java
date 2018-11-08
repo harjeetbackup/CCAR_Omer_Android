@@ -4,6 +4,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.omer.ListCardName.CustomAdapter;
 
@@ -128,7 +129,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 	     
 		mStartCardNo = 0;//DeckView.total;
 		
-        mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+        mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
 
         SharedPreferences myPrefs = null;
 

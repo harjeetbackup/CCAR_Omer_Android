@@ -1,0 +1,11 @@
+/build
+/.idea
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+/.gradle
+/idea
+/app/src/main/main.iml
+omer-android.iml
+/omer-android.iml

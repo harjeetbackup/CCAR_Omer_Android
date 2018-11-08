@@ -24,6 +24,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,7 +74,7 @@ public class Search extends Activity
 			}
 		});
 		*/
-		 mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+		 mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
 	        updateList(true);
 		ed = (EditText) findViewById(R.id.searchcards_edit_search);
 		

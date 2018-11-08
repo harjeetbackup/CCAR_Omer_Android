@@ -1,5 +1,6 @@
 package com.spearheadinc.flashcards.omer;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 
 import android.app.Activity;
@@ -52,7 +53,7 @@ public class Setting extends Activity {
 				overridePendingTransition(R.anim.hold, R.anim.push_up_out);
 			}
 		});
-		 mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+		 mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
 
 		final Button offBtn = (Button) findViewById(R.id.offBtn);
 		final Button onBtn = (Button) findViewById(R.id.onBtn);

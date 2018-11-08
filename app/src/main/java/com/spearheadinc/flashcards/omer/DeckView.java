@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.sunrisesunset.SunriseSunsetCalculator;
 import com.spearheadinc.flashcards.sunrisesunset.dto.Location;
@@ -255,7 +256,7 @@ public class DeckView  extends Activity  implements LocationListener {
     	profvalueBookMark = (TextView) findViewById(R.id.bookmarked_cards_proficiency_value);
 		totNumbOfAllCard = (TextView) findViewById(R.id.drugs_cards_numb_all_cards);
 		totNumbOfBookMarkCard = (TextView) findViewById(R.id.no_of_bookmarked_cards);
-        mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+        mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
         DisplayMetrics displaymetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);       
         int width = displaymetrics.widthPixels;
@@ -543,7 +544,7 @@ public class DeckView  extends Activity  implements LocationListener {
 	      			System.out.println("Calendar.getInstance().getTimeInMillis() == " + Calendar.getInstance().getTimeInMillis());
 	      			System.out.println("beginSunset.getTimeInMillis() == " + beginSunset.getTimeInMillis());
 	      			long dayDiff=(Calendar.getInstance().getTimeInMillis()-beginSunset.getTimeInMillis())/(24 * 60 * 60 * 1000);
-				   mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+				   mFCDbHelper = DBManager.getInstance(DeckView.this).getMyFCDbHelper();
 			        mFCDbHelper.openDataBase();
 				List<String[]> list= mFCDbHelper.getTodaysReadingFlashCard((int)dayDiff + 1);
 				 mFCDbHelper.close();

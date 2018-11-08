@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 
 import android.app.Activity;
@@ -64,7 +65,7 @@ public class NewComments extends Activity {
         	mNotesText = extras.getString("com.fadavis.pharmphlashfc.phone.notesText");
 //        	mFromClass = extras.getString("com.fadavis.pharmphlashfc.phone.fromclass");
         }
-        mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+        mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
 		
 		Button backBut = (Button) findViewById(R.id.comments_back);
 		backBut.setOnClickListener(new OnClickListener() {

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.omer.ListCardName.CustomAdapter;
 import com.spearheadinc.flashcards.omer.ListCardName.CustomAdapter.ViewHolder;
@@ -15,6 +16,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,7 +31,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class IndexSearch extends Activity {
+public class IndexSearch extends AppCompatActivity {
 	static IndexSearch mIndexSearch;
 	public static IndexSearch getInstance() {
 		return mIndexSearch;
@@ -48,7 +50,7 @@ public class IndexSearch extends Activity {
 				finish();
 			}
 		});
-		mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+		mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
 		
 		List <String> lst = new ArrayList<String>();
 		

@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 
 import android.app.Activity;
@@ -67,7 +68,7 @@ public class NewVoiceNotes  extends Activity {
         {
         	mFlashCardId = extras.getString("com.fadavis.pharmphlashfc.phone.fk_FlashCardId");
         }
-        mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+        mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
 		Button backBut = (Button) findViewById(R.id.voicenote_back);
 		backBut.setOnClickListener(new OnClickListener() {
 			

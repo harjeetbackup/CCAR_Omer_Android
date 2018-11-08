@@ -3,6 +3,7 @@ package com.spearheadinc.flashcards.omer;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.omer.Search.CustomAdapter;
 import com.spearheadinc.flashcards.omer.Search.CustomAdapter.ViewHolder;
@@ -67,7 +68,7 @@ public class ListCardName extends Activity {
        // cardTypeSelected = extras.getString("com.android.flashcard.screen.cardDetail");
          i = (Integer) getIntent().getSerializableExtra("com.android.flashcard.screen.cardDetail");
         
-        mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+        mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
         mFCDbHelper.openDataBase();
         
         Button backBut = (Button) findViewById(R.id.back_but);

@@ -3,6 +3,7 @@ package com.spearheadinc.flashcards.omer;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 
 import android.app.Activity;
@@ -57,7 +58,7 @@ public class MyComments  extends Activity {
 //        	mFromClass  = extras.getString("com.fadavis.pharmphlashfc.phone.fromclass");
 //        }
 		
-        mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+        mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
         mainLinearLayoutView = (LinearLayout) findViewById(R.id.mynotes_details_edit_name_lin);
 		
 		TextView titleTextview = (TextView) findViewById(R.id.mynotes_details_title);

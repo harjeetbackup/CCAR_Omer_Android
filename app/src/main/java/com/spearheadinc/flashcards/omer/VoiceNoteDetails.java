@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 
 import android.app.Activity;
@@ -63,7 +64,7 @@ public class VoiceNoteDetails extends Activity {
         	mFromClass  = extras.getString("com.fadavis.pharmphlashfc.phone.fromclass");
         }
 		
-        mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+        mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
         mainLinearLayoutView = (LinearLayout) findViewById(R.id.voicenote_details_edit_name_lin);
 		
 		Button backBut = (Button) findViewById(R.id.voicenote_details_back);

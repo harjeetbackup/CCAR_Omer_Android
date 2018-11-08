@@ -1,5 +1,6 @@
 package com.spearheadinc.flashcards.omer;
 
+import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 
 import android.app.Dialog;
@@ -57,7 +58,7 @@ public class CustomizeDialog extends Dialog
 		}
 		tv.setText(message);
 		Button okButton = (Button)findViewById(R.id.visabutton);
-		mFCDbHelper = FlashCards.getScreen().getMyFCDbHelper();
+		mFCDbHelper = DBManager.getInstance(context).getMyFCDbHelper();
 		okButton.setOnClickListener(new Button.OnClickListener() 
 		{		
 			@Override

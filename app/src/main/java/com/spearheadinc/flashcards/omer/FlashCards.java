@@ -3,49 +3,150 @@ package com.spearheadinc.flashcards.omer;
 //http://developer.android.com/guide/webapps/targeting.html
 
 import java.io.File;
-import java.io.IOException;
 
-import com.spearheadinc.flashcards.omer.R;
+import com.location.callbacks.AppLocationListener;
+import com.location.getaddress.AppLocationActivity;
+import com.spearheadinc.flashcards.apputil.AppPreference;
+import com.spearheadinc.flashcards.apputil.DBManager;
 
-import android.app.Activity;
+import android.Manifest;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.content.pm.PackageManager;
+import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 
-public class FlashCards extends Activity 
-{
+public class FlashCards extends AppLocationActivity {
 	private static FlashCards screen;
-	FCDBHelper mFCDbHelper;
+//	FCDBHelper mFCDbHelper;
 	private boolean tagValue;
+
+	int REQUEST_FINE_LOCATION = 111;
 	
 
-	public FCDBHelper getMyFCDbHelper() {
-		return mFCDbHelper;
-	}
+//	public FCDBHelper getMyFCDbHelper() {
+//		return mFCDbHelper;
+//	}
 	
     public static FlashCards getScreen() 
     {
     	return screen;
 	}
 
-    /** Called when the activity is first created. */
+	@Override
+	protected int getLayoutResFile() {
+		return R.layout.fcmain;
+	}
+
+	private GpsLocationReceiver mGpsLocationReceiver;
+
+
+	private void getLocation() {
+
+		if(mGpsLocationReceiver == null) {
+			mGpsLocationReceiver = new GpsLocationReceiver();
+			registerReceiver(mGpsLocationReceiver, new IntentFilter(LocationManager.PROVIDERS_CHANGED_ACTION));
+		}
+
+		getLocation(new AppLocationListener() {
+			@Override
+			public void locationReceived(String maxAddress, String pin, String state, String city,
+										 String subCity, String countryCode, double latitude, double longitude) {
+				Log.i("","");
+				AppPreference.getInstance(FlashCards.this).setLatitude(latitude);
+				AppPreference.getInstance(FlashCards.this).setLongitude(longitude);
+			}
+
+			@Override
+			public void locationFailed() {
+				Log.i("","");
+			}
+		});
+	}
+
+	private boolean checkPermissions() {
+		if (ContextCompat.checkSelfPermission(this,
+				Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+			return true;
+		}
+		else if (ContextCompat.checkSelfPermission(this,
+				Manifest.permission.READ_CALENDAR) == PackageManager.PERMISSION_GRANTED) {
+			return true;
+		}
+		else if (ContextCompat.checkSelfPermission(this,
+				Manifest.permission.WRITE_CALENDAR) == PackageManager.PERMISSION_GRANTED) {
+			return true;
+		}
+		else {
+			requestPermissions();
+			return false;
+		}
+	}
+
+	private void requestPermissions() {
+		ActivityCompat.requestPermissions(this,
+				new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+						Manifest.permission.READ_CALENDAR,
+						Manifest.permission.WRITE_CALENDAR},
+				REQUEST_FINE_LOCATION);
+	}
+
+	private class GpsLocationReceiver extends BroadcastReceiver {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			if (intent.getAction().matches("android.location.PROVIDERS_CHANGED")) {
+				getLocation();
+			}
+		}
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode,
+										   @NonNull String permissions[],
+										   @NonNull int[] grantResults) {
+		// Make sure it's our original ACCESS_FINE_LOCATION request
+		if (requestCode == REQUEST_FINE_LOCATION) {
+			if (grantResults.length == 1 &&
+					grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				getLocation();
+				DBManager.getInstance(this).getMyFCDbHelper();
+			} else {
+				// false if user clicks Never Ask Again, otherwise true
+				finish();
+			}
+		} else {
+			super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		}
+	}
+
+	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 		
 		screen = this;
-		setContentView(R.layout.fcmain);
-		DatabaseProvider dbProvider = new DatabaseProvider();
-		dbProvider.createDB(this);
-		mFCDbHelper = dbProvider.getMyFCDbHelper();
-		
-		
+//		DatabaseProvider dbProvider = new DatabaseProvider();
+//		dbProvider.createDB(this);
+//		mFCDbHelper = dbProvider.getMyFCDbHelper();
+
+		if(checkPermissions()) {
+			getLocation();
+			DBManager.getInstance(this).getMyFCDbHelper();
+
+		}
+
+
 	   
 	    SharedPreferences booleanTag = screen.getSharedPreferences( screen.getString( R.string.CHECK_FOR_VERSION), 0 );
 		tagValue = booleanTag.getBoolean("bValue", tagValue);
@@ -101,12 +202,13 @@ public class FlashCards extends Activity
 //        doCheck();
     }
 
-    @Override
-    protected void onDestroy() 
-    {
-        super.onDestroy();
-//        mChecker.onDestroy();
-    }
+	@Override
+	protected void onDestroy() {
+		if (mGpsLocationReceiver != null) {
+			unregisterReceiver(mGpsLocationReceiver);
+		}
+		super.onDestroy();
+	}
     
 
 	

@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
+    compileSdkVersion 26
     buildToolsVersion "28.0.2"
 
     defaultConfig {
         applicationId "com.spearheadinc.flashcards.omer"
-        minSdkVersion 14
-        targetSdkVersion 17
+        minSdkVersion 16
+        targetSdkVersion 26
     }
 
     buildTypes {
@@ -19,5 +19,11 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
+//    compile 'com.android.support:support-v4:19.1.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:27.0.2'
+
+    // This is Location
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
 }
