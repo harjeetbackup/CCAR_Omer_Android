@@ -1,8 +1,6 @@
 package com.location.callbacks;
 
-/**
- * Created by ashwanisingh on 02/03/18.
- */
+
 
 public interface AlertDialogClickListener {
 

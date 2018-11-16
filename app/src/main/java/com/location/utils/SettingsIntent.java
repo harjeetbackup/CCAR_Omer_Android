@@ -8,10 +8,6 @@ import android.provider.Settings;
 import com.spearheadinc.flashcards.omer.BuildConfig;
 
 
-/**
- * Created by ashwanisingh on 02/03/18.
- */
-
 public class SettingsIntent {
 
 

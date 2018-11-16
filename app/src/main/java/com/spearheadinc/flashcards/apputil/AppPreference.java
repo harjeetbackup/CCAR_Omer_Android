@@ -3,6 +3,13 @@ package com.spearheadinc.flashcards.apputil;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.spearheadinc.flashcards.omer.retrofit.ItemsBean;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
 public class AppPreference {
 
     private SharedPreferences mPreferences;
@@ -59,5 +66,37 @@ public class AppPreference {
         double lon = (double) longitude;
         return lon;
     }
+    public  void putList( ArrayList<ItemsBean> list) {
+        Gson gson = new Gson();
+        mEditor.putString("OMAR_CARDS", gson.toJson(list));
+        mEditor.apply();
+    }
+    public  ArrayList<ItemsBean> getList() {
+        Type typeOfT = TypeToken.getParameterized(ArrayList.class, ItemsBean.class).getType();
+        Gson gson = new Gson();
+        return gson.fromJson(mPreferences.getString("OMAR_CARDS", null), typeOfT);
+    }
+
+    public void setCurrentDate(String currentDate){
+        mEditor.putString("CurrentDate", currentDate);
+        mEditor.apply();
+    }
+    public String  getCurrentDate(){
+        String currentDate = mPreferences.getString("CurrentDate","");
+        String date =  currentDate;
+        return date;
+    }
+    public void setOmarDate(ArrayList date) {
+        mEditor.putString("date", String.valueOf(date));
+        mEditor.apply();
+    }
+
+
+    public String getOmarDate() {
+        String omarDate = mPreferences.getString("date","");
+        String dat =  omarDate;
+        return dat;
+    }
+
 
 }

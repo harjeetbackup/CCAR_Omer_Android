@@ -10,9 +10,6 @@ import android.widget.Toast;
 
 import com.location.callbacks.AlertDialogClickListener;
 
-/**
- * Created by ashwanisingh on 02/03/18.
- */
 
 public class Alerts {
 

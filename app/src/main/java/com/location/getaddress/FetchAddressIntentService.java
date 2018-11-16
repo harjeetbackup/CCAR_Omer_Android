@@ -59,7 +59,7 @@ public class FetchAddressIntentService extends IntentService {
     /**
      * Tries to get the location address using a Geocoder. If successful, sends an address to a
      * result receiver. If unsuccessful, sends an error message instead.
-     * Note: We define a {@link ResultReceiver} in * MainActivity to process content
+     * Note: We define a {@link ResultReceiver} in * GettingResponse to process content
      * sent from this service.
      *
      * This service calls this method from the default worker thread with the intent that started
@@ -136,23 +136,6 @@ public class FetchAddressIntentService extends IntentService {
             Address address = addresses.get(0);
             ArrayList<String> addressFragments = new ArrayList<>();
 
-            // Fetch the address lines using {@code getAddressLine},
-            // join them, and send them to the thread. The {@link android.location.address}
-            // class provides other options for fetching address details that you may prefer
-            // to use. Here are some examples:
-            // getLocality() ("Mountain View", for example)
-            // getAdminArea() ("CA", for example)
-            // getPostalCode() ("94043", for example)
-            // getCountryCode() ("US", for example)
-            // getCountryName() ("United States", for example)
-
-
-//            address.getAdminArea()   = Karnataka
-//            address.getLocality() = Bangalore
-//            address.getThoroughfare() = 9th A Cross Road
-//            address.getSubAdminArea()  = Bangalore Urban
-//            address.getFeatureName() = 149
-//            address.getAddressLine(0) = 149, 9th A Cross Rd, Jeewan Sathi Colony, 1st Phase, JP Nagar, Bengaluru, Karnataka 560078, India
 
             for(int i = 0; i <= address.getMaxAddressLineIndex(); i++) {
                 addressFragments.add(address.getAddressLine(i));
@@ -177,6 +160,8 @@ public class FetchAddressIntentService extends IntentService {
         bundle.putString(Constants.RESULT_CITY_KEY, city);
         bundle.putString(Constants.RESULT_SUB_CITY_KEY, subCity);
         bundle.putString(Constants.RESULT_COUNTRY_CODE_KEY, countryCode);
+        bundle.putDouble(Constants.RESULT_LATITUDE, latitude);
+        bundle.putDouble(Constants.RESULT_LONGITUDE ,longitude);
         mReceiver.send(resultCode, bundle);
     }
 

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Omer_Kindle.iml" filepath="$PROJECT_DIR$/Omer_Kindle.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/omer-android.iml" filepath="$PROJECT_DIR$/omer-android.iml" />
     </modules>
   </component>
 </project>

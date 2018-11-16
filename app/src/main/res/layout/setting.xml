@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
  	xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
 	android:background="#fff">
@@ -32,6 +33,7 @@
 			android:layout_centerHorizontal="true"/>
 		
 		</RelativeLayout>
+
 
 <!--	<ImageView-->
 <!--	    android:id="@+id/setting_title"-->
@@ -155,9 +157,28 @@
 				android:layout_marginTop="10dp"		
 				android:gravity="center" />
 	
-		</RelativeLayout>  
-		
-	    <RelativeLayout
+		</RelativeLayout>
+	<RelativeLayout
+		android:id="@+id/alarm"
+		android:layout_below="@+id/resetApplication"
+		android:layout_width="fill_parent"
+		android:layout_height="50dp"
+		android:layout_marginTop="2dp"
+		android:layout_centerHorizontal="true"
+		android:background="#e5e5e5">
+
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Set Alarm"
+			android:textSize="20dp"
+			android:textColor="@android:color/black"
+			android:layout_marginTop="10dp"
+			android:gravity="center" />
+
+
+
+		<RelativeLayout
 		    android:id="@+id/randomizeCards"
 			android:layout_below="@+id/resetApplication"
 			android:layout_width="wrap_content"
@@ -166,7 +187,8 @@
 			android:layout_marginLeft="50px"
 			android:visibility="gone"
 			android:layout_centerHorizontal="true"
-			android:background="@drawable/big_grey_btn">
+			android:background="@drawable/big_grey_btn"
+			tools:ignore="NotSibling">
 			
 			<TextView  
 			    android:layout_width="fill_parent" 
@@ -200,5 +222,6 @@
             
 			   />  
 		</RelativeLayout>
-	
+
 	</RelativeLayout>
+</RelativeLayout>

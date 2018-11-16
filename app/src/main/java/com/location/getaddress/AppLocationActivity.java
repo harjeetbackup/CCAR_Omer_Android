@@ -33,9 +33,6 @@ import com.location.utils.Constants;
 import com.location.utils.SettingsIntent;
 import com.spearheadinc.flashcards.omer.R;
 
-/**
- * Created by ashwanisingh on 02/03/18.
- */
 
 public abstract class AppLocationActivity extends BaseActivity {
 
@@ -205,7 +202,7 @@ public abstract class AppLocationActivity extends BaseActivity {
         }
 
         /**
-         *  Receives data sent from FetchAddressIntentService and updates the UI in MainActivity.
+         *  Receives data sent from FetchAddressIntentService and updates the UI in GettingResponse.
          */
         @Override
         protected void onReceiveResult(int resultCode, Bundle resultData) {

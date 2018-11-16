@@ -1,12 +1,11 @@
 package com.spearheadinc.flashcards.omer;
 
 import com.spearheadinc.flashcards.apputil.DBManager;
-import com.spearheadinc.flashcards.omer.R;
+import com.spearheadinc.flashcards.omer.notification.NotificationActivity;
+import com.spearheadinc.flashcards.omer.retrofit.GettingResponse;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -91,6 +90,14 @@ public class Setting extends Activity {
 		  onBtn.setVisibility(View.GONE);
 	        offBtn.setVisibility(View.VISIBLE); 
 	  }
+	  RelativeLayout alarm = (RelativeLayout) findViewById(R.id.alarm);
+	  alarm.setOnClickListener(new OnClickListener() {
+		  @Override
+		  public void onClick(View v) {
+			  Intent intent = new Intent(Setting.this,GettingResponse.class);
+			  startActivity(intent);
+		  }
+	  });
 //        RelativeLayout tv1 = (RelativeLayout) findViewById(R.id.setting_delete_bookmarks);
         RelativeLayout clearbook = (RelativeLayout) findViewById(R.id.setting_delete_bookmarks);
         clearbook.setOnClickListener(new OnClickListener() 
@@ -141,6 +148,15 @@ public class Setting extends Activity {
 			{
 				customizeDialog = new CustomizeDialog(Setting.this, "Are you sure you want to reset Application ?");
 				customizeDialog.show();
+			}
+		});
+        RelativeLayout setAlarm = (RelativeLayout) findViewById(R.id.alarm);
+        setAlarm.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Setting.this, NotificationActivity.class);
+				startActivity(intent);
+
 			}
 		});
     /*    Button apprating = (Button) findViewById(R.id.newsetting_but_apprating);
