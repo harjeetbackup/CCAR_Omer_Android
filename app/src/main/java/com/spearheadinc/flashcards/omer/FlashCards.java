@@ -193,14 +193,6 @@ public class FlashCards extends AppLocationActivity {
 	}
 
 
-//	private void getCurrentDate() {
-//		Calendar calendar = Calendar.getInstance();
-//		SimpleDateFormat mdformat = new SimpleDateFormat("yyyy / MM / dd ");
-//		String strDate = mdformat.format(calendar.getTime());
-//		AppPreference.getInstance(FlashCards.this).setCurrentDate(strDate);
-//
-//	}
-
 	@Override
 	protected void onDestroy() {
 		if (mGpsLocationReceiver != null) {
@@ -239,27 +231,18 @@ public class FlashCards extends AppLocationActivity {
 		mDisposable.add(ApiDataManager.getMyThings(callbackContext, mLastSearchQuery));
 
 	}
-//
-//	private void getDateFromResponseList() {
-//		ArrayList<ItemsBean> dateList = AppPreference.getInstance(FlashCards.this).getList();
-//		for (int i = 0; i < dateList.size(); i++) {
-//			String dateResponse = dateList.get(i).getDate();
-//			AppPreference.getInstance(FlashCards.this).setOmarDate(dateResponse);
-//		}
-//
-//
-//	}
+
 
 	@RequiresApi(api = Build.VERSION_CODES.O)
 	private void setOmarCurrentDate() {
 		ArrayList<ItemsBean> omarList = AppPreference.getInstance(FlashCards.this).getList();
 		ArrayList<String> dateList = new ArrayList<>();
-		for (int i = 0; i < omarList.size(); i++) {
-			String dateResponse = omarList.get(i).getDate();
-			dateList.add(dateResponse );
-			AppPreference.getInstance(FlashCards.this).setOmarDate(dateList);
-
-		}
+//		for (int i = 0; i < omarList.size(); i++) {
+//			String dateResponse = omarList.get(i).getDate();
+//			dateList.add(dateResponse );
+//			AppPreference.getInstance(FlashCards.this).setOmarDate(dateList);
+//
+//		}
 	}
 }
 

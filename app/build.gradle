@@ -36,4 +36,7 @@ dependencies {
     implementation deps.retrofit
     implementation deps.retrofitGsonConverter
     implementation 'org.jetbrains:annotations-java5:15.0'
+
+    // Joda Date & Time
+    implementation 'net.danlew:android.joda:2.10.1'
 }

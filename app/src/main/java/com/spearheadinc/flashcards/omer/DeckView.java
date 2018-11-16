@@ -270,10 +270,8 @@ public class DeckView extends Activity implements LocationListener {
         logoImage.getLayoutParams().height = (73 * width) / 320;
 
         mFCDbHelper.openDataBase();
-//    	List<String[]> totalDeckInfo = mFCDbHelper.getDeksTotalIfo();
         Cursor cursorDeck = mFCDbHelper.getDeksInfoCursor();
-        //mFCDbHelper.close();
-//    	int arrayDeckIcon[] = new int[totalDeckInfo.size()];
+
         int arrayDeckBackgroundImage[] = new int[cursorDeck.getCount()];
         arrayDeckBackgroundImage[0] = R.drawable.week1;
         arrayDeckBackgroundImage[1] = R.drawable.week2;
@@ -293,14 +291,6 @@ public class DeckView extends Activity implements LocationListener {
 
         cursorDeck.moveToFirst();
         for (int i = 0; i < cursorDeck.getCount(); i++) {
-
-//        for (int i = 0; i < totalDeckInfo.size(); i++)
-//        {
-//    		String strArr[] = totalDeckInfo.get(i);
-//			String strDeckPrefName = strArr[1];
-//			String strDeckPrefValue = strArr[1];
-//			String strCardPrefsName = strArr[1];
-//			String strCardPrefsValue = strArr[1];
 
             String strArr = cursorDeck.getString(cursorDeck.getColumnIndexOrThrow(FCDBHelper.DECKTITLE));
             String strDeckPrefName = strArr;
@@ -343,20 +333,15 @@ public class DeckView extends Activity implements LocationListener {
 
         cursorDeck.moveToFirst();
         for (int i = 0; i < cursorDeck.getCount(); i++) {
-//    	for (int i = 0; i < totalDeckInfo.size(); i++)
-//    	{
-//    		String strArr[] = totalDeckInfo.get(i);
             mFCDbHelper.openDataBase();
             int totalCards = mFCDbHelper.getDeksTotalNumOfCards(i + "");
             mFCDbHelper.close();
             myPrefs = DeckView.this.getSharedPreferences(listDeckPreferenceName.get(i), MODE_PRIVATE);
             String prefVal = myPrefs.getString(listDeckPreferenceValue.get(i), "0%");
 
-//          LinearLayout detailRow =  CreateRowView(totalCards, strArr[1], arrayDeckIcon[i], strArr[3], prefVal, total, i);
             LinearLayout detailRow = CreateRowView(totalCards, cursorDeck.getString(cursorDeck.getColumnIndexOrThrow(FCDBHelper.DECKTITLE)),
                     arrayDeckBackgroundImage[i], cursorDeck.getString(cursorDeck.getColumnIndexOrThrow(FCDBHelper.DECKCOLOR)), prefVal, total, i);
 
-//    		if(i < totalDeckInfo.size() - 1)
             if (i <= cursorDeck.getCount() + 1)
                 mainDeckViewLinear.addView(createSeqUnderLine());
             mainDeckViewLinear.addView(detailRow);
@@ -464,13 +449,7 @@ public class DeckView extends Activity implements LocationListener {
             public void onClick(View v) {
                 startActivity(new Intent(DeckView.this, Info.class));
                 overridePendingTransition(R.anim.push_up_in, R.anim.hold);
-               /* mainLayout.removeView(takePickPanal);
-                mainLayout.addView(takePickPanal);
-			    takePickPanal.setVisibility(View.VISIBLE);
-			    TranslateAnimation slide = new TranslateAnimation(0, 0, 100, 0);
-			    slide.setDuration(700);
-			    slide.setFillAfter(true);
-			    takePickPanal.startAnimation(slide);*/
+
             }
         });
 
@@ -813,124 +792,6 @@ public class DeckView extends Activity implements LocationListener {
         deleteAllProficiency();
     }
 
-    //FACEBOOK
-
-    /*	private FacebookConnector facebookConnector;
-        private final Handler mFacebookHandler = new Handler();
-
-
-        final Runnable mUpdateFacebookNotification = new Runnable() {
-            public void run() {
-                mProgressDialog.dismiss();
-                Toast.makeText(getBaseContext(), "Facebook updated !", Toast.LENGTH_LONG).show();
-            }
-        };
-
-        @Override
-        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-            this.facebookConnector.getFacebook().authorizeCallback(requestCode, resultCode, data);
-        }
-
-
-        private String getFacebookMsg() {
-            String value = profvalueAllCard.getText().toString();
-            if(value != null && !value.equals(""))
-                proficScore = value;
-            return TwitterConstants.MSGSUFF + proficScore + TwitterConstants.MSGPREF + MAX_CARD_NUMBER + TwitterConstants.MSGPREFTWT;
-            //return Constants.MSGSUFF + quizScore + Constants.MSGPREF;//" at " + new Date().toLocaleString();
-        }
-
-        String mPostText = "";
-        protected String proficScore = "0";
-
-        public void setmPostText(String mPostText) {
-            this.mPostText = mPostText;
-            postMessageInThreadFromDialog();
-        }
-
-        public void postMessage() {
-            if (facebookConnector.getFacebook().isSessionValid()) {
-                postMessageInThread();
-            } else {
-                SessionEvents.AuthListener listener = new SessionEvents.AuthListener() {
-
-                    @Override
-                    public void onAuthSucceed() {
-                        postMessageInThread();
-                    }
-
-                    @Override
-                    public void onAuthFail(String error) {
-
-                    }
-                };
-                SessionEvents.addAuthListener(listener);
-                facebookConnector.login();
-            }
-        }
-
-        private void postMessageInThread() {
-            FacebookDialog fb = new FacebookDialog(DeckView.this, getFacebookMsg());
-            fb.show();
-        }
-
-        public void postMessageInThreadFromDialog() {
-            mProgressDialog = ProgressDialog.show(DeckView.this, "", "...");
-            mProgressDialog.setContentView(R.layout.customprogress);
-            Thread t = new Thread() {
-                public void run() {
-
-                    try {
-                        facebookConnector.postMessageOnWall(mPostText);
-                        mFacebookHandler.post(mUpdateFacebookNotification);
-                    } catch (Exception ex) {
-                        Log.e(TwitterConstants.TAG, "Error sending msg",ex);
-                    }
-                }
-            };
-            t.start();
-        }
-
-         //FACEBOOK
-
-         //TWITTER
-        private String getTweetMsg()
-        {
-            String value = profvalueAllCard.getText().toString();
-            if(value != null && !value.equals(""))
-                proficScore = value;
-            return TwitterConstants.MSGSUFF + proficScore + TwitterConstants.MSGPREF + MAX_CARD_NUMBER + TwitterConstants.MSGPREFTWT;
-    //		return Constants.MSGSUFF + quizScore + Constants.MSGPREFTWT;
-        }
-
-        private SharedPreferences prefs;
-        private final Handler mTwitterHandler = new Handler();
-
-        final Runnable mUpdateTwitterNotification = new Runnable() {
-            public void run() {
-                mProgressDialog.dismiss();
-                Toast.makeText(getBaseContext(), "Tweet sent !", Toast.LENGTH_LONG).show();
-            }
-        };
-
-        final Runnable mUpdateTwitterNotificationwrongData = new Runnable() {
-            public void run() {
-                mProgressDialog.dismiss();
-                Toast.makeText(getBaseContext(), "Error Duplicate Data !", Toast.LENGTH_LONG).show();
-            }
-        };
-        String mTweetMessage;
-        public void postTweetMsgfromTwitterDialog(String tweetMessage)
-        {
-            mTweetMessage = tweetMessage;
-            mProgressDialog = ProgressDialog.show(DeckView.this, "", "...");
-            mProgressDialog.setContentView(R.layout.customprogress);
-            sendTweet();
-        }
-        public void postTweetMsg()
-        {
-
-        }*/
     private ProgressDialog mProgressDialog;
 
     @Override

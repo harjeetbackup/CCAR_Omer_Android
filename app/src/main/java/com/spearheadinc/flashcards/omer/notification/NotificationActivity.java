@@ -9,15 +9,25 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telecom.Call;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.spearheadinc.flashcards.apputil.Alarm;
 import com.spearheadinc.flashcards.apputil.AppPreference;
 import com.spearheadinc.flashcards.omer.FlashCards;
 import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.omer.retrofit.ItemsBean;
+
+import org.joda.time.DateTime;
+import org.joda.time.Days;
+import org.joda.time.Instant;
+import org.joda.time.LocalDateTime;
+import org.joda.time.Period;
+import org.joda.time.PeriodType;
+import org.joda.time.field.MillisDurationField;
 
 import java.sql.Time;
 import java.text.DateFormat;
@@ -33,15 +43,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class NotificationActivity extends AppCompatActivity {
-    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-    SimpleDateFormat mdformat = new SimpleDateFormat("");
     private TimePicker mTimePiker;
-    private Button mAlarmSetBtn;
-    AlarmManager alarmManager;
-    private PendingIntent pendingIntent;
-    final static int RQS_1 = 1;
-    private String time;
-    private String date;
+    private Button mAlarmSetBtn, mTestBtn;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -50,54 +53,25 @@ public class NotificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notification);
         mTimePiker = findViewById(R.id.timePiker);
         mAlarmSetBtn = findViewById(R.id.setAlarmBtn);
+        mTestBtn = findViewById(R.id.test);
 
-//         hour = mTimePiker.getHour();
-//        minute = mTimePiker.getMinute();
-//        second = 0;
-//        time =  new Time(hour,minute,0);
 
          mTimePiker.is24HourView();
-        mTimePiker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-            @Override
-            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-
-                time =  mTimePiker.getCurrentHour() + ":" + mTimePiker.getCurrentMinute() ;
-            }
-
-
-        });
-
 
         mAlarmSetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Calendar cal = Calendar.getInstance();
-                ArrayList<ItemsBean> omarList = AppPreference.getInstance(NotificationActivity.this).getList();
-                for (int i = 0; i < omarList.size(); i++) {
-                    String dateResponse = omarList.get(i).getDate();
+                AppPreference.getInstance(NotificationActivity.this).setCurrentDate(mTimePiker.getCurrentHour() + ":" + mTimePiker.getCurrentMinute());
 
-                    getTimeDate(date, cal);
-                    Map<String, String> data = new HashMap<>();
-                    data.put("title", getResources().getString(R.string.Notify));
-                    data.put("body", "This is notification Message");
-                    AlarmReceiver.createNotification(NotificationActivity.this, data);
-                    setAlarm(cal);
-                }
+                Alarm.readOmarDateToSetAlarm(NotificationActivity.this);
             }
 
         });
 
     }
 
-    private void getTimeDate(String dateResponse, Calendar calendar) {
 
-    }
 
-    private void setAlarm(Calendar targetCal) {
-        Intent intent = new Intent(getBaseContext(), AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), RQS_1, intent, 0);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
-    }
+
 }
 
