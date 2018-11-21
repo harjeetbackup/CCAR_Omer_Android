@@ -1,5 +1,6 @@
 package com.spearheadinc.flashcards.omer;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -9,6 +10,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import com.spearheadinc.flashcards.apputil.AppPreference;
 import com.spearheadinc.flashcards.apputil.DBManager;
@@ -17,6 +19,7 @@ import com.spearheadinc.flashcards.omer.retrofit.ItemsBean;
 import com.spearheadinc.flashcards.sunrisesunset.SunriseSunsetCalculator;
 import com.spearheadinc.flashcards.sunrisesunset.dto.Location;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -25,6 +28,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.location.LocationListener;
@@ -34,6 +38,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActivityCompat;
 import android.text.Html;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -48,6 +53,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.joda.time.DateTime;
 
 
 public class DeckView extends Activity implements LocationListener {
@@ -78,6 +85,7 @@ public class DeckView extends Activity implements LocationListener {
     protected LocationManager locationManager;
     protected LocationListener locationListener;
     protected android.location.Location localLocation;
+    private String mFrom;
 
     public static DeckView getScreen() {
         return screen;
@@ -255,7 +263,13 @@ public class DeckView extends Activity implements LocationListener {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             fromClassName = extras.getString("com.nclex.qa.app.packageName.nclecquizview.class.name");
+            mFrom = extras.getString("from");
+            if (mFrom != null && mFrom.equals("pushNotification")){
+                callTodaysReading();
+            }
         }
+
+
         logoImage = (ImageView) findViewById(R.id.companyname_title);
         mainDeckViewLinear = (LinearLayout) findViewById(R.id.deckview_lin_drugs_main_layout);
 
@@ -468,63 +482,13 @@ public class DeckView extends Activity implements LocationListener {
             @TargetApi(Build.VERSION_CODES.O)
             @Override
             public void onClick(View v) {
-				locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-//				// getting GPS status
-                boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
 
-                // getting network status
-                boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-                if (!isGPSEnabled && !isNetworkEnabled) {
-                    // no network provider is enabled
-                } else {
-                    Calendar beginTime = Calendar.getInstance();
-                    beginTime.set(2018,Calendar.MAY,21,0,0);
-                    Calendar endTime = Calendar.getInstance();
-                    endTime.set(2018,Calendar.JUNE,21,0,0);
-
-
-                    Location location = new Location(AppPreference.getInstance(DeckView.this).getLatitude(), AppPreference.getInstance(DeckView.this).getLatitude());
-                    SunriseSunsetCalculator calculator = new SunriseSunsetCalculator(location, localLocation.getProvider());
-                    Calendar beginSunset = calculator.getOfficialSunsetCalendarForDate(beginTime);
-                    Calendar endSunset = calculator.getOfficialSunsetCalendarForDate(endTime);
-
-
-                    if (Calendar.getInstance().before(beginSunset)) {
-                        Intent i = new Intent(DeckView.this, BeforeOmer.class);
-                        // i.putExtra("com.android.flashcard.screen.cardDetail", "all_cards");
-                        startActivity(i);
-                    } else if (Calendar.getInstance().after(endSunset)) {
-                        Intent i = new Intent(DeckView.this, AfterOmer.class);
-                        // i.putExtra("com.android.flashcard.screen.cardDetail", "all_cards");
-                        startActivity(i);
-                    } else {
-                        System.out.println("Calendar.getInstance().getTimeInMillis() == " + Calendar.getInstance().getTimeInMillis());
-                        System.out.println("beginSunset.getTimeInMillis() == " + beginSunset.getTimeInMillis());
-                        long dayDiff = (Calendar.getInstance().getTimeInMillis() - beginSunset.getTimeInMillis()) / (24 * 60 * 60 * 1000);
-                        mFCDbHelper = DBManager.getInstance(DeckView.this).getMyFCDbHelper();
-                        mFCDbHelper.openDataBase();
-                        List<String[]> list = mFCDbHelper.getTodaysReadingFlashCard((int) dayDiff + 1);
-                        mFCDbHelper.close();
-                        String[] strArr = list.get(0);
-                        listSearchCardid = new ArrayList<String>();
-                        listSearchCardName = new ArrayList<String>();
-                        listSearchCardColor = new ArrayList<String>();
-                        listSearchCardid.add(strArr[0]);
-                        listSearchCardName.add(strArr[1]);
-                        listSearchCardColor.add(strArr[2]);
-                        Intent i = new Intent(DeckView.this, CardDetails.class);
-                        i.putExtra("FROM", "TodaysReading");
-                        i.putExtra("POSITION", "" + 0);
-                        i.putExtra("SEARCHSTRING", "" + ""/*s*/);
-                        i.putExtra("TOTALCARDS", "" + listSearchCardid.size());
-                        i.putExtra("CLASSNAME", "LISTCARDNAME");
-                        i.putExtra("isBookmarked", "false");
-                        startActivity(i);
-                    }
-                }
+                callTodaysReading();
             }
+
         });
+
 
         ImageButton infoSliderBut = (ImageButton) findViewById(R.id.sliderinfo_but_info);
         infoSliderBut.setOnClickListener(new OnClickListener() {
@@ -801,5 +765,121 @@ public class DeckView extends Activity implements LocationListener {
         localLocation = location;
     }
 
+    public void callTodaysReading() {
+
+        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+//				// getting GPS status
+        boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+
+        // getting network status
+        boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+        if (!isGPSEnabled && !isNetworkEnabled) {
+            // no network provider is enabled
+        } else {
+
+
+            ArrayList<ItemsBean> omarDates = AppPreference.getInstance(DeckView.this).getList();
+            String lastDate = "";
+            String statDate = "";
+            int startYear = 0;
+            int startMonth = 0;
+            int startDay = 0;
+            int lastYear = 0;
+            int lastMonth = 0;
+            int lastDay = 0;
+
+
+            if (omarDates != null && omarDates.size() > 1) {
+                statDate = omarDates.get(0).getDate();
+
+                String parts[] = statDate.split("-");
+                startYear = Integer.parseInt(parts[0]);
+                startMonth = Integer.parseInt(parts[1]);
+                startDay = Integer.parseInt(parts[2]);
+
+                lastDate = omarDates.get(omarDates.size() - 1).getDate();
+                String parts1[] = lastDate.split("-");
+                lastYear = Integer.parseInt(parts1[0]);
+                lastMonth = Integer.parseInt(parts1[1]);
+                lastDay = Integer.parseInt(parts1[2]);
+
+
+            }
+
+            //    Frist date of omar in calander
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Calendar beginTime = Calendar.getInstance();
+            beginTime.set(Calendar.YEAR, startYear);
+            beginTime.set(Calendar.MONTH, startMonth - 1);
+            beginTime.set(Calendar.DAY_OF_MONTH, startDay - 1);
+            beginTime.getTime();
+            System.out.println("Frist of OmarDates  : " + dateFormat.format(beginTime.getTime()));
+
+            //    Last date of omar in calander
+
+            DateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd");
+            Calendar endTime = Calendar.getInstance();
+            endTime.set(Calendar.YEAR, lastYear);
+            endTime.set(Calendar.MONTH, lastMonth - 1);
+            endTime.set(Calendar.DAY_OF_MONTH, lastDay - 1);
+            endTime.getTime();
+            System.out.println("Last of OmarDates  : " + dateFormat.format(endTime.getTime()));
+
+
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10, 10, DeckView.this);
+        android.location.Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        Location location1 = new Location(AppPreference.getInstance(DeckView.this).getLatitude(), AppPreference.getInstance(DeckView.this).getLatitude());
+
+        SunriseSunsetCalculator calculator = new SunriseSunsetCalculator(location1, location.getProvider());
+        Calendar beginSunset = calculator.getOfficialSunsetCalendarForDate(beginTime);
+        Calendar endSunset = calculator.getOfficialSunsetCalendarForDate(endTime);
+
+
+        if (Calendar.getInstance().before(beginSunset)) {
+            Intent i = new Intent(DeckView.this, BeforeOmer.class);
+
+            startActivity(i);
+        } else if (Calendar.getInstance().after(endSunset)) {
+            Intent i = new Intent(DeckView.this, AfterOmer.class);
+
+            startActivity(i);
+        } else {
+            System.out.println("Calendar.getInstance().getTimeInMillis() == " + Calendar.getInstance().getTimeInMillis());
+            System.out.println("beginSunset.getTimeInMillis() == " + beginSunset.getTimeInMillis());
+            long dayDiff = (Calendar.getInstance().getTimeInMillis() - beginSunset.getTimeInMillis()) / (24 * 60 * 60 * 1000);
+            mFCDbHelper = DBManager.getInstance(DeckView.this).getMyFCDbHelper();
+            mFCDbHelper.openDataBase();
+            List<String[]> list = mFCDbHelper.getTodaysReadingFlashCard((int) dayDiff + 1);
+            mFCDbHelper.close();
+            String[] strArr = list.get(0);
+            listSearchCardid = new ArrayList<String>();
+            listSearchCardName = new ArrayList<String>();
+            listSearchCardColor = new ArrayList<String>();
+            listSearchCardid.add(strArr[0]);
+            listSearchCardName.add(strArr[1]);
+            listSearchCardColor.add(strArr[2]);
+            Intent i = new Intent(DeckView.this, CardDetails.class);
+            i.putExtra("FROM", "TodaysReading");
+            i.putExtra("POSITION", "" + 0);
+            i.putExtra("SEARCHSTRING", "" + ""/*s*/);
+            i.putExtra("TOTALCARDS", "" + listSearchCardid.size());
+            i.putExtra("CLASSNAME", "LISTCARDNAME");
+            i.putExtra("isBookmarked", "false");
+            startActivity(i);
+
+        }
+    }
+}
 
 }

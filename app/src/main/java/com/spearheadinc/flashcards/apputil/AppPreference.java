@@ -77,11 +77,11 @@ public class AppPreference {
         return gson.fromJson(mPreferences.getString("OMAR_CARDS", null), typeOfT);
     }
 
-    public void setCurrentDate(String currentDate){
+    public void setCurrentTime(String currentDate){
         mEditor.putString("CurrentDate", currentDate);
         mEditor.apply();
     }
-    public String  getCurrentDate(){
+    public String getCurrentTime(){
         String currentDate = mPreferences.getString("CurrentDate","");
         String date =  currentDate;
         return date;

@@ -52,16 +52,35 @@
 <!--		android:textStyle="bold"-->
 <!--		android:layout_marginLeft="3px"-->
 <!--	    android:text=""/>-->
-		
-			
-	    <RelativeLayout
+
+	<RelativeLayout
+		android:id="@+id/alarm"
+		android:layout_below="@+id/newsetting_title_bg"
+		android:layout_width="fill_parent"
+		android:layout_height="50dp"
+		android:layout_marginTop="40dp"
+		android:layout_centerHorizontal="true"
+		android:background="#e5e5e5">
+
+		<TextView
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:text="Set Alarm"
+			android:textSize="20dp"
+			android:textColor="@android:color/black"
+			android:layout_marginTop="10dp"
+			android:gravity="center" />
+
+	</RelativeLayout>
+
+		<RelativeLayout
 		    android:id="@+id/setting_delete_bookmarks"
 			android:layout_width="fill_parent"
 			android:layout_height="50dp"
-			android:layout_marginTop="40dp"
+			android:layout_marginTop="2dp"
 			android:layout_marginLeft="0dp"
 			android:layout_centerHorizontal="true"
-			android:layout_below="@+id/newsetting_title_bg"
+			android:layout_below="@+id/alarm"
 			android:background="#e5e5e5">
 	<!--		@layout/customshape   #cc22cc-->
 			
@@ -158,23 +177,6 @@
 				android:gravity="center" />
 	
 		</RelativeLayout>
-	<RelativeLayout
-		android:id="@+id/alarm"
-		android:layout_below="@+id/resetApplication"
-		android:layout_width="fill_parent"
-		android:layout_height="50dp"
-		android:layout_marginTop="2dp"
-		android:layout_centerHorizontal="true"
-		android:background="#e5e5e5">
-
-		<TextView
-			android:layout_width="fill_parent"
-			android:layout_height="wrap_content"
-			android:text="Set Alarm"
-			android:textSize="20dp"
-			android:textColor="@android:color/black"
-			android:layout_marginTop="10dp"
-			android:gravity="center" />
 
 
 
@@ -224,4 +226,3 @@
 		</RelativeLayout>
 
 	</RelativeLayout>
-</RelativeLayout>

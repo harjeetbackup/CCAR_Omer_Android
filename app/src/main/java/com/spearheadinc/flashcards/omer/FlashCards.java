@@ -144,7 +144,7 @@ public class FlashCards extends AppLocationActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		getCurrentDate();
+//		getCurrentTime();
 		screen = this;
 		AppPreference.getInstance(FlashCards.this).getList();
 		searchInWeb();

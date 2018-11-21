@@ -15,11 +15,13 @@ import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
+import com.spearheadinc.flashcards.omer.DeckView;
 import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.omer.notification.AlarmReceiver;
 import com.spearheadinc.flashcards.omer.notification.NotificationActivity;
 import com.spearheadinc.flashcards.omer.retrofit.ItemsBean;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -51,7 +53,7 @@ public class Alarm {
             notificationManager.createNotificationChannel(mChannel);
         }
 
-        Intent intent = new Intent(context , NotificationActivity.class );
+        Intent intent = new Intent(context , DeckView.class);
         intent.putExtra("from", "pushNotification");
         for (Map.Entry<String, String> entry : getData.entrySet()) {
             String key = entry.getKey();
@@ -81,39 +83,53 @@ public class Alarm {
 
 
     public static void setAlarm(Context context, long timeInMillies) {
+        Calendar calendar = Calendar.getInstance();
         Intent intent = new Intent(context, AlarmReceiver.class);
         int requestCode = 1;
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, timeInMillies, pendingIntent);
-
-
     }
 
 
     public static void readOmarDateToSetAlarm(Context context) {
         Calendar currentTime = Calendar.getInstance();
-
         ArrayList<ItemsBean> omarList = AppPreference.getInstance(context).getList();
-        String savedTime = AppPreference.getInstance(context).getCurrentDate();
+        String savedTime = AppPreference.getInstance(context).getCurrentTime();
 
-        for (ItemsBean bean : omarList) {
-            String dateStr = bean.getDate() + "-" + savedTime;
-//            String dateStr = "2018-11-16-19:30";
-            try {
-                Date date1 = new SimpleDateFormat("yyyy-MM-dd-HH:mm").parse(dateStr);
-                long omarMillis = date1.getTime();
-
-                if (currentTime.getTimeInMillis() <= omarMillis) {
-                    setAlarm(context, omarMillis);
-                    break;
+        if (omarList != null) {
+            for (ItemsBean bean : omarList) {
+                String dateStr = bean.getDate() + "-" + savedTime;
+                try {
+                    Date date1 = new SimpleDateFormat("yyyy-MM-dd-HH:mm").parse(dateStr);
+                    long omarMillis = date1.getTime();
+                    if (getCurrentDateInMillsec(currentTime.getTimeInMillis()) <= omarMillis) {
+                        setAlarm(context, omarMillis);
+                        break;
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
                 }
-
-            } catch (ParseException e) {
-                e.printStackTrace();
             }
-
-            Log.i("", "");
         }
+    }
+
+    private static long getCurrentDateInMillsec(long millsec) {
+        DateFormat simple = new SimpleDateFormat("yyyy-MM-dd-HH:mm");
+        Date result = new Date(millsec);
+        String h =  simple.format(result);
+        Date date1 = null;
+        long omarMillis = 0;
+        try {
+            date1 = new SimpleDateFormat("yyyy-MM-dd-HH:mm").parse(h);
+            omarMillis = date1.getTime() ;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+        return omarMillis;
+    }
+    public static void readSunsetTimeForAlarm(Context context){
+
     }
 }
