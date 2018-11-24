@@ -39,4 +39,5 @@ dependencies {
 
     // Joda Date & Time
     implementation 'net.danlew:android.joda:2.10.1'
+    implementation('org.shredzone.commons:commons-suncalc:2.3')
 }

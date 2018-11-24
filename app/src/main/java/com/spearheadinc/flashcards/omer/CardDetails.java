@@ -8,6 +8,7 @@ import com.spearheadinc.flashcards.apputil.DBManager;
 import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.omer.ListCardName.CustomAdapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -118,7 +119,8 @@ public class CardDetails extends Activity//  implements OnTouchListener
 	}
 
     /** Called when the activity is first created. */
-    @Override
+    @SuppressLint("JavascriptInterface")
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 		screen = this;

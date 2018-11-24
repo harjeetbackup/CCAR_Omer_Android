@@ -42,7 +42,7 @@ import io.reactivex.disposables.CompositeDisposable;
 
 public class FlashCards extends AppLocationActivity {
 	private CompositeDisposable mDisposable = new CompositeDisposable();
-	private String mLastSearchQuery = "Modi";
+	private String mLastSearchQuery = "MD";
 
 	private static FlashCards screen;
 	private boolean tagValue;
@@ -144,7 +144,7 @@ public class FlashCards extends AppLocationActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		getCurrentTime();
+		getSupportActionBar().hide();
 		screen = this;
 		AppPreference.getInstance(FlashCards.this).getList();
 		searchInWeb();
@@ -237,12 +237,6 @@ public class FlashCards extends AppLocationActivity {
 	private void setOmarCurrentDate() {
 		ArrayList<ItemsBean> omarList = AppPreference.getInstance(FlashCards.this).getList();
 		ArrayList<String> dateList = new ArrayList<>();
-//		for (int i = 0; i < omarList.size(); i++) {
-//			String dateResponse = omarList.get(i).getDate();
-//			dateList.add(dateResponse );
-//			AppPreference.getInstance(FlashCards.this).setOmarDate(dateList);
-//
-//		}
 	}
 }
 

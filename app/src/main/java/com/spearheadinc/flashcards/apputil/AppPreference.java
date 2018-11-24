@@ -97,6 +97,36 @@ public class AppPreference {
         String dat =  omarDate;
         return dat;
     }
+    public void setCheckboxState(final boolean isChecked){
+        mEditor.putBoolean("checked",isChecked);
+        mEditor.putBoolean("sunChecked",!isChecked);
+        mEditor.commit();
+    }
+    public boolean getCheckboxSState(){
+        boolean checkbox = mPreferences.getBoolean("checked",false);
+        boolean check = checkbox;
+        return check;
+    }
+
+    public void setSunCheckboxState(final boolean isChecked){
+        mEditor.putBoolean("sunChecked",isChecked);
+        mEditor.putBoolean("checked",!isChecked);
+        mEditor.commit();
+    }
+    public boolean getSunCheckboxSState(){
+        boolean checkbox = mPreferences.getBoolean("sunChecked",false);
+        boolean check = checkbox;
+        return check;
+    }
+    public void setSunsetTime(String currentDate){
+        mEditor.putString("SunsetTime", currentDate);
+        mEditor.apply();
+    }
+    public String getSunsetTime(){
+        String currentDate = mPreferences.getString("SunsetTime","");
+        String date =  currentDate;
+        return date;
+    }
 
 
 }

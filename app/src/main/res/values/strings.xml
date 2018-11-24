@@ -62,5 +62,6 @@
     <string name="sett_reminder_time_label">Set Reminder Time</string>
     <string name="sett_reminder_time_content">8 : 00 PM</string>
     <string name="Notify">Notification Recived</string>
+    <string name="set_alarm">Set Alarm </string>
 
 </resources>

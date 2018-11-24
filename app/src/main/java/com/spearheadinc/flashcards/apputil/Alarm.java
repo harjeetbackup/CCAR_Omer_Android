@@ -1,6 +1,7 @@
 package com.spearheadinc.flashcards.apputil;
 
 import android.app.AlarmManager;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -13,14 +14,10 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
-
 import com.spearheadinc.flashcards.omer.DeckView;
 import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.omer.notification.AlarmReceiver;
-import com.spearheadinc.flashcards.omer.notification.NotificationActivity;
 import com.spearheadinc.flashcards.omer.retrofit.ItemsBean;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -38,6 +35,7 @@ public class Alarm {
 
         NotificationManager notificationManager =
                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
 
         CharSequence name="APP ss";
         String desc="this is notific";
@@ -70,13 +68,14 @@ public class Alarm {
 
         Uri notificationSoundURI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder mNotificationBuilder = new NotificationCompat.Builder( context, ChannelID)
-                .setSmallIcon(R.drawable.logo)
+                .setSmallIcon(R.drawable.icon)
                 .setLargeIcon(largeIcon)
                 .setContentTitle(title)
                 .setContentText(body)
                 .setAutoCancel( true )
                 .setSound(notificationSoundURI)
-                .setContentIntent(resultIntent);
+                .setContentIntent(resultIntent)
+                .setOnlyAlertOnce(true);
 
         notificationManager.notify(0, mNotificationBuilder.build());
     }
@@ -85,6 +84,7 @@ public class Alarm {
     public static void setAlarm(Context context, long timeInMillies) {
         Calendar calendar = Calendar.getInstance();
         Intent intent = new Intent(context, AlarmReceiver.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         int requestCode = 1;
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
@@ -112,6 +112,7 @@ public class Alarm {
                 }
             }
         }
+
     }
 
     private static long getCurrentDateInMillsec(long millsec) {
@@ -126,10 +127,30 @@ public class Alarm {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        
+
         return omarMillis;
     }
     public static void readSunsetTimeForAlarm(Context context){
+
+        Calendar currentTime = Calendar.getInstance();
+        ArrayList<ItemsBean> omarList = AppPreference.getInstance(context).getList();
+        String savedTime = AppPreference.getInstance(context).getSunsetTime();
+
+        if (omarList != null) {
+            for (ItemsBean bean : omarList) {
+                String dateStr = bean.getDate() + "-" + savedTime;
+                try {
+                    Date date1 = new SimpleDateFormat("yyyy-MM-dd-HH:mm").parse(dateStr);
+                    long omarMillis = date1.getTime();
+                    if (getCurrentDateInMillsec(currentTime.getTimeInMillis()) <= omarMillis) {
+                        setAlarm(context, omarMillis);
+                        break;
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
     }
 }

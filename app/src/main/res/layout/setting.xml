@@ -35,37 +35,19 @@
 		</RelativeLayout>
 
 
-<!--	<ImageView-->
-<!--	    android:id="@+id/setting_title"-->
-<!--	    android:layout_width="fill_parent"-->
-<!--	    android:src="@drawable/settingheader"-->
-<!--	    android:background="@android:color/transparent"-->
-<!--	    android:layout_height="50dp"-->
-<!--	    android:scaleType="fitXY"/> -->
-<!--		-->
-<!--	<TextView  -->
-<!--	    android:layout_width="75dp" -->
-<!--	    android:layout_height="50dp"-->
-<!--	    android:id="@+id/settingback"-->
-<!--		android:textSize="14px"-->
-<!--		android:layout_marginTop="1px"-->
-<!--		android:textStyle="bold"-->
-<!--		android:layout_marginLeft="3px"-->
-<!--	    android:text=""/>-->
-
 	<RelativeLayout
 		android:id="@+id/alarm"
 		android:layout_below="@+id/newsetting_title_bg"
 		android:layout_width="fill_parent"
 		android:layout_height="50dp"
-		android:layout_marginTop="40dp"
+		android:layout_marginTop="2dp"
 		android:layout_centerHorizontal="true"
 		android:background="#e5e5e5">
 
 		<TextView
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="Set Alarm"
+			android:text="Set Alerts"
 			android:textSize="20dp"
 			android:textColor="@android:color/black"
 			android:layout_marginTop="10dp"

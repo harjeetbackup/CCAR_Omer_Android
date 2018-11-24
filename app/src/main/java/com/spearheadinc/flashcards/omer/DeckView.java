@@ -1,24 +1,16 @@
 package com.spearheadinc.flashcards.omer;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
-
 import com.spearheadinc.flashcards.apputil.AppPreference;
 import com.spearheadinc.flashcards.apputil.DBManager;
-import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.omer.retrofit.ItemsBean;
 import com.spearheadinc.flashcards.sunrisesunset.SunriseSunsetCalculator;
 import com.spearheadinc.flashcards.sunrisesunset.dto.Location;
-
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -36,8 +28,6 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
 import android.text.Html;
 import android.util.DisplayMetrics;
@@ -52,38 +42,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.joda.time.DateTime;
-
 
 public class DeckView extends Activity implements LocationListener {
-    SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
     private static DeckView screen;
-    //	TextView clickGastro;
     List<String> listSearchCardName = new ArrayList<String>();
     List<String> listSearchCardid = new ArrayList<String>();
     List<String> listSearchCardColor = new ArrayList<String>();
     TextView profvalueAllCard;
     TextView profvalueBookMark;
-    //	TextView profvalueGastro;
     TextView totNumbOfAllCard;
     TextView totNumbOfBookMarkCard;
     ImageView logoImage;
-    private ItemsBean itemsBean;
-//	TextView totNumbOfGastroCard;
-
-//	TextView titleGastro;
-
     private FCDBHelper mFCDbHelper;
     private String fromClassName;
     private LinearLayout mainDeckViewLinear;
-    //	private RelativeLayout relCustomshapeQuiz;
     protected int MAX_CARD_NUMBER = 0;
-    private CustomizeDialog customizeDialog;
-    private String deckcolor = "";
     protected LocationManager locationManager;
-    protected LocationListener locationListener;
     protected android.location.Location localLocation;
     private String mFrom;
 
@@ -100,40 +74,24 @@ public class DeckView extends Activity implements LocationListener {
     private LinearLayout CreateRowView(int totalCards, String declTitle, int bgImage, String deckColor, String deckProf, int totl, int i)// notesText, String strFilePath, LinearLayout seqOrderLinrOpt)
     {
         LayoutInflater mInflater = LayoutInflater.from(this);
-        //declTitle=Html.fromHtml((String) declTitle).toString();
         LinearLayout detailRow = (LinearLayout) mInflater.inflate(R.layout.deckviewcellrow, null);
         RelativeLayout relBgGastro = (RelativeLayout) detailRow.findViewById(R.id.deck_in_layout_eighth);
         DisplayMetrics displaymetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         int width = displaymetrics.widthPixels;
         relBgGastro.getLayoutParams().height = (193 * width) / 1000;
-        //relBgGastro.setBackgroundColor(Color2Hex(new String[]{deckColor}));
         relBgGastro.setBackgroundResource(bgImage);
         TextView deckTitleView = (TextView) detailRow.findViewById(R.id.drugs_title_eighth);
         TextView deckTitleView_noImage = (TextView) detailRow.findViewById(R.id.drugs_title_eighth_noImage);
-		/*if(bgImage!=0)
-		{
-	    deckTitleView.setText(Html.fromHtml(declTitle));
-	    deckTitleView.setVisibility(View.VISIBLE);	    
-	    deckTitleView_noImage.setVisibility(View.GONE);	
-	    deckTitleView.append(":");
-		}
-		else
-		{*/
         deckTitleView.setVisibility(View.GONE);
         deckTitleView_noImage.setVisibility(View.GONE);
         deckTitleView_noImage.setText(Html.fromHtml(declTitle));
-        //}
         TextView totalCardsView = (TextView) detailRow.findViewById(R.id.drugs_cards_numb_eighth);
         totalCardsView.setText(totalCards + " cards");
         TextView profValueView = (TextView) detailRow.findViewById(R.id.drugs_proficiency_value_eighth);
         profValueView.setText(deckProf);
         listDeckPreferenceView.add(profValueView);
         System.out.println("CreateRowViewlistDeckPreferenceView  =  " + profValueView);
-        // ImageView iconView = (ImageView) detailRow.findViewById(R.id.drugs_cardicon_eighth);
-        // iconView.setImageResource(icon);
-        // if(icon==0)
-        //{
         TextView relCustomClicker = (TextView) detailRow.findViewById(R.id.drugs_eighth_clickable_view);
         {
             setDataTagsToView(i, totl, profValueView, relCustomClicker);
@@ -144,7 +102,6 @@ public class DeckView extends Activity implements LocationListener {
                 }
             });
         }
-        //}
         return detailRow;
     }
 
@@ -169,10 +126,7 @@ public class DeckView extends Activity implements LocationListener {
             TextView recordFilePath = (TextView) listRel.get(0);
             Intent i = new Intent(DeckView.this, ListCardName.class);
             int in = (Integer) listRel.get(2) + 1;
-
             i.putExtra("com.android.flashcard.screen.cardDetail", in);
-            //i.putExtra("com.android.flashcard.screen.cardDetail", listDeckPreferenceValue.get(in));
-            //System.out.println("setViewStatus  =  " + listDeckPreferenceValue.get(in));
             startActivity(i);
             Log.e("detailRow1", recordFilePath + "" + "");
         }
@@ -213,8 +167,6 @@ public class DeckView extends Activity implements LocationListener {
 
     public void onLocationChanged(Location location) {
         BigDecimal latlocation = location.getLatitude();
-        // txtLat = (TextView) findViewById(R.id.textview1);
-        // txtLat.setText("Latitude:" + location.getLatitude() + ", Longitude:" + location.getLongitude());
     }
 
     @Override
@@ -285,7 +237,6 @@ public class DeckView extends Activity implements LocationListener {
 
         mFCDbHelper.openDataBase();
         Cursor cursorDeck = mFCDbHelper.getDeksInfoCursor();
-
         int arrayDeckBackgroundImage[] = new int[cursorDeck.getCount()];
         arrayDeckBackgroundImage[0] = R.drawable.week1;
         arrayDeckBackgroundImage[1] = R.drawable.week2;
@@ -472,7 +423,6 @@ public class DeckView extends Activity implements LocationListener {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(DeckView.this, Introduction.class);
-                // i.putExtra("com.android.flashcard.screen.cardDetail", "all_cards");
                 startActivity(i);
             }
         });
@@ -606,7 +556,6 @@ public class DeckView extends Activity implements LocationListener {
                 Intent shareOnTwitterIntent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse(twitterUri + marketUri));
                 startActivity(shareOnTwitterIntent);
-                //	postTweetMsg();
                 mainLayout.removeView(takePickPanal);
             }
         });
@@ -625,9 +574,6 @@ public class DeckView extends Activity implements LocationListener {
                 mainLayout.removeView(takePickPanal);
             }
         });
-
-        // this.prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        //   this.facebookConnector = new FacebookConnector(TwitterConstants.FACEBOOK_APPID, this, getApplicationContext(), new String[] {TwitterConstants.FACEBOOK_PERMISSION});
 
         if (fromClassName != null && fromClassName.equals("PREPAREREQUESTTOKENACTIVITY")) {
             //startSendingMessage();

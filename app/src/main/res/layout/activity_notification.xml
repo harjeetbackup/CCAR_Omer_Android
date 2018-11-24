@@ -7,37 +7,119 @@
     android:orientation="vertical"
     tools:context=".notification.NotificationActivity">
 
-    <CheckBox
-        android:id="@+id/localCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="setAlarm"
-        android:onClick="onCheckBoxClicked"/>
-    <TimePicker
+    <RelativeLayout
+        android:id="@+id/newsetting_title_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#CC000000">
+
+        <RelativeLayout
+            android:id="@+id/relative_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/settingback"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/arrow_left_white"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toRightOf="@+id/settingback"
+                android:text="Back"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/newsetting_header_content"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center"
+                android:text="@string/set_alarm"
+                android:textColor="#ffffff"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/localCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:onClick="onCheckBoxClicked"
+            android:text="Alert at time"
+            android:textSize="20dp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/timePiker"
-        android:timePickerMode="spinner"
-        android:visibility="gone"/>
+        android:layout_margin="5dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTintMode="src_over">
 
-    <CheckBox
-        android:id="@+id/SunsetCheckBox"
+
+        <TimePicker
+            android:id="@+id/timePiker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:outlineProvider="bounds"
+            android:padding="20dp"
+            android:timePickerMode="spinner"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sunset Alarm "
-        android:onClick="onCheckBoxClicked"/>
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp">
+
+        <CheckBox
+            android:id="@+id/SunsetCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onCheckBoxClicked"
+            android:text="Alert at sunset "
+            android:textSize="20dp" />
 
 
-
-
-    <!--<Button-->
-        <!--android:id="@+id/setAlarmBtn"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Set Alarm"-->
-        <!--android:layout_marginLeft="10dp"-->
-        <!--android:layout_marginRight="10dp"-->
-        <!--android:layout_marginTop="10dp"/>-->
+    </RelativeLayout>
 
 
 </LinearLayout>

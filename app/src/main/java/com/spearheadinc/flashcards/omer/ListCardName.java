@@ -64,13 +64,11 @@ public class ListCardName extends Activity {
         deckCards = (RelativeLayout)findViewById(R.id.deckCards);
         deckCards.bringToFront();
         screen = this;
-     //   Bundle extras = getIntent().getExtras();
-       // cardTypeSelected = extras.getString("com.android.flashcard.screen.cardDetail");
          i = (Integer) getIntent().getSerializableExtra("com.android.flashcard.screen.cardDetail");
         
         mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
         mFCDbHelper.openDataBase();
-        
+
         Button backBut = (Button) findViewById(R.id.back_but);
         deckname =  (TextView) findViewById(R.id.deckName);
         listCardView = (ListView) findViewById(R.id.listCardView);
