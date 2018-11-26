@@ -34,6 +34,7 @@ public class VoiceNoteDetails extends Activity {
 	private FCDBHelper mFCDbHelper;
 	private LinearLayout mainLinearLayoutView;
 	private String mFromClass = "";
+	private RelativeLayout voice_back_btn;
 	
 	public static VoiceNoteDetails getInstance() {
 		return screen;
@@ -66,9 +67,9 @@ public class VoiceNoteDetails extends Activity {
 		
         mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
         mainLinearLayoutView = (LinearLayout) findViewById(R.id.voicenote_details_edit_name_lin);
-		
-		Button backBut = (Button) findViewById(R.id.voicenote_details_back);
-		backBut.setOnClickListener(new OnClickListener() {
+
+		voice_back_btn= findViewById(R.id.voicenote_details_back);
+		voice_back_btn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 public class Setting extends Activity {
 	private static Setting screen;
     private	FCDBHelper mFCDbHelper;
+    private RelativeLayout setting_backBtn;
     public static Setting getScreen() 
     {
     	return screen;
@@ -41,9 +42,9 @@ public class Setting extends Activity {
 		setContentView(R.layout.setting);
 		
 //        TextView tv = (TextView) findViewById(R.id.settingback);
-		
-		Button back_but = (Button) findViewById(R.id.settingback);
-		back_but.setOnClickListener(new OnClickListener() 
+
+		setting_backBtn = findViewById(R.id.settingback);
+		setting_backBtn.setOnClickListener(new OnClickListener()
         {
 			@Override
 			public void onClick(View v) 

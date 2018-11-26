@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class AfterOmer extends Activity {
 	private static AfterOmer screen;
 	private WebSettings localWebView;
+	private RelativeLayout backBtnRelative;
     public static AfterOmer getScreen() 
     {
     	return screen;
@@ -26,8 +28,9 @@ public class AfterOmer extends Activity {
 		screen = this;
 		setContentView(R.layout.aftercard);
         
-        TextView tv = (TextView) findViewById(R.id.trade_title);
-        tv.setOnClickListener(new OnClickListener() 
+//        TextView tv = (TextView) findViewById(R.id.trade_title);
+        backBtnRelative = findViewById(R.id.backBut_after_omar);
+        backBtnRelative.setOnClickListener(new OnClickListener()
         {
 			@Override
 			public void onClick(View v) 

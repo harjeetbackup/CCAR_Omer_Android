@@ -27,15 +27,33 @@
 	    android:id="@+id/info_title"
 	    android:layout_height="50dp"
 		android:background="#CC000000">
-	
-		<Button  
-		    android:id="@+id/trade_title"
-		    android:layout_width="wrap_content" 
-		    android:layout_height="wrap_content"
-	   		android:layout_marginTop="3dp"
-			android:layout_marginLeft="5dp"
+
+		<RelativeLayout
+			android:id="@+id/backBut_after_omar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentStart="true"
 			android:layout_centerVertical="true"
-			android:background="@drawable/back_btn"/>
+			android:layout_marginLeft="5dp"
+			>
+
+			<ImageView
+				android:layout_width="25dp"
+				android:layout_height="20dp"
+				android:layout_centerVertical="true"
+				android:src="@drawable/arrow_left_white"
+				android:id="@+id/back"/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Back"
+				android:textColor="#ffffff"
+				android:layout_toRightOf="@id/back"
+				android:textSize="16dp"/>
+
+
+		</RelativeLayout>
+
 	
 	    <TextView 
 	        android:layout_width="fill_parent"

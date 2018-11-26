@@ -21,6 +21,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 public class NewComments extends Activity {
 
@@ -38,6 +39,7 @@ public class NewComments extends Activity {
 	private String mFromClass;
 	private Button addButton;
 	private Button edButton;
+	private RelativeLayout backBtn_newComment;
     
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) 
@@ -67,8 +69,8 @@ public class NewComments extends Activity {
         }
         mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
 		
-		Button backBut = (Button) findViewById(R.id.comments_back);
-		backBut.setOnClickListener(new OnClickListener() {
+		backBtn_newComment = findViewById(R.id.comments_back);
+		backBtn_newComment.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

@@ -10,15 +10,33 @@
 	    android:layout_height="50dp"
 	    android:background="#99000000"
 	    android:cacheColorHint="#99000000">
+		<RelativeLayout
+			android:id="@+id/back_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true">
 
-		<Button  
-		    android:id="@+id/back_but"
-		    android:layout_width="wrap_content" 
-		    android:layout_height="wrap_content"
-			android:layout_centerVertical="true"
-			android:paddingRight="5dp"
-			android:layout_marginLeft="5dp"
-			android:background="@drawable/back_btn"/>
+			<ImageView
+				android:id="@+id/back_but"
+				android:layout_width="25dp"
+				android:layout_height="20dp"
+				android:src="@drawable/arrow_left_white"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="5dp"
+				/>
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Back"
+				android:textSize="18sp"
+				android:textColor="#ffffff"
+				android:layout_toRightOf="@id/back_but"
+				android:layout_centerVertical="true"/>
+
+
+		</RelativeLayout>
+
+
 		
 		<TextView  
 		    android:id="@+id/deckName"

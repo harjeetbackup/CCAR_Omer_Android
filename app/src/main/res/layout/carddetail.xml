@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
  	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/relative_carddetail_main"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_carddetail_main"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -56,17 +57,40 @@
 		    android:visibility="gone"
 		    android:background="@android:color/transparent"
 		    android:layout_height="50dp"
-		    android:scaleType="fitXY"/> 
+		    android:scaleType="fitXY"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/carddetail_back_but"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            >
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:src="@drawable/arrow_left_white"
+                android:id="@+id/iv_back1"
+                android:layout_marginTop="3dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:layout_toRightOf="@id/iv_back1"
+                android:textSize="18sp"
+                android:textColor="#ffffff"/>
+
+        </RelativeLayout>
 			
-		<Button  
-		    android:id="@+id/carddetail_back_but"
-		    android:layout_width="wrap_content" 
-		    android:layout_height="wrap_content"
-			android:layout_centerVertical="true"
-			android:layout_marginLeft="3px"
-			android:background="@drawable/back_btn"/>
-<!--		    android:layout_width="61dp" -->
-<!--		    android:layout_height="34dp"-->
+		<!--<Button-->
+		    <!--android:id="@+id/carddetail_back_but"-->
+		    <!--android:layout_width="wrap_content"-->
+		    <!--android:layout_height="wrap_content"-->
+			<!--android:layout_centerVertical="true"-->
+			<!--android:layout_marginLeft="3px"-->
+			<!--android:background="@drawable/back_btn"/>-->
+		    <!--android:layout_width="61dp"-->
+		    <!--android:layout_height="34dp"-->
 		
 	<TextView  
 	    android:id="@+id/carddetail_back_totalcardcount"
@@ -371,15 +395,36 @@
 		    android:visibility="gone"
 		    android:layout_height="50dp"
 		    android:scaleType="fitXY"/> 
-			
-		<Button  
-		    android:id="@+id/carddetail_front_back"
-		    android:layout_width="wrap_content" 
-		    android:layout_height="wrap_content"
-			android:layout_centerVertical="true"	   
-			android:layout_marginLeft="3px"
-			android:background="@drawable/back_btn"/>
-	
+			<RelativeLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/carddetail_front_back"
+				android:layout_centerVertical="true"
+				android:layout_marginLeft="5dp"
+				>
+				<ImageView
+					android:layout_width="25dp"
+					android:layout_height="20dp"
+					android:src="@drawable/arrow_left_white"
+					android:id="@+id/iv_back"
+					android:layout_marginTop="3dp"/>
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Back"
+					android:layout_toRightOf="@id/iv_back"
+					android:textSize="18sp"
+					android:textColor="#ffffff"/>
+
+			</RelativeLayout>
+		<!--<Button  -->
+		    <!--android:id="@+id/carddetail_front_back"-->
+		    <!--android:layout_width="wrap_content" -->
+		    <!--android:layout_height="wrap_content"-->
+			<!--android:layout_centerVertical="true"	   -->
+			<!--android:layout_marginLeft="3px"-->
+			<!--android:background="@drawable/back_btn"/>-->
+	<!---->
 		<TextView  
 		    android:id="@+id/carddetail_front_totalcardcount"
 		    android:layout_width="wrap_content" 
@@ -391,16 +436,15 @@
 			android:layout_centerVertical="true"	    
 		    android:text="100 of 111"/>
 
-		<ImageView
-		    android:id="@+id/carddetail_front_footer_flip"
-		    android:layout_width="wrap_content"
-		    android:src="@drawable/flip_front" 
-			android:layout_centerVertical="true"	
-		    android:layout_height="wrap_content"
-		    android:layout_alignParentRight="true"
-		    android:layout_marginRight="3dp"		    
-		    android:clickable="true"
-		    android:scaleType="fitXY"/>
+        <ImageView
+            android:id="@+id/carddetail_front_footer_flip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="3dp"
+            android:clickable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/flip_front" />
 
 		<ImageView
 		    android:id="@+id/carddetail_frontbookmark_icon"

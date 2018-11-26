@@ -30,6 +30,7 @@ public class CardNotesDetail  extends Activity {
 	private FCDBHelper mFCDbHelper;
 	private LinearLayout mainLinearLayoutView;
 	protected CustomizeDialog customizeDialog;
+	private RelativeLayout mBackBtn;
 //	private String mFromClass = "";
 	protected View viewDel;
 	
@@ -64,9 +65,9 @@ public class CardNotesDetail  extends Activity {
 		
         mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
         mainLinearLayoutView = (LinearLayout) findViewById(R.id.mynotes_details_edit_name_lin);
-		
-		Button backBut = (Button) findViewById(R.id.mynotes_details_back);
-		backBut.setOnClickListener(new OnClickListener() {
+
+		mBackBtn = findViewById(R.id.mynotes_details_back);
+		mBackBtn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

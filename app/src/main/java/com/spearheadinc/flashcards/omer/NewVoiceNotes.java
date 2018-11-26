@@ -21,6 +21,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 public class NewVoiceNotes  extends Activity {
 
@@ -40,6 +41,7 @@ public class NewVoiceNotes  extends Activity {
 	private EditText ed;
 	private FCDBHelper mFCDbHelper;
 	private String mFlashCardId = "";
+	private RelativeLayout voicenote_backBtn;
 	
 	public static NewVoiceNotes getInstance() {
 		return screen;
@@ -69,8 +71,8 @@ public class NewVoiceNotes  extends Activity {
         	mFlashCardId = extras.getString("com.fadavis.pharmphlashfc.phone.fk_FlashCardId");
         }
         mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
-		Button backBut = (Button) findViewById(R.id.voicenote_back);
-		backBut.setOnClickListener(new OnClickListener() {
+		voicenote_backBtn = findViewById(R.id.voicenote_back);
+		voicenote_backBtn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {

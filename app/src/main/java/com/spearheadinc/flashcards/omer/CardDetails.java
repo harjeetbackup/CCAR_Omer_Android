@@ -51,6 +51,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 	private Animation fadeIn = null;
 	private TextView cardDetail_Front_HeaderCountText = null;
 	private TextView cardDetail_Back__HeaderCountText = null;
+	private RelativeLayout front_back_btn;
 	
 	private RelativeLayout cardDetail_Front_View;
 	private RelativeLayout cardDetail_Back_View;
@@ -72,6 +73,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 	private int mLastCardNo;
 	private ImageView cardDetail_Front_Next;
 	private ImageView cardDetail_Back_Next;
+	private RelativeLayout back_btn_layout;
 	
 	private ImageView cardDetail_Front_Prev;
 	private ImageView cardDetail_Back_Prev;
@@ -1026,8 +1028,8 @@ public class CardDetails extends Activity//  implements OnTouchListener
     
     private void setScreenData()
     {
-    	Button tv = (Button) findViewById(R.id.carddetail_back_but);
-        tv.setOnClickListener(new OnClickListener() 
+		front_back_btn =  findViewById(R.id.carddetail_back_but);
+		front_back_btn.setOnClickListener(new OnClickListener()
         {
 			@Override
 			public void onClick(View v) 
@@ -1044,8 +1046,8 @@ public class CardDetails extends Activity//  implements OnTouchListener
 				finish();
 			}
 		});
-        Button tvfront = (Button) findViewById(R.id.carddetail_front_back);
-        tvfront.setOnClickListener(new OnClickListener() 
+        back_btn_layout = findViewById(R.id.carddetail_front_back);
+		back_btn_layout.setOnClickListener(new OnClickListener()
         {
 			@Override
 			public void onClick(View v) 

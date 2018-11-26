@@ -23,6 +23,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -44,6 +45,7 @@ public class ListCardName extends Activity {
 	private Integer i;
 	private TextView deckname;
 	public List<String> colorList= new ArrayList<String>();
+	private RelativeLayout  backBut;
 	
     public static ListCardName getInstance() 
     {
@@ -69,7 +71,7 @@ public class ListCardName extends Activity {
         mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
         mFCDbHelper.openDataBase();
 
-        Button backBut = (Button) findViewById(R.id.back_but);
+        backBut = (RelativeLayout) findViewById(R.id.back_layout);
         deckname =  (TextView) findViewById(R.id.deckName);
         listCardView = (ListView) findViewById(R.id.listCardView);
 		backBut.setOnClickListener(new OnClickListener() {

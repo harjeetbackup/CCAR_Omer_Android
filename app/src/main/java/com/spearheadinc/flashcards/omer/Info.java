@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Info extends Activity {
 	private static Info screen;
 	private WebSettings localWebView;
+	private RelativeLayout backBtn_relativelayout;
     public static Info getScreen() 
     {
     	return screen;
@@ -25,9 +27,9 @@ public class Info extends Activity {
         super.onCreate(savedInstanceState);
 		screen = this;
 		setContentView(R.layout.info);
-        
-        TextView tv = (TextView) findViewById(R.id.trade_title);
-        tv.setOnClickListener(new OnClickListener() 
+
+        backBtn_relativelayout = findViewById(R.id.trade_title);
+        backBtn_relativelayout.setOnClickListener(new OnClickListener()
         {
 			@Override
 			public void onClick(View v) 

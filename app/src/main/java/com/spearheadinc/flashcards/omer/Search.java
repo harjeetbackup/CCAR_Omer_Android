@@ -21,6 +21,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
@@ -37,6 +38,7 @@ public class Search extends Activity
 	private String mSearchString;
 	private static Search screen;
 	List<String[]> list;
+	private RelativeLayout searchcard_backBtn;
     private	boolean bookmaredCard;
 	public static Search getInstance() {
 		return screen;
@@ -47,9 +49,9 @@ public class Search extends Activity
         super.onCreate(savedInstanceState);
 		setContentView(R.layout.searchcards);
 		screen = this;
-		
-		Button backBut = (Button) findViewById(R.id.searchcards_back_but);
-		backBut.setOnClickListener(new OnClickListener() {
+
+		searchcard_backBtn = findViewById(R.id.searchcards_back_but);
+		searchcard_backBtn.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
