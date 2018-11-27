@@ -49,6 +49,7 @@ public class Alarm {
             mChannel.canShowBadge();
             mChannel.setShowBadge(true);
             notificationManager.createNotificationChannel(mChannel);
+
         }
 
         Intent intent = new Intent(context , DeckView.class);
@@ -64,7 +65,7 @@ public class Alarm {
                 PendingIntent.FLAG_ONE_SHOT);
 
         Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(),
-                R.drawable.icon_facebook40);
+                R.drawable.icon);
 
         Uri notificationSoundURI = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder mNotificationBuilder = new NotificationCompat.Builder( context, ChannelID)
@@ -89,6 +90,7 @@ public class Alarm {
         PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, timeInMillies, pendingIntent);
+
     }
 
 
@@ -151,6 +153,14 @@ public class Alarm {
                 }
             }
         }
+
+    }
+    public static  void removeAlarmByUser(Context context ){
+        Intent intent = new Intent(context, AlarmReceiver.class);
+        int requestCode = 1;
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
 
     }
 }

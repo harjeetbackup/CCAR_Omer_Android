@@ -1,40 +1,25 @@
 package com.spearheadinc.flashcards.omer.notification;
 
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.location.LocationManager;
 import android.os.Build;
-import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TimePicker;
 
 import com.spearheadinc.flashcards.apputil.Alarm;
 import com.spearheadinc.flashcards.apputil.AppPreference;
 import com.spearheadinc.flashcards.omer.R;
-import com.spearheadinc.flashcards.sunrisesunset.SunriseSunsetCalculator;
-import com.spearheadinc.flashcards.sunrisesunset.calculator.SolarEventCalculator;
-import com.spearheadinc.flashcards.sunrisesunset.dto.Location;
 
-import org.shredzone.commons.suncalc.SunPosition;
 import org.shredzone.commons.suncalc.SunTimes;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.ZonedDateTime;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import java.util.TimeZone;
 
 public class NotificationActivity extends AppCompatActivity {
     private TimePicker mTimePiker;
@@ -124,6 +109,7 @@ public class NotificationActivity extends AppCompatActivity {
                     AppPreference.getInstance(NotificationActivity.this).setCheckboxState(false);
                     mTimePiker.setVisibility(View.GONE);
                     AppPreference.getInstance(NotificationActivity.this).getCurrentTime();
+                    deleteAlarm();
 
                 }
                 break;
@@ -147,9 +133,18 @@ public class NotificationActivity extends AppCompatActivity {
                 }
                 if (!checked) {
                     AppPreference.getInstance(NotificationActivity.this).setSunCheckboxState(false);
-
+//                    removeSunsetAlarm();
                 }
         }
+
+    }
+
+//    private void removeSunsetAlarm() {
+//        Alarm.removeSunsetAlarm(NotificationActivity.this);
+//    }
+
+    private void deleteAlarm() {
+        Alarm.removeAlarmByUser(NotificationActivity.this);
 
     }
 
