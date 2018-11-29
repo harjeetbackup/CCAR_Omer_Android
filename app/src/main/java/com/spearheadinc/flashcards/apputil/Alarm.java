@@ -87,7 +87,7 @@ public class Alarm {
         Intent intent = new Intent(context, AlarmReceiver.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
         int requestCode = 1;
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, timeInMillies, pendingIntent);
 
@@ -133,7 +133,6 @@ public class Alarm {
         return omarMillis;
     }
     public static void readSunsetTimeForAlarm(Context context){
-
         Calendar currentTime = Calendar.getInstance();
         ArrayList<ItemsBean> omarList = AppPreference.getInstance(context).getList();
         String savedTime = AppPreference.getInstance(context).getSunsetTime();
@@ -162,5 +161,12 @@ public class Alarm {
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
 
+    }
+    public static void removeSunsetAlarm(Context context){
+        Intent intent = new Intent(context, AlarmReceiver.class);
+        int requestCode = 1;
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(context, requestCode, intent, 0);
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
     }
 }

@@ -17,6 +17,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -278,15 +279,15 @@ public class DeckView extends Activity implements LocationListener {
             System.out.println("DOCstrCardPrefsValue  =  " + strCardPrefsValue);
             cursorDeck.moveToNext();
         }
-        myPrefs = DeckView.this.getSharedPreferences("StrAllCardPrefs", MODE_WORLD_READABLE);
+        myPrefs = DeckView.this.getSharedPreferences("StrAllCardPrefs", Context.MODE_PRIVATE);
         String strAllCard = myPrefs.getString("STRALLCARD", "0%");
         profvalueAllCard.setText(strAllCard);
 
-        myPrefs = DeckView.this.getSharedPreferences("StrBookMarkPrefs", MODE_WORLD_READABLE);
+        myPrefs = DeckView.this.getSharedPreferences("StrBookMarkPrefs", Context.MODE_PRIVATE);
         String strBookMark = myPrefs.getString("STRBOOKMARK", "0.00%");
         profvalueBookMark.setText(strBookMark);
 
-        myPrefs = DeckView.this.getSharedPreferences("TotalbookMarkedProfPrefs", MODE_WORLD_READABLE);
+        myPrefs = DeckView.this.getSharedPreferences("TotalbookMarkedProfPrefs", Context.MODE_PRIVATE);
         int bookMarkProfcardStatus = myPrefs.getInt("BOOKMARKEDCARDS", 0);
         totNumbOfBookMarkCard.setText(bookMarkProfcardStatus + " cards");
 

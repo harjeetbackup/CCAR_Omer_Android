@@ -160,19 +160,6 @@ public class Setting extends Activity {
 
 			}
 		});
-    /*    Button apprating = (Button) findViewById(R.id.newsetting_but_apprating);
-        apprating.setOnClickListener(new OnClickListener() 
-        {
-			@Override
-			public void onClick(View v) 
-			{
-//				String url = "https://market.android.com/details?id=com.spearheadinc.flashcards.omer&feature=search_result";
-				String url = "http://www.amazon.com/gp/mas/dl/android?p=com.spearheadinc.flashcards.omer&showAll=1";
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(url));
-				startActivity(i);
-			}
-		});*/
     }
     
     private CustomizeDialog customizeDialog;

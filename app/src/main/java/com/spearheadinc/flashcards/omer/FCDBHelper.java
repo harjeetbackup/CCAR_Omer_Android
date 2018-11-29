@@ -551,7 +551,7 @@ public class FCDBHelper extends SQLiteOpenHelper
 //      return list;
 //   }
 	
-   public int getKnownBookMarkedCardStatus() 
+   public int getKnownBookMarkedCardStatus()
    {
 	   int i = 0;
       Cursor cursor = myDataBase.query(true, "m_FlashCard", new String[]{"ISBookMarked", "ISKnown", "pk_FlashCardId"}, 
@@ -572,7 +572,7 @@ public class FCDBHelper extends SQLiteOpenHelper
       return i;
    }
    
-   public List<String> getAllBookMarkedCardStatus() 
+   public List<String> getAllBookMarkedCardStatus()
    {
 	   List<String> list = new ArrayList<String>();
 	   Cursor cursor = myDataBase.query(true, "m_FlashCard", new String[]{"ISBookMarked", "ISKnown", "pk_FlashCardId"}, 
@@ -593,7 +593,7 @@ public class FCDBHelper extends SQLiteOpenHelper
 	   return list;
    }
 	   
-   public List<String> getBookMarkedCardStatus() 
+   public List<String> getBookMarkedCardStatus()
    {
 	   int i = 0;
 	   List<String> list = new ArrayList<String>();
@@ -1537,7 +1537,7 @@ public class FCDBHelper extends SQLiteOpenHelper
 	public static String AUDIOFILE = "audioFile";
 	public static String RECORDINGDATE = "recordingDate";
 
-	public Cursor getDeksInfoCursor() 
+	public Cursor getDeksInfoCursor()
 	{
 		String sql = "select distinct * from " + DATABASE_TABLE_M_FLASHCARDDECKS + " order by pk_FlashCardDeckId ASC";// where pk_FlashCardId = " + pk_FlashCardId;
 		Cursor cursor = myDataBase.rawQuery(sql, null);

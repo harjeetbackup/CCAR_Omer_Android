@@ -99,7 +99,6 @@ public class AppPreference {
     }
     public void setCheckboxState(final boolean isChecked){
         mEditor.putBoolean("checked",isChecked);
-        mEditor.putBoolean("sunChecked",!isChecked);
         mEditor.commit();
     }
     public boolean getCheckboxSState(){
@@ -110,7 +109,6 @@ public class AppPreference {
 
     public void setSunCheckboxState(final boolean isChecked){
         mEditor.putBoolean("sunChecked",isChecked);
-        mEditor.putBoolean("checked",!isChecked);
         mEditor.commit();
     }
     public boolean getSunCheckboxSState(){
@@ -127,6 +125,23 @@ public class AppPreference {
         String date =  currentDate;
         return date;
     }
+    public void setTimePikerHour(int hour){
+        mEditor.putInt("CurrentHour", hour);
+        mEditor.apply();
+    }
+    public int getTimePikerHour(){
+        int currentHour = mPreferences.getInt("CurrentHour",0);
+        int hour =  currentHour;
+        return hour;
+    }
 
-
+    public void setTimePikerMinute(int minute){
+        mEditor.putInt("CurrentMinute", minute);
+        mEditor.apply();
+    }
+    public int getTimePikerMinute(){
+        int currentMinute = mPreferences.getInt("CurrentMinute",0);
+        int minute =  currentMinute;
+        return minute;
+    }
 }

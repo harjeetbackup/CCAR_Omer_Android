@@ -19,6 +19,7 @@ import org.shredzone.commons.suncalc.SunTimes;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 public class NotificationActivity extends AppCompatActivity {
@@ -45,7 +46,7 @@ public class NotificationActivity extends AppCompatActivity {
         mLocalCheckBox.setChecked(false);
         if (check) {
             mLocalCheckBox.setChecked(true);
-            mSunsetCheckBox.setChecked(false);
+//            mSunsetCheckBox.setChecked(false);
             mTimePiker.setVisibility(View.VISIBLE);
         } else {
 
@@ -59,16 +60,13 @@ public class NotificationActivity extends AppCompatActivity {
         mSunsetCheckBox.setChecked(false);
         if (check1) {
             mSunsetCheckBox.setChecked(true);
-            mLocalCheckBox.setChecked(false);
             mTimePiker.setVisibility(View.GONE);
         } else {
             mSunsetCheckBox.setChecked(false);
-//           mLocalCheckBox.setChecked(true);
         }
 
-        String[] time = lastUpdatedTime.split(":");
-        int hour = Integer.parseInt(time[0].trim());
-        int min = Integer.parseInt(time[1].trim());
+        int hour = AppPreference.getInstance(NotificationActivity.this).getTimePikerHour();
+        int min = AppPreference.getInstance(NotificationActivity.this).getTimePikerMinute();
         mTimePiker.setHour(hour);
         mTimePiker.setMinute(min);
         mBackBtn.setOnClickListener(new View.OnClickListener() {
@@ -88,16 +86,18 @@ public class NotificationActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.localCheckBox:
                 if (checked) {
+                    AppPreference.getInstance(NotificationActivity.this).setCheckboxState(true);// true to appPreferance
+                    AppPreference.getInstance(NotificationActivity.this).setSunCheckboxState(false);// true to appPreferance
                     mTimePiker.setVisibility(View.VISIBLE);
                     mSunsetCheckBox.setChecked(false);
-                    AppPreference.getInstance(NotificationActivity.this).setCheckboxState(true);
 
                     mTimePiker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
                         @Override
                         public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-
                             hourOfDay = mTimePiker.getCurrentHour();
+                            AppPreference.getInstance(NotificationActivity.this).setTimePikerHour(hourOfDay);
                             minute = mTimePiker.getCurrentMinute();
+                            AppPreference.getInstance(NotificationActivity.this).setTimePikerMinute(minute);
                             AppPreference.getInstance(NotificationActivity.this).setCurrentTime(hourOfDay + ":" + minute);
                             Alarm.readOmarDateToSetAlarm(NotificationActivity.this);
 
@@ -106,7 +106,7 @@ public class NotificationActivity extends AppCompatActivity {
 
                 }
                 if (!checked) {
-                    AppPreference.getInstance(NotificationActivity.this).setCheckboxState(false);
+                    AppPreference.getInstance(NotificationActivity.this).setCheckboxState(false);// false for appPreferance
                     mTimePiker.setVisibility(View.GONE);
                     AppPreference.getInstance(NotificationActivity.this).getCurrentTime();
                     deleteAlarm();
@@ -115,9 +115,11 @@ public class NotificationActivity extends AppCompatActivity {
                 break;
             case R.id.SunsetCheckBox:
                 if (checked) {
+                    AppPreference.getInstance(NotificationActivity.this).setSunCheckboxState(true);
+                    AppPreference.getInstance(NotificationActivity.this).setCheckboxState(false);
                     mLocalCheckBox.setChecked(false);
                     mTimePiker.setVisibility(View.GONE);
-                    AppPreference.getInstance(NotificationActivity.this).setSunCheckboxState(true);
+
                     Date date = new Date();
                     SunTimes times = SunTimes.compute()
                             .on(date)
@@ -133,15 +135,16 @@ public class NotificationActivity extends AppCompatActivity {
                 }
                 if (!checked) {
                     AppPreference.getInstance(NotificationActivity.this).setSunCheckboxState(false);
-//                    removeSunsetAlarm();
+                    removeSunsetAlarm();
                 }
         }
 
     }
 
-//    private void removeSunsetAlarm() {
-//        Alarm.removeSunsetAlarm(NotificationActivity.this);
-//    }
+    private void removeSunsetAlarm() {
+        Alarm.removeSunsetAlarm(NotificationActivity.this);
+    }
+
 
     private void deleteAlarm() {
         Alarm.removeAlarmByUser(NotificationActivity.this);

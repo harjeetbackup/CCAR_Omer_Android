@@ -124,7 +124,7 @@ public class FlashCards extends AppLocationActivity {
 										   @NonNull int[] grantResults) {
 		// Make sure it's our original ACCESS_FINE_LOCATION request
 		if (requestCode == REQUEST_FINE_LOCATION) {
-			if (grantResults.length == 1 &&
+			if (grantResults.length > 1 &&
 					grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 				getLocation();
 				DBManager.getInstance(this).getMyFCDbHelper();

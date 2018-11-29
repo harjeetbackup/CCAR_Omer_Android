@@ -35,7 +35,6 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         //It creates the notification
         Alarm.createNotification(context, data);
-
         // Once above notification is created,
         // then it sets new alarm interval of omar upcoming date.
         AsyncTask asyncTask = new AsyncTask(context);

@@ -36,7 +36,7 @@ public class DecompressZip {
         	System.out.println("ISDiredtr");
           _dirChecker(ze.getName()); 
         } else { 
-          FileOutputStream fout = ctx.openFileOutput( ze.getName(), Context.MODE_WORLD_READABLE );
+          FileOutputStream fout = ctx.openFileOutput( ze.getName(), Context.MODE_PRIVATE );
           System.out.println("Path:" + _location + ze.getName());
           ByteArrayOutputStream baos = new ByteArrayOutputStream();
           byte[] buffer = new byte[1024];
