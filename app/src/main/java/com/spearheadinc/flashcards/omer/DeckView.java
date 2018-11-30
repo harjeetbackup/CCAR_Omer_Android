@@ -255,6 +255,8 @@ public class DeckView extends Activity implements LocationListener {
         listCardsPreferenceValue = new ArrayList<String>();
         listDeckPreferenceView = new ArrayList<TextView>();
 
+        ArrayList<ItemsBean> weakList = AppPreference.getInstance(this).getList();
+
         cursorDeck.moveToFirst();
         for (int i = 0; i < cursorDeck.getCount(); i++) {
 
@@ -279,15 +281,15 @@ public class DeckView extends Activity implements LocationListener {
             System.out.println("DOCstrCardPrefsValue  =  " + strCardPrefsValue);
             cursorDeck.moveToNext();
         }
-        myPrefs = DeckView.this.getSharedPreferences("StrAllCardPrefs", Context.MODE_PRIVATE);
+        myPrefs = DeckView.this.getSharedPreferences("StrAllCardPrefs", MODE_PRIVATE);
         String strAllCard = myPrefs.getString("STRALLCARD", "0%");
         profvalueAllCard.setText(strAllCard);
 
-        myPrefs = DeckView.this.getSharedPreferences("StrBookMarkPrefs", Context.MODE_PRIVATE);
+        myPrefs = DeckView.this.getSharedPreferences("StrBookMarkPrefs", MODE_PRIVATE);
         String strBookMark = myPrefs.getString("STRBOOKMARK", "0.00%");
         profvalueBookMark.setText(strBookMark);
 
-        myPrefs = DeckView.this.getSharedPreferences("TotalbookMarkedProfPrefs", Context.MODE_PRIVATE);
+        myPrefs = DeckView.this.getSharedPreferences("TotalbookMarkedProfPrefs", MODE_PRIVATE);
         int bookMarkProfcardStatus = myPrefs.getInt("BOOKMARKEDCARDS", 0);
         totNumbOfBookMarkCard.setText(bookMarkProfcardStatus + " cards");
 
@@ -615,7 +617,7 @@ public class DeckView extends Activity implements LocationListener {
         }
 
         tv.setText(value);
-        SharedPreferences myPrefs = DeckView.this.getSharedPreferences(sharedPrefName, MODE_WORLD_READABLE);
+        SharedPreferences myPrefs = DeckView.this.getSharedPreferences(sharedPrefName, MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = myPrefs.edit();
         prefsEditor.putString(sharedPrefParam, value);
         prefsEditor.commit();
@@ -624,11 +626,11 @@ public class DeckView extends Activity implements LocationListener {
     public void deleteAllBookmarks() {
         profvalueBookMark.setText("0.00%");
         totNumbOfBookMarkCard.setText(0 + " cards");
-        SharedPreferences myPrefs = DeckView.this.getSharedPreferences("StrBookMarkPrefs", MODE_WORLD_READABLE);
+        SharedPreferences myPrefs = DeckView.this.getSharedPreferences("StrBookMarkPrefs", MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = myPrefs.edit();
         prefsEditor.putString("STRBOOKMARK", "0.00%");
         prefsEditor.commit();
-        myPrefs = DeckView.this.getSharedPreferences("TotalbookMarkedProfPrefs", MODE_WORLD_READABLE);
+        myPrefs = DeckView.this.getSharedPreferences("TotalbookMarkedProfPrefs", MODE_PRIVATE);
         prefsEditor = myPrefs.edit();
         prefsEditor.putInt("BOOKMARKEDCARDS", 0);
         prefsEditor.commit();
@@ -644,7 +646,7 @@ public class DeckView extends Activity implements LocationListener {
         Log.e("setStrBookMark", strBookMark + " : " + total);
         double dbl = (double) strBookMark / total;
         populateProficiencyValue(dbl, profvalueBookMark, "StrBookMarkPrefs", "STRBOOKMARK");
-        SharedPreferences myPrefs = DeckView.this.getSharedPreferences("TotalbookMarkedProfPrefs", MODE_WORLD_READABLE);
+        SharedPreferences myPrefs = DeckView.this.getSharedPreferences("TotalbookMarkedProfPrefs", MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = myPrefs.edit();
         prefsEditor.putInt("BOOKMARKEDCARDS", total);
         prefsEditor.commit();
@@ -682,7 +684,7 @@ public class DeckView extends Activity implements LocationListener {
     }
 
     protected void storeDataInPreferences(int value, String sharedPrefName, String sharedPrefParam) {
-        SharedPreferences myPrefs = DeckView.this.getSharedPreferences(sharedPrefName, MODE_WORLD_READABLE);
+        SharedPreferences myPrefs = DeckView.this.getSharedPreferences(sharedPrefName, MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = myPrefs.edit();
         prefsEditor.putInt(sharedPrefParam, value);
         prefsEditor.commit();
@@ -690,7 +692,7 @@ public class DeckView extends Activity implements LocationListener {
     }
 
     protected void storeDataInPreferences(int value, int i/*, String sharedPrefParam*/) {
-        SharedPreferences myPrefs = DeckView.this.getSharedPreferences(listCardsPreferenceName.get(i), MODE_WORLD_READABLE);
+        SharedPreferences myPrefs = DeckView.this.getSharedPreferences(listCardsPreferenceName.get(i), MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = myPrefs.edit();
         prefsEditor.putInt(listCardsPreferenceValue.get(i), value);
         System.out.println("storeDataInPreferencesvalue  =  " + i + " , " + value + " , " + listCardsPreferenceName.get(i) + " , " + listCardsPreferenceValue.get(i));

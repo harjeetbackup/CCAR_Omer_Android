@@ -17,6 +17,7 @@ import java.util.zip.ZipInputStream;
 import com.spearheadinc.flashcards.omer.R;
 
 import android.R.string;
+import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -33,106 +34,55 @@ import android.provider.CalendarContract.Reminders;
 import android.text.Html;
 import android.util.Log;
 
-public class FCDBHelper extends SQLiteOpenHelper
-{
+public class FCDBHelper extends SQLiteOpenHelper {
 //    private static String DB_PATH = "/data/data/com.android.flash.screens/databases/";
-    private static String DB_PATH = "/data/data/com.spearheadinc.flashcards.omer/databases/";
-    private static String DB_NAME = "PrayerApp1.db3";//"LeekFlashCardss.db3";
+//    private static String DB_PATH = "/data/data/com.spearheadinc.flashcards.omer/databases/";
+//    private static String DB_NAME = "PrayerApp1.db3";//"LeekFlashCardss.db3";
     private SQLiteDatabase myDataBase; 
     private final Context myContext;
     private boolean isRandomized;
-    /**
+
+	private static String DB_PATH = "";
+	private static final String DB_NAMEn = "PrayerApp1.db3";
+
+	/**
      * Constructor
      * Takes and keeps a reference of the passed context in order to access to the application assets and resources.
      * @param context
      */
-    public FCDBHelper(Context context)
-    {
-    	super(context, DB_NAME, null, 1);
+    public FCDBHelper(Context context) {
+    	super(context, DB_NAMEn, null, 1);
         this.myContext = context;
-    }	
- 
-  /**
-     * Creates a empty database on the system and rewrites it with your own database.
-     * */
-//    public void createDataBase() throws IOException{
-// 
-//    	boolean dbExist = checkDataBase();
-// 
-//    	if(dbExist)
-//    	{
-//    		//do nothing - database already exist
-//    	}
-//    	else
-//    	{
-//    		//By calling this method an empty database will be created into the default system path
-//               //of your application so we are gonna be able to overwrite that database with our database.
-//        	this.getReadableDatabase();
-//        	try 
-//        	{
-//    			copyDataBase();
-//    		} catch (IOException e) {
-//        		throw new Error("Error copying database");
-//        	}
-//    	}
-//    }
-    public void setRandomized(boolean b)
-    {
+		DB_PATH = myContext.getDatabasePath(DB_NAMEn).getAbsolutePath();
+    }
+
+	@Override
+	public void onOpen(SQLiteDatabase db) {
+		super.onOpen(db);
+		db.disableWriteAheadLogging();
+	}
+
+
+    public void setRandomized(boolean b) {
     	isRandomized = b;
     }
     
-    public boolean getRandomized()
-    {
+    public boolean getRandomized() {
     	return isRandomized;
     }
     
-    public List<String> selectCardStatus(String table, String[] strArr) 
-    {
-       List<String> list = new ArrayList<String>();
-//       this.sqlDB = openHelper.getWritableDatabase();
-       
-       Cursor cursor = myDataBase.query(true, table, strArr, 
-    		   null, null, null, null, null, null); 
-       if (cursor.moveToFirst())
-       {
-     	  do 
-     	  {	
-     		  for(int i = 0; i < strArr.length; i ++)
-     		  {
-	     		  String str = cursor.getString(i);
-	    		  list.add(str);
-     		  }
-//     		  String str1 = cursor.getString(1);
-//    		  list.add(str1);
-     	  } 
-     	  while (cursor.moveToNext());
-       }
-       if (cursor != null && !cursor.isClosed())
-       {
-     	  cursor.close();
-       }
-       for(int i = 0; i < list.size(); i ++)
-	   {
-		   Log.e("" + table, list.get(i)+"");
-	   }
-       return list;
-    }
-    
-    
-    
-    /** 
+    /**
      * Check if the database already exist to avoid re-copying the file each time you open the application.
      * @return true if it exists, false if it doesn't
      */
     private boolean checkDataBase(){
  
     	SQLiteDatabase checkDB = null;
-    	try
-    	{
-    		String myPath = DB_PATH + DB_NAME;
-    		checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READWRITE);
+    	try {
+    		checkDB = SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.OPEN_READWRITE);
     	}catch(SQLiteException e){
     		//database does't exist yet.
+            Log.i("","");
     	}
     	if(checkDB != null){
     		checkDB.close();
@@ -183,7 +133,7 @@ public class FCDBHelper extends SQLiteOpenHelper
       		
       		//By calling this method an empty database will be created into the default system path
                  //of your application so we are gonna be able to overwrite that database with our database.
-      		String path = DB_PATH + "PrayerApp.db3";
+      		String path = DB_PATH;
       		File f = new File( path); 
      	    if(f.isDirectory()) 
      	    {
@@ -192,7 +142,9 @@ public class FCDBHelper extends SQLiteOpenHelper
           	this.getReadableDatabase();
           	try 
           	{
-//      			copyDataBase();
+				/*if(1==1) {
+					return;
+				}*/
       			copyFromZipFile();
       		} catch (IOException e) {
       			e.printStackTrace();
@@ -205,7 +157,7 @@ public class FCDBHelper extends SQLiteOpenHelper
 //      	 InputStream is = myContext.getAssets().open("NewATI.zip", AssetManager.ACCESS_RANDOM);//
       	InputStream is = myContext.getResources().openRawResource(R.raw.schlossbergnew);//newati fadnclex nclexnew
       	// Path to the just created empty db
-      	File outFile = new File(DB_PATH ,DB_NAME);
+      	File outFile = new File(DB_PATH);
       	//Open the empty db as the output stream
       	OutputStream myOutput = new FileOutputStream(outFile.getAbsolutePath());
       	ZipInputStream zis = new ZipInputStream(new BufferedInputStream(is));
@@ -223,7 +175,9 @@ public class FCDBHelper extends SQLiteOpenHelper
   				}
       			baos.writeTo(myOutput);
   			}
-  		} 
+  		} catch (Exception e) {
+      		e.printStackTrace();
+		}
       	finally 
   		{
   			zis.close();
@@ -255,8 +209,7 @@ public class FCDBHelper extends SQLiteOpenHelper
 //    }
  
     public void openDataBase() throws SQLException{
-        String myPath = DB_PATH + DB_NAME;
-    	myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.NO_LOCALIZED_COLLATORS);
+    	myDataBase = SQLiteDatabase.openDatabase(DB_PATH, null, SQLiteDatabase.NO_LOCALIZED_COLLATORS);
     }
  
     @Override
@@ -429,48 +382,7 @@ public class FCDBHelper extends SQLiteOpenHelper
 															"fk_FlashCardId", "fk_TypeId", "TitleData", 
 															"FrontOrBack", "SortKey"}; 
 	   
-//	   public List<String> getAllBookMarkedCardStatus() 
-//	   {
-//		   List<String> list = new ArrayList<String>();
-//		   Cursor cursor =sqlDB.query(true, TABLE_NAME, new String[]{bookmarkedCard, iKnowCard, cardID}, 
-//	    		  						"bookmarkedCard=1", null, null, null, "cardID ASC", null);
-//		   if (cursor.moveToFirst())
-//		   {
-//			   do 
-//			   {	 
-//				   list.add(cursor.getString(2));
-//				   Log.e("DB  cursor.getString(2)  IIIIIIII  ", "" + cursor.getString(2));
-//			   } 
-//			   while (cursor.moveToNext());
-//		   }
-//		   if (cursor != null && !cursor.isClosed())
-//		   {
-//			   cursor.close();
-//		   }
-//		   return list;
-//	   }
-//		   
-//	   public int getBookMarkedCardStatus() 
-//	   {
-//		   int i = 0;
-//	      Cursor cursor =sqlDB.query(true, TABLE_NAME, new String[]{bookmarkedCard, iKnowCard, cardID}, 
-//	    		  						"bookmarkedCard=1", null, null, null, null, null); 
-//	      if (cursor.moveToFirst())
-//	      {
-//	    	  do 
-//	    	  {	 
-//	    		  i++;
-//	    		  Log.e("DBiiiiiii  ",""+i);
-//	    	  } 
-//	    	  while (cursor.moveToNext());
-//	      }
-//	      if (cursor != null && !cursor.isClosed())
-//	      {
-//	    	  cursor.close();
-//	      }
-//	      return i;
-//	   }
-	
+
     public int UpdateResetCardValues(String bmc, String known, String id)
     {
     	SQLiteDatabase db=myDataBase;
@@ -515,42 +427,7 @@ public class FCDBHelper extends SQLiteOpenHelper
 //       this.myDataBase.delete("m_FlashCard", "ISKnown= 0", new String[]{known});
     }
     
-//   public void deleteAll() 
-//   {
-//      this.sqlDB.delete(TABLE_NAME, null, null);
-//   }
 
-   public void deleteAll(String known) 
-   {
-      this.myDataBase.delete("m_FlashCard", "iKnowCard= ?", new String[]{known});
-   }
-	   
-//   public List<FlashCardDetailBean> selectAllCardStatus(String cardId) 
-//   {
-//      List<FlashCardDetailBean> list = new ArrayList<FlashCardDetailBean>();
-//      Cursor cursor =myDataBase.query(true, "m_FlashCard", new String[]{"ISBookMarked", "ISKnown", "pk_FlashCardId"}, 
-//    		  						"cardID= ?", new String[]{cardId}, null, null, null, null); 
-//      if (cursor.moveToFirst())
-//      {
-//    	  do 
-//    	  {	 
-//    		  FlashCardDetailBean artBean = new FlashCardDetailBean();
-////    		  artBean.setbookmarkedCard(cursor.getString(0));
-////    		  
-////    		  artBean.setiKnowCard(cursor.getString(1));
-////    		  artBean.setcardID(cursor.getString(2));
-//        	 
-//    		  list.add(artBean);
-//    	  } 
-//    	  while (cursor.moveToNext());
-//      }
-//      if (cursor != null && !cursor.isClosed())
-//      {
-//    	  cursor.close();
-//      }
-//      return list;
-//   }
-	
    public int getKnownBookMarkedCardStatus()
    {
 	   int i = 0;
@@ -657,26 +534,6 @@ public class FCDBHelper extends SQLiteOpenHelper
       return str;
    }
 	   
-   public int getKnownCardStatus()
-   {
-	  int i = 0;
-      Cursor cursor = myDataBase.query(true, "m_FlashCard", new String[]{"ISBookMarked", "ISKnown", "pk_FlashCardId"}, 
-    		  						"ISKnown=1", null, null, null, null, null); 
-      if (cursor.moveToFirst())
-      {
-    	  do 
-    	  {	 
-    		  i++;
-    	  } 
-    	  while (cursor.moveToNext());
-      }
-      if (cursor != null && !cursor.isClosed())
-      {
-    	  cursor.close();
-      }
-	  Log.e("getKnownCardStatus  ",""+i);
-      return i;
-   }
 
 	public String getDeckID(String cardId) {
 		  String str = "";
@@ -771,113 +628,6 @@ public class FCDBHelper extends SQLiteOpenHelper
        return str;
 	}
 	
-	public String getSoundFileFrontOrBackStatus(String cardId, String frorbk)
-	{
-		String str = "";
-       Cursor cursor = myDataBase.query(true, "m_FlashCardInternalDetails", new String[]{"FrontOrBack"}, 
-    		   "fk_FlashCardId= ? AND FrontOrBack=?", new String[]{cardId,frorbk}, null, null, null, null); 
-       if (cursor.moveToFirst())
-       {
-     	  do 
-     	  {	
-     		  str = cursor.getString(0);
-     	  } 
-     	  while (cursor.moveToNext());
-       }
-       if (cursor != null && !cursor.isClosed())
-       {
-     	  cursor.close();
-       }
-		  Log.e("getSoundFileFrontOrBackStatus  ",""+str);
-       return str;
-	}
-	
-//	public String getSoundFileFrontOrBackStatus(String cardId)
-//	{
-//		String str = "";
-//       Cursor cursor = myDataBase.query(true, "m_FlashCardInternalDetails", new String[]{"FrontOrBack"}, 
-//    		   "fk_FlashCardId= ?", new String[]{cardId}, null, null, null, null); 
-//       if (cursor.moveToFirst())
-//       {
-//     	  do 
-//     	  {	
-//     		  str = cursor.getString(0);
-//     	  } 
-//     	  while (cursor.moveToNext());
-//       }
-//       if (cursor != null && !cursor.isClosed())
-//       {
-//     	  cursor.close();
-//       }
-//		  Log.e("getSoundFileFrontOrBackStatus  ",""+str);
-//       return str;
-//	}
-	
-	public String getSoundFileStatusBack(String cardId)
-	{
-		String str = "";
-       Cursor cursor = myDataBase.query(true, "m_FlashCardInternalDetails", new String[]{"TitleData"}, 
-    		   "fk_FlashCardId= ?", new String[]{cardId}, null, null, null, null); 
-       if (cursor.moveToFirst())
-       {
-     	  do 
-     	  {	
-     		  str = cursor.getString(0);
-     	  } 
-     	  while (cursor.moveToNext());
-       }
-       if (cursor != null && !cursor.isClosed())
-       {
-     	  cursor.close();
-       }
-		  Log.e("getSoundFileNme  ",""+str);
-       return str;
-	}
-	
-
-	
-	String[] m_ConfigDetailsArr = new String[] {"m_ConfigDetails", "Bookmark", "Animation", "AudioIcon", "Name", "HelpText",
-													"Help", "Info", "TitleName", "DetailName"};
-	public String getHelpText() {
-		String str = "";
-       Cursor cursor = myDataBase.query(true, "m_ConfigDetails", new String[]{"HelpText"}, 
-    		   null, null, null, null, null, null); 
-       if (cursor.moveToFirst())
-       {
-     	  do 
-     	  {	
-     		  str = cursor.getString(0);
-     	  } 
-     	  while (cursor.moveToNext());
-       }
-       if (cursor != null && !cursor.isClosed())
-       {
-     	  cursor.close();
-       }
-		  Log.e("getHelpText  ",""+str);
-       return str;
-	}
-	
-	public String getInfoText() {
-		String str = "";
-       Cursor cursor = myDataBase.query(true, "m_ConfigDetails", new String[]{"Info"}, 
-    		   null, null, null, null, null, null); 
-       if (cursor.moveToFirst())
-       {
-     	  do 
-     	  {	
-     		  str = cursor.getString(0);
-     	  } 
-     	  while (cursor.moveToNext());
-       }
-       if (cursor != null && !cursor.isClosed())
-       {
-     	  cursor.close();
-       }
-		  Log.e("getInfoText  ",""+str);
-       return str;
-	}
-	
 	public List<String[]>getBookmarkedCards()
 	{
 		List<String[]> list = new ArrayList<String[]>();
@@ -932,29 +682,7 @@ public class FCDBHelper extends SQLiteOpenHelper
 		return list;
 	}
 	
-	public String getDeckColor(int DeckId)
-	{
-		String strArr = "";
-		String sql = "Select DeckColor from m_FlashCardDecks where pk_FlashCardDeckId="+DeckId;
-		Cursor cursor = myDataBase.rawQuery(sql, null);
-		if (cursor.moveToFirst())
-		{
-			do
-			{
-				strArr = cursor.getString(0);
-					
-				//Log.e("getSearchResults ,   ",strArr[0] + "  ;  " + strArr[1]/* + "   " + strArr[2]*//*+"    " + strArr[3]*/);
-				
-			}
-			while (cursor.moveToNext());
-		}
-		if (cursor != null && !cursor.isClosed())
-		{
-			cursor.close();
-		}
-		return strArr;
-	}
-	
+
 	public String getDeckCardsName(int DeckId)
 	{
 		List<String[]> list = new ArrayList<String[]>();
@@ -1124,34 +852,6 @@ public class FCDBHelper extends SQLiteOpenHelper
 		return list;
 	}
 
-	public List<String[]> getSearchResults(String givenAnswer) {
-		// TODO Auto-generated method stub select distinct fk_flashcardid, cardname from m_flashcardfrontbackdetails where filecontent like '%urine%' order by cardname
-		List<String[]> list = new ArrayList<String[]>();
-		String sql = "select distinct fk_flashcardid, cardname, pk_FlashCardFrontBackDetailId from m_flashcardfrontbackdetails , m_flashcard " +
-											"where pk_flashcardid=fk_flashcardid AND filecontent like '%"+ givenAnswer +"%' order by cardname";
-		Cursor cursor = myDataBase.rawQuery(sql, null);
-		if (cursor.moveToFirst())
-		{
-			do
-			{
-				String strArr[] = new String[3];
-				strArr[0] = cursor.getString(0);
-				strArr[1] = cursor.getString(1);
-				strArr[2] = cursor.getString(2);
-			
-//				strArr[3] = cursor.getString(3);
-				Log.e("getSearchResults ,   ",strArr[0] + "  ;  " + strArr[1] + "   " + strArr[2]/*+"    " + strArr[3]*/);
-				list.add(strArr);
-			}
-			while (cursor.moveToNext());
-		}
-		if (cursor != null && !cursor.isClosed())
-		{
-			cursor.close();
-		}
-		return list;
-		
-	}
 
 	public List<List<String[]>> getSearchResultCursora(/*String givenAnswer*/) {
 		List<String[]> list = null;//new ArrayList<String[]>();
@@ -1236,27 +936,6 @@ public class FCDBHelper extends SQLiteOpenHelper
     	return i;
 	}
 
-	public List<String[]> getVoiceSearchResults() {
-		List <String[]> listArr = new ArrayList<String[]>();
-		String sql = "select distinct fk_FlashCardId, audioTitle, audioFile from m_FlashCardVoiceNotes order by fk_FlashCardId";
-		Cursor cursor = myDataBase.rawQuery(sql, null);
-
-		if (cursor.moveToFirst())
-		{
-			do
-			{
-				String strArr[] = new String[3];
-				strArr[0] = cursor.getString(0);
-				strArr[1] = cursor.getString(1);
-				strArr[2] = cursor.getString(2);
-//				strArr[3] = cursor.getString(3);
-				Log.e("getVoiceSearchResults ,   ",strArr[0] + "  ;  " + strArr[1] + "   " + strArr[2]/*+"    " + strArr[3]*/);
-				listArr.add(strArr);
-			}
-			while (cursor.moveToNext());
-		}
-		return listArr;
-	}
 
 	public List<String> getVoiceSearchResultsForIndividual() {
 		List <String> listArr = new ArrayList<String>();
@@ -1370,25 +1049,6 @@ public class FCDBHelper extends SQLiteOpenHelper
     	return i;
 	}
 
-	public List<String[]> getCommentSearchResults() {
-		List <String[]> listArr = new ArrayList<String[]>();
-		String sql = "select distinct fk_FlashCardId, Comments from m_FlashCardComments order by fk_FlashCardId";
-		Cursor cursor = myDataBase.rawQuery(sql, null);
-
-		if (cursor.moveToFirst())
-		{
-			do
-			{
-				String strArr[] = new String[2];
-				strArr[0] = cursor.getString(0);
-				strArr[1] = cursor.getString(1);
-				Log.e("getCommentSearchResults ,   ",strArr[0] + "  ;  " + strArr[1]);
-				listArr.add(strArr);
-			}
-			while (cursor.moveToNext());
-		}
-		return listArr;
-	}
 
 	public List<String> getCommentSearchResultsForIndividual() {
 		List <String> listArr = new ArrayList<String>();
@@ -1459,27 +1119,6 @@ public class FCDBHelper extends SQLiteOpenHelper
     	myDataBase.update("m_FlashCard", cv,null,null);
 	}
 
-	public List<String[]> getDeksTotalIfo() {
-		List <String[]> listArr = new ArrayList<String[]>();
-		String sql = "select distinct pk_FlashCardDeckId, DeckTitle, DeckImage, DeckColor from m_FlashCardDecks";
-		Cursor cursor = myDataBase.rawQuery(sql, null);
-
-		if (cursor.moveToFirst())
-		{
-			do
-			{
-				String strArr[] = new String[4];
-				strArr[0] = cursor.getString(0);
-				strArr[1] = cursor.getString(1);
-				strArr[2] = cursor.getString(2);
-				strArr[3] = cursor.getString(3);
-				Log.e("getCommentSearchResults ,   ",strArr[0] + "  ;  " + strArr[1] + "   " + strArr[2]+"    " + strArr[3]);
-				listArr.add(strArr);
-			}
-			while (cursor.moveToNext());
-		}
-		return listArr;
-	}
 
 	public String getCardDeckid(String pk_FlashCardId) {
 		
@@ -1501,77 +1140,21 @@ public class FCDBHelper extends SQLiteOpenHelper
 
 	public static String DATABASE_TABLE_M_FLASHCARD = "m_FlashCard";
 	public static String PK_FLASHCARDID = "pk_FlashCardId";
-	public static String INTERNALCARDID = "InternalCardId";
-	public static String CARDNAME = "CardName";
-	public static String FK_FLASHCARDDECKID = "fk_FlashCardDeckId";
-	public static String ISKNOWN = "ISKnown";
-	public static String ISBOOKMARKED = "ISBookMarked";
-	
-	
-	public static String DATABASE_TABLE_M_FLASHCARDCOMMENTS = "m_FlashCardComments";
-	public static String PK_COMMENTID = "pk_CommentId";
-	public static String FK_FLASHCARDID = "fk_FlashCardId";
-	public static String COMMENTS = "Comments";
-	public static String LASTUPDATED = "LastUpdated";
-
 	public static String DATABASE_TABLE_M_FLASHCARDDECKS = "m_FlashCardDecks";
-	public static String PK_FLASHCARDDECKID = "pk_FlashCardDeckId";
 	public static String DECKTITLE = "DeckTitle";
-	public static String DECKIMAGE = "DeckImage";
 	public static String DECKCOLOR = "DeckColor";
 
-	public static String DATABASE_TABLE_m_FlashCardFrontBackDetails = "m_FlashCardFrontBackDetails";
-	public static String PK_FLASHCARDFRONTBACKDETAILID = "pk_FlashCardFrontBackDetailId";
-	public static String FRONTORBACK = "FrontOrBack";
-	public static String FK_TYPEID = "fk_TypeId";
-	public static String TITLEDATA = "TitleData";
-	public static String SORTKEY = "SortKey";
-	public static String FILECONTENT = "FileContent";
 
-	public static String DATABASE_TABLE_m_FlashCardInternalDetails = "m_FlashCardInternalDetails";
-	public static String PK_FLASHCARDINTERNALDETAILID = "pk_FlashCardInternalDetailId";
+	public Cursor getDeksInfoCursor() {
+		Cursor cursor = null;
+		try {
+//			openDataBase();
+			String sql = "select distinct * from " + DATABASE_TABLE_M_FLASHCARDDECKS + " order by pk_FlashCardDeckId ASC";// where pk_FlashCardId = " + pk_FlashCardId;
+			cursor = myDataBase.rawQuery(sql, null);
+		} catch (Exception e) {
+			e.printStackTrace();
 
-	public static String DATABASE_TABLE_M_FLASHCARDVOICENOTES = "m_FlashCardVoiceNotes";
-	public static String PK_VOICENOTEID = "pk_VoiceNoteId";
-	public static String AUDIOTITLE = "audioTitle";
-	public static String AUDIOFILE = "audioFile";
-	public static String RECORDINGDATE = "recordingDate";
-
-	public Cursor getDeksInfoCursor()
-	{
-		String sql = "select distinct * from " + DATABASE_TABLE_M_FLASHCARDDECKS + " order by pk_FlashCardDeckId ASC";// where pk_FlashCardId = " + pk_FlashCardId;
-		Cursor cursor = myDataBase.rawQuery(sql, null);
-		return cursor;
-	}
-
-	public Cursor getm_FlashCardAllCursor() 
-	{
-		String sql;
-		if(getRandomized())
-		{
-			 sql = "select distinct * from " + DATABASE_TABLE_M_FLASHCARD + " order by Random()";// where pk_FlashCardId = " + pk_FlashCardId;
 		}
-		else
-		{
-			 sql = "select distinct * from " + DATABASE_TABLE_M_FLASHCARD + " order by pk_FlashCardId ASC";// where pk_FlashCardId = " + pk_FlashCardId;
-		}
-		Cursor cursor = myDataBase.rawQuery(sql, null);
-		return cursor;
-	}
-
-	public Cursor getm_FlashCardInfoCursor(String fk_FlashCardDeckId) 
-	{
-		String sql;
-		if(getRandomized())
-		{
-			sql = "select distinct * from " + DATABASE_TABLE_M_FLASHCARD + " where fk_FlashCardDeckId = " + fk_FlashCardDeckId + " order by Random()";
-		}
-		else
-		{
-			sql = "select distinct * from " + DATABASE_TABLE_M_FLASHCARD + " where fk_FlashCardDeckId = " + fk_FlashCardDeckId + " order by pk_FlashCardId ASC";
-		}
-		
-		Cursor cursor = myDataBase.rawQuery(sql, null);
 		return cursor;
 	}
 	

@@ -141,18 +141,18 @@ public class CardDetails extends Activity//  implements OnTouchListener
         profSelGastro = new int[listPreferenceName.size()];
         if(DeckView.getScreen() != null && !DeckView.getScreen().isdeleteAllProficiency)
         {
-	        myPrefs =  DeckView.getScreen().getSharedPreferences("StrAllCardPrefsGenericcd", MODE_WORLD_READABLE);
+	        myPrefs =  DeckView.getScreen().getSharedPreferences("StrAllCardPrefsGenericcd", Context.MODE_PRIVATE);
 	        profSelAllCard = myPrefs.getInt("STRALLCARDGENERICcd", 0);
-	        myPrefs =  DeckView.getScreen().getSharedPreferences("StrBookMarkPrefsGenericcd", MODE_WORLD_READABLE);
+	        myPrefs =  DeckView.getScreen().getSharedPreferences("StrBookMarkPrefsGenericcd", Context.MODE_PRIVATE);
 	        profSelBookMark = myPrefs.getInt("STRBOOKMARKGENERICcd", 0);
     		List<String> listPreferenceValue = DeckView.getScreen().getListCardsPreferenceValue();
 //    		int indx = listPreferenceName.indexOf(cardTypeSelected);
 	        for (int i = 0; i < listPreferenceName.size(); i++) {
-		        myPrefs =  DeckView.getScreen().getSharedPreferences(listPreferenceName.get(i), MODE_WORLD_READABLE);
+		        myPrefs =  DeckView.getScreen().getSharedPreferences(listPreferenceName.get(i), Context.MODE_PRIVATE);
 		        profSelGastro[i] = myPrefs.getInt(listPreferenceValue.get(i), 0);
 			}
 	        
-	        myPrefs =  DeckView.getScreen().getSharedPreferences("StrbookMarkProfcardsStatusPrefsGenericcd", MODE_WORLD_READABLE);
+	        myPrefs =  DeckView.getScreen().getSharedPreferences("StrbookMarkProfcardsStatusPrefsGenericcd", Context.MODE_PRIVATE);
 	        bookMarkProfcardStatus = myPrefs.getInt("BOOKMARKPROFCARDSTATUScd", 0);
         }
         else

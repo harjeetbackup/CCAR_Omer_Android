@@ -64,4 +64,7 @@
     <string name="Notify">Notification Recived</string>
     <string name="set_alarm">Set Alarm </string>
 
+
+    <string name="file_provider_authority" translatable="false">com.spearheadinc.flashcards.omer.fileprovider</string>
+
 </resources>

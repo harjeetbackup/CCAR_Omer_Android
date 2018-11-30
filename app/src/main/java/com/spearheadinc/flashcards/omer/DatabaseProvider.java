@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import android.content.Context;
 
-public class DatabaseProvider
-{
+public class DatabaseProvider {
 	FCDBHelper myFCDbHelper;
 	
 	String[] lkp_TypesArrFC = new String[] {"lkp_Types", "pk_TypeId", "TypeValue"}; 
