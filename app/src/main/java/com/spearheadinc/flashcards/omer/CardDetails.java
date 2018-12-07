@@ -739,7 +739,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
     		cardDetail_Front_Next.setClickable(true);
     	   
     	}
-    	
+
     	 fadeIn = AnimationUtils.loadAnimation(DeckView.getScreen(), R.anim.push_left_in);
  	    front_Animatable_View.startAnimation(fadeIn);
 

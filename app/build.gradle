@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.spearheadinc.flashcards.omer"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 28
     }
 

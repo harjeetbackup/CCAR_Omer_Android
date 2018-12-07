@@ -121,16 +121,16 @@ public class Setting extends Activity {
 				customizeDialog.show();
 			}
 		});
-        RelativeLayout clearvoice = (RelativeLayout) findViewById(R.id.setting_delete_voicenotes);
-        clearvoice.setOnClickListener(new OnClickListener() 
-        {
-			@Override
-			public void onClick(View v) 
-			{
-				customizeDialog = new CustomizeDialog(Setting.this, "Are you sure you want to reset all voice notes ?");
-				customizeDialog.show();
-			}
-		});
+//        RelativeLayout clearvoice = (RelativeLayout) findViewById(R.id.setting_delete_voicenotes);
+//        clearvoice.setOnClickListener(new OnClickListener()
+//        {
+//			@Override
+//			public void onClick(View v)
+//			{
+//				customizeDialog = new CustomizeDialog(Setting.this, "Are you sure you want to reset all voice notes ?");
+//				customizeDialog.show();
+//			}
+//		});
         RelativeLayout clearcomment = (RelativeLayout) findViewById(R.id.setting_delete_comments);
         clearcomment.setOnClickListener(new OnClickListener() 
         {

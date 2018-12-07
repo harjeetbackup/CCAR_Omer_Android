@@ -142,30 +142,30 @@
 				android:gravity="center" />
 	
 		</RelativeLayout>
-		
-	       <RelativeLayout
-		    android:id="@+id/setting_delete_voicenotes"
-			android:layout_below="@+id/setting_delete_comments"
-			android:layout_width="fill_parent"
-			android:layout_height="50dp"
-			android:layout_marginTop="2dp"						
-			android:layout_centerHorizontal="true"
-			android:background="#e5e5e5">
-			
-			<TextView  
-			    android:layout_width="fill_parent" 
-			    android:layout_height="wrap_content" 
-			    android:text="@string/deleteallvoicenotes"
-				android:textSize="20dp"
-				android:textColor="@android:color/black"
-				android:layout_marginTop="10dp"		
-				android:gravity="center" />
-	
-		</RelativeLayout>
+		<!---->
+	       <!--<RelativeLayout-->
+		    <!--android:id="@+id/setting_delete_voicenotes"-->
+			<!--android:layout_below="@+id/setting_delete_comments"-->
+			<!--android:layout_width="fill_parent"-->
+			<!--android:layout_height="50dp"-->
+			<!--android:layout_marginTop="2dp"						-->
+			<!--android:layout_centerHorizontal="true"-->
+			<!--android:background="#e5e5e5">-->
+			<!---->
+			<!--<TextView  -->
+			    <!--android:layout_width="fill_parent" -->
+			    <!--android:layout_height="wrap_content" -->
+			    <!--android:text="@string/deleteallvoicenotes"-->
+				<!--android:textSize="20dp"-->
+				<!--android:textColor="@android:color/black"-->
+				<!--android:layout_marginTop="10dp"		-->
+				<!--android:gravity="center" />-->
+	<!---->
+		<!--</RelativeLayout>-->
 		
 	    <RelativeLayout
 		    android:id="@+id/resetApplication"
-			android:layout_below="@+id/setting_delete_voicenotes"
+			android:layout_below="@+id/setting_delete_comments"
 			android:layout_width="fill_parent"
 			android:layout_height="50dp"
 			android:layout_marginTop="2dp"						
