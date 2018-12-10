@@ -1043,7 +1043,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
         		DeckView.getScreen().setStrBookMark(bookMarkProfcardStatus, profSelBookMark);
         		DeckView.getScreen().storeDataInPreferences(profSelBookMark, "StrBookMarkPrefsGenericcd", "STRBOOKMARKGENERICcd");
         		DeckView.getScreen().storeDataInPreferences(bookMarkProfcardStatus, "StrbookMarkProfcardsStatusPrefsGenericcd", "BOOKMARKPROFCARDSTATUScd");
-				finish();
+				closeActivity();
 			}
 		});
         back_btn_layout = findViewById(R.id.carddetail_front_back);
@@ -1062,8 +1062,8 @@ public class CardDetails extends Activity//  implements OnTouchListener
         		DeckView.getScreen().setStrBookMark(bookMarkProfcardStatus, profSelBookMark);
         		DeckView.getScreen().storeDataInPreferences(profSelBookMark, "StrBookMarkPrefsGenericcd", "STRBOOKMARKGENERICcd");
         		DeckView.getScreen().storeDataInPreferences(bookMarkProfcardStatus, "StrbookMarkProfcardsStatusPrefsGenericcd", "BOOKMARKPROFCARDSTATUScd");
-           	   finish();
-        		
+				closeActivity();
+
 			}
 		});
 
@@ -1603,7 +1603,20 @@ public class CardDetails extends Activity//  implements OnTouchListener
 		    }
 	   	
 	    }
-	
-	
 
+	    private void closeActivity() {
+			final Handler handler = new Handler();
+			handler.postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					finish();
+				}
+			}, 1000);
+		}
+
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		closeActivity();
+	}
 }

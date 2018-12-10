@@ -91,14 +91,6 @@ public class Setting extends Activity {
 		  onBtn.setVisibility(View.GONE);
 	        offBtn.setVisibility(View.VISIBLE); 
 	  }
-	  RelativeLayout alarm = (RelativeLayout) findViewById(R.id.alarm);
-	  alarm.setOnClickListener(new OnClickListener() {
-		  @Override
-		  public void onClick(View v) {
-			  Intent intent = new Intent(Setting.this,GettingResponse.class);
-			  startActivity(intent);
-		  }
-	  });
 //        RelativeLayout tv1 = (RelativeLayout) findViewById(R.id.setting_delete_bookmarks);
         RelativeLayout clearbook = (RelativeLayout) findViewById(R.id.setting_delete_bookmarks);
         clearbook.setOnClickListener(new OnClickListener() 
@@ -121,16 +113,7 @@ public class Setting extends Activity {
 				customizeDialog.show();
 			}
 		});
-//        RelativeLayout clearvoice = (RelativeLayout) findViewById(R.id.setting_delete_voicenotes);
-//        clearvoice.setOnClickListener(new OnClickListener()
-//        {
-//			@Override
-//			public void onClick(View v)
-//			{
-//				customizeDialog = new CustomizeDialog(Setting.this, "Are you sure you want to reset all voice notes ?");
-//				customizeDialog.show();
-//			}
-//		});
+
         RelativeLayout clearcomment = (RelativeLayout) findViewById(R.id.setting_delete_comments);
         clearcomment.setOnClickListener(new OnClickListener() 
         {
@@ -151,15 +134,7 @@ public class Setting extends Activity {
 				customizeDialog.show();
 			}
 		});
-        RelativeLayout setAlarm = (RelativeLayout) findViewById(R.id.alarm);
-        setAlarm.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(Setting.this, NotificationActivity.class);
-				startActivity(intent);
 
-			}
-		});
     }
     
     private CustomizeDialog customizeDialog;

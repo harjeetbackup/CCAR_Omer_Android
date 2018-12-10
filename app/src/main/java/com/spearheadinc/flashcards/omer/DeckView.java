@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.List;
 import com.spearheadinc.flashcards.apputil.AppPreference;
 import com.spearheadinc.flashcards.apputil.DBManager;
+import com.spearheadinc.flashcards.omer.notification.NotificationActivity;
 import com.spearheadinc.flashcards.omer.retrofit.ItemsBean;
 import com.spearheadinc.flashcards.sunrisesunset.SunriseSunsetCalculator;
 import com.spearheadinc.flashcards.sunrisesunset.dto.Location;
@@ -16,6 +17,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Notification;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -71,7 +73,6 @@ public class DeckView extends Activity implements LocationListener {
         RelativeLayout detailRow = (RelativeLayout) mInflater.inflate(R.layout.sequential_textview, null);
         return detailRow;
     }
-
     private LinearLayout CreateRowView(int totalCards, String declTitle, int bgImage, String deckColor, String deckProf, int totl, int i)// notesText, String strFilePath, LinearLayout seqOrderLinrOpt)
     {
         LayoutInflater mInflater = LayoutInflater.from(this);
@@ -379,14 +380,12 @@ public class DeckView extends Activity implements LocationListener {
             }
         });
 
-        Button indxSerchBut = (Button) findViewById(R.id.index_footer);
-        indxSerchBut.setOnClickListener(new OnClickListener() {
+        Button notification = (Button)findViewById(R.id.notificationBtn);
+        notification.setOnClickListener(new OnClickListener() {
             @Override
-            public void onClick(View v)
-
-            {
-                startActivity(new Intent(DeckView.this, IndexSearch.class));
-                overridePendingTransition(R.anim.push_up_in, R.anim.hold);
+            public void onClick(View v) {
+                Intent intent  = new Intent(DeckView.this, NotificationActivity.class);
+                startActivity(intent);
             }
         });
 

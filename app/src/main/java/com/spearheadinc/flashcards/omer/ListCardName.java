@@ -8,6 +8,7 @@ import com.spearheadinc.flashcards.omer.R;
 import com.spearheadinc.flashcards.omer.Search.CustomAdapter;
 import com.spearheadinc.flashcards.omer.Search.CustomAdapter.ViewHolder;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -46,6 +47,7 @@ public class ListCardName extends Activity {
 	private TextView deckname;
 	public List<String> colorList= new ArrayList<String>();
 	private RelativeLayout  backBut;
+	private ImageView backgroundImage;
 	
     public static ListCardName getInstance() 
     {
@@ -74,6 +76,7 @@ public class ListCardName extends Activity {
         backBut = (RelativeLayout) findViewById(R.id.back_layout);
         deckname =  (TextView) findViewById(R.id.deckName);
         listCardView = (ListView) findViewById(R.id.listCardView);
+        backgroundImage = (ImageView) findViewById(R.id.backgroundImage);
 		backBut.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -116,31 +119,32 @@ public class ListCardName extends Activity {
        	 list = mFCDbHelper.getDeckCards(i);
        	       	  if(i==1)
        	       	  {
-       	       	listCardView.setBackgroundResource(R.drawable.background1);
+                      backgroundImage.setImageDrawable(getResources().getDrawable(R.drawable.background1));
+
        	       	  }
        	       	  else if(i==2)
        	       	  {
-       	       	listCardView.setBackgroundResource(R.drawable.background2);
+                      backgroundImage.setImageDrawable(getResources().getDrawable(R.drawable.background2));
        	       	  }
        	       	  else if(i==3)
     	       	  {
-    	       	listCardView.setBackgroundResource(R.drawable.background3);
+                      backgroundImage.setImageDrawable(getResources().getDrawable(R.drawable.background3));
     	       	  }
        	       	  else if(i==4)
        	       	  {
-       	       	listCardView.setBackgroundResource(R.drawable.background4);
+                      backgroundImage.setImageDrawable(getResources().getDrawable(R.drawable.background4));
        	       	  }
        	       	  else if(i==5)
        	       	  {
-       	       	listCardView.setBackgroundResource(R.drawable.background5);
+                      backgroundImage.setImageDrawable(getResources().getDrawable(R.drawable.background5));
        	       	  }
        	       	  else if(i==6)
        	       	  {
-       	       	listCardView.setBackgroundResource(R.drawable.background6);
+                      backgroundImage.setImageDrawable(getResources().getDrawable(R.drawable.background6));
        	       	  }
        	       	  else if(i==7)
        	       	  {
-       	       	listCardView.setBackgroundResource(R.drawable.background7);
+                      backgroundImage.setImageDrawable(getResources().getDrawable(R.drawable.background7));
        	       	  }
         	//listCardView.setBackgroundColor(Color.parseColor(colorArr[0]));
        	 DeckName = mFCDbHelper.getDeckCardsName(i);      

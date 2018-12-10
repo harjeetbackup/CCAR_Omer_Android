@@ -46,12 +46,10 @@ public class NotificationActivity extends AppCompatActivity {
         mLocalCheckBox.setChecked(false);
         if (check) {
             mLocalCheckBox.setChecked(true);
-//            mSunsetCheckBox.setChecked(false);
             mTimePiker.setVisibility(View.VISIBLE);
         } else {
 
             mLocalCheckBox.setChecked(false);
-//           mSunsetCheckBox.setChecked(true);
             mTimePiker.setVisibility(View.GONE);
 
         }
@@ -67,8 +65,10 @@ public class NotificationActivity extends AppCompatActivity {
 
         int hour = AppPreference.getInstance(NotificationActivity.this).getTimePikerHour();
         int min = AppPreference.getInstance(NotificationActivity.this).getTimePikerMinute();
-        mTimePiker.setHour(hour);
-        mTimePiker.setMinute(min);
+        mTimePiker.setCurrentHour(hour);
+        mTimePiker.setCurrentMinute(min);
+//        mTimePiker.setHour(hour);
+//        mTimePiker.setMinute(min);
         mBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
