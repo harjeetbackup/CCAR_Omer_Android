@@ -3,7 +3,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#fff"
+    android:background="#000000"
     android:orientation="vertical" >
 
 	
@@ -661,67 +661,72 @@
 	    android:layout_height="50dp"
 	    android:layout_alignParentBottom="true"
 	 
-	    > 
-	
-	<Button
-	    android:id="@+id/height_alert_footer"
-	    android:layout_width="fill_parent"
-	    android:background="#99000000"
-	    android:layout_height="50dp"
-	    android:layout_alignParentBottom="true"
-	    /> 
-	
-	<Button
-	    android:id="@+id/search_footer"
-	    android:layout_width="wrap_content"
-	    android:background="@drawable/search_btn"
-	    android:layout_height="wrap_content"
-	    android:layout_centerVertical="true"
-	    android:layout_alignParentLeft="true"
-	    android:layout_marginLeft="75dp"
-	    /> 
-	
-<!--	    android:layout_width="92dp"-->
-<!--	    android:layout_width="92dp"-->
-	<Button
-	    android:id="@+id/index_footer"
-	      android:visibility="gone"
-	    android:layout_width="wrap_content"
-	    android:background="@drawable/index"
-	    android:layout_height="wrap_content"
-	    android:layout_centerVertical="true"
-	    android:layout_marginLeft="200dp"/> 
-	
-	<Button
-	    android:id="@+id/setting_footer"
-	    android:layout_width="wrap_content"
-	    android:background="@drawable/settings_btn"
-	    android:layout_height="wrap_content"
-	    android:layout_centerVertical="true"
-	    android:layout_alignParentLeft="true"
-	    android:layout_marginLeft="200dp"/> 
-	
-	<Button
-	    android:id="@+id/help_footer"
-	    android:layout_width="wrap_content"
-	    android:background="@drawable/help_btn"
-	    android:layout_height="wrap_content"
-	    android:layout_centerVertical="true"
-	    android:layout_alignParentRight="true"
-	    android:layout_marginRight="200dp"
-	    android:scaleType="fitCenter"/>  
-	
-	<Button
-	    android:id="@+id/info_footer"
-	    android:layout_width="wrap_content"
-	    android:background="@drawable/info_btn"
-	    android:layout_height="wrap_content"
-	    android:layout_centerVertical="true"
-	    android:layout_alignParentRight="true"
-	    android:layout_marginRight="75dp"
-	    android:scaleType="fitCenter"/> 
-		    
-    </RelativeLayout>
+	    >
+
+		<Button
+			android:id="@+id/height_alert_footer"
+			android:layout_width="fill_parent"
+			android:layout_height="48dp"
+			android:layout_alignParentBottom="true"
+			android:background="#99000000" />
+
+		<Button
+			android:id="@+id/search_footer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="15dp"
+			android:background="@drawable/search_btn" />
+
+		<Button
+			android:id="@+id/notificationBtn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:layout_marginLeft="170dp"
+			android:layout_toRightOf="@id/search_footer"
+			android:background="@drawable/notification" />
+
+		<!--<Button-->
+		<!--android:id="@+id/index_footer"-->
+		<!--android:layout_width="wrap_content"-->
+		<!--android:background="@drawable/index"-->
+		<!--android:layout_height="wrap_content"-->
+		<!--android:visibility="gone"-->
+		<!--android:layout_centerVertical="true"-->
+		<!--android:layout_marginLeft="75dp"/>-->
+
+
+		<Button
+			android:id="@+id/setting_footer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			android:layout_centerVertical="true"
+			android:background="@drawable/settings_btn" />
+
+		<Button
+			android:id="@+id/help_footer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:layout_marginRight="240dp"
+			android:background="@drawable/help_btn"
+			android:scaleType="fitCenter" />
+
+		<Button
+			android:id="@+id/info_footer"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:layout_centerVertical="true"
+			android:layout_marginRight="15dp"
+			android:background="@drawable/info_btn"
+			android:scaleType="fitCenter" />
+
+	</RelativeLayout>
 	    
 </RelativeLayout>
 
