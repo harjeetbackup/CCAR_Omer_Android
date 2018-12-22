@@ -23,7 +23,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class NotificationActivity extends AppCompatActivity {
-    private TimePicker mTimePiker;
+    private TimePicker mTimePiker ;
     private CheckBox mLocalCheckBox, mSunsetCheckBox;
     private RelativeLayout mBackBtn;
 
@@ -67,16 +67,29 @@ public class NotificationActivity extends AppCompatActivity {
         int min = AppPreference.getInstance(NotificationActivity.this).getTimePikerMinute();
         mTimePiker.setCurrentHour(hour);
         mTimePiker.setCurrentMinute(min);
-//        mTimePiker.setHour(hour);
-//        mTimePiker.setMinute(min);
         mBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-    }
 
+        if (mLocalCheckBox.isChecked()) {
+            mTimePiker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+                @Override
+                public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                    hourOfDay = mTimePiker.getCurrentHour();
+                    AppPreference.getInstance(NotificationActivity.this).setTimePikerHour(hourOfDay);
+                    minute = mTimePiker.getCurrentMinute();
+                    AppPreference.getInstance(NotificationActivity.this).setTimePikerMinute(minute);
+                    AppPreference.getInstance(NotificationActivity.this).setCurrentTime(hourOfDay + ":" + minute);
+                    Alarm.readOmarDateToSetAlarm(NotificationActivity.this);
+
+                }
+            });
+        }
+
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public void onCheckBoxClicked(View view) {
@@ -90,19 +103,6 @@ public class NotificationActivity extends AppCompatActivity {
                     AppPreference.getInstance(NotificationActivity.this).setSunCheckboxState(false);// true to appPreferance
                     mTimePiker.setVisibility(View.VISIBLE);
                     mSunsetCheckBox.setChecked(false);
-
-                    mTimePiker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
-                        @Override
-                        public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                            hourOfDay = mTimePiker.getCurrentHour();
-                            AppPreference.getInstance(NotificationActivity.this).setTimePikerHour(hourOfDay);
-                            minute = mTimePiker.getCurrentMinute();
-                            AppPreference.getInstance(NotificationActivity.this).setTimePikerMinute(minute);
-                            AppPreference.getInstance(NotificationActivity.this).setCurrentTime(hourOfDay + ":" + minute);
-                            Alarm.readOmarDateToSetAlarm(NotificationActivity.this);
-
-                        }
-                    });
 
                 }
                 if (!checked) {
@@ -138,9 +138,7 @@ public class NotificationActivity extends AppCompatActivity {
                     removeSunsetAlarm();
                 }
         }
-
     }
-
     private void removeSunsetAlarm() {
         Alarm.removeSunsetAlarm(NotificationActivity.this);
     }

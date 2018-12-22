@@ -7,7 +7,7 @@ table.dContents{
 }
 
 div.dFooter{
-position:absolute;right:10%;width:80%;text-align:right;font-family:RobotoRegular;font-size:3.6vmin;padding:0 4%;
+text-align:bottom; right:10%;width:80%;text-align:right;font-family:RobotoRegular;font-size:3.6vmin;padding:4 4%;
 }
 
 @media only screen and (min-device-width:320px) and (max-device-width:480px){

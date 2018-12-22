@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.spearheadinc.flashcards.apputil.DBManager;
-import com.spearheadinc.flashcards.omer.R;
-import com.spearheadinc.flashcards.omer.Search.CustomAdapter;
-import com.spearheadinc.flashcards.omer.Search.CustomAdapter.ViewHolder;
-
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -17,13 +12,11 @@ import android.graphics.Color;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -32,10 +25,8 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class ListCardName extends Activity {
     public List<String[]> list=null;
-    public List<String[]> listDeckName=null;
     private String DeckName;
     private static ListCardName screen;
-    private String cardTypeSelected = "";
     List<String> listSearchCardName = new ArrayList<String>();
 	List<String> listSearchCardid = new ArrayList<String>();
 	List<String> listSearchCardColor = new ArrayList<String>();
@@ -45,7 +36,6 @@ public class ListCardName extends Activity {
 	private RelativeLayout deckCards;
 	private Integer i;
 	private TextView deckname;
-	public List<String> colorList= new ArrayList<String>();
 	private RelativeLayout  backBut;
 	private ImageView backgroundImage;
 	
@@ -92,6 +82,7 @@ public class ListCardName extends Activity {
   		   bookmaredCard=false;
   		   DeckName = "All Cards";
            deckname.setText(DeckName);
+           listCardView.setBackgroundColor(Color.parseColor("#777777"));
            //listCardView.setBackgroundColor(Color.parseColor("#D3F3FF"));
      }
        else if(i==-2)
@@ -100,6 +91,7 @@ public class ListCardName extends Activity {
           bookmaredCard=true;
           DeckName = "Bookmarks & Notes";
           deckname.setText(DeckName);
+		   listCardView.setBackgroundColor(Color.parseColor("#777777"));
          // listCardView.setBackgroundColor(Color.parseColor("#D3F3FF"));
          
        }
@@ -241,7 +233,6 @@ public class ListCardName extends Activity {
     			holder=(ViewHolder)vi.getTag();    		
     			holder.address.setText(Html.fromHtml(cardNamearr[0]));
     			holder.address2.setText(Html.fromHtml(cardNamearr[1]));
-    			//vi.setBackgroundColor(Color2Hex(new String[]{mCardColor.get(position)}));
             return vi;
         }
     }

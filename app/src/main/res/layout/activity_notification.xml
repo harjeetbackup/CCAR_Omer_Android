@@ -76,7 +76,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:onClick="onCheckBoxClicked"
-            android:text="Alert at time"
+            android:text="Alert at specified time"
             android:textSize="20dp" />
 
 

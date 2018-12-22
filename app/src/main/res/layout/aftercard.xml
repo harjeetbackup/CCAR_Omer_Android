@@ -11,6 +11,10 @@
         android:layout_marginBottom="0dp"
         android:layout_marginTop="0dp"
         android:layout_height="fill_parent">
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/textViewDate"/>
 			
 		<WebView
 	    	android:id="@+id/webview" 

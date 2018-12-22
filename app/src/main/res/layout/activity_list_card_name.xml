@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ffffff">
+    android:background="#777777">
 
 	<ImageView
 		android:id="@+id/backgroundImage"
@@ -10,7 +10,7 @@
 		android:layout_height="match_parent"
 		android:src="@drawable/background1"
 		android:scaleType="fitXY"/>
-    
+
     <RelativeLayout
 	 	android:id="@+id/deckCards"
 	    android:layout_width="fill_parent"
@@ -56,7 +56,7 @@
 			 android:singleLine="true"
 			 android:layout_centerHorizontal="true"
 			 android:layout_centerVertical="true"
-			android:textColor="#ffffff"  
+			android:textColor="#ffffff"
 		    android:text="Cards"/>
    	</RelativeLayout>
 
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:paddingTop="50dp"
-        android:clipToPadding="false"       
+        android:clipToPadding="false"
         android:background="@android:color/transparent"
 		android:cacheColorHint="@android:color/transparent"
 		android:divider="@android:color/white"

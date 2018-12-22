@@ -1193,7 +1193,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 			{
 				resetMediaPlayer();
 				currentView = "Trade";
-				applyRotation(-1, 0, 90, 0);
+				applyRotation(-1, 0, 180, 1);
 				preapareMediaPlayerData();
 
 		    	String htmlName = "";
@@ -1226,7 +1226,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 				else
 					hideSoundIcon();
 		    	mFCDbHelper.close();
-				applyRotation(1, 0, 90, 0);
+				applyRotation(1, 0, 180, 1);
 			}
 			
 			if(mSearchString != null && !mSearchString.equals(""))
