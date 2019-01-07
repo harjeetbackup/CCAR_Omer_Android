@@ -1193,7 +1193,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 			{
 				resetMediaPlayer();
 				currentView = "Trade";
-				applyRotation(-1, 0, 180, 1);
+				applyRotation(-1, 0, 0, 1);
 				preapareMediaPlayerData();
 
 		    	String htmlName = "";
@@ -1226,7 +1226,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 				else
 					hideSoundIcon();
 		    	mFCDbHelper.close();
-				applyRotation(1, 0, 180, 1);
+				applyRotation(1, 0, 0, 1);
 			}
 			
 			if(mSearchString != null && !mSearchString.equals(""))
@@ -1381,11 +1381,11 @@ public class CardDetails extends Activity//  implements OnTouchListener
 	}
 	
 	private void applyRotation(int position, float start, float end, int i) {
-        final float centerX = mContainer.getWidth() / 2.0f;
-        final float centerY = mContainer.getHeight() / 2.0f;
+        final float centerX = mContainer.getWidth() / 3.0f;
+        final float centerY = mContainer.getHeight() / 3.0f;
 
         final Rotate3dAnimation rotation =
-                new Rotate3dAnimation(start, end, centerX, centerY, 320.0f, true);
+                new Rotate3dAnimation(start, end, centerX, centerY, 2.0f, true);
 //        if(i == 1)
 //            rotation.setDuration(2);
 //        else
