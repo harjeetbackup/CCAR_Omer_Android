@@ -105,7 +105,8 @@ public class Alarm {
                 try {
                     Date date1 = new SimpleDateFormat("yyyy-MM-dd-HH:mm").parse(dateStr);
                     long omarMillis = date1.getTime();
-                    if (getCurrentDateInMillsec(currentTime.getTimeInMillis()) <= omarMillis) {
+                    long currentTimeInMillies = currentTime.getTimeInMillis();
+                    if (currentTimeInMillies<= omarMillis) {
                         setAlarm(context, omarMillis);
                         break;
                     }
@@ -143,7 +144,7 @@ public class Alarm {
                 try {
                     Date date1 = new SimpleDateFormat("yyyy-MM-dd-HH:mm").parse(dateStr);
                     long omarMillis = date1.getTime();
-                    if (getCurrentDateInMillsec(currentTime.getTimeInMillis()) <= omarMillis) {
+                    if (getCurrentDateInMillsec(currentTime.getTimeInMillis()) == omarMillis) {
                         setAlarm(context, omarMillis);
                         break;
                     }

@@ -74,7 +74,7 @@ public class AfterOmer extends Activity {
 
         if (omarDates != null && omarDates.size() > 1) {
 
-            lastDate = omarDates.get(omarDates.size()-1).getDate();
+            lastDate = omarDates.get(0).getDate();
             String strDate = lastDate;
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date convertedDate = new Date();
@@ -131,7 +131,7 @@ public class AfterOmer extends Activity {
             "<div class=\"dContentsBox\" style=\"height:auto;overflow-y:none;\">\n" +
             "<table class=\"dContents\" style=\"height:95%;\"><tr><td>\n" +
             "Unfortunately, the counting of the Omer has ended for this year.  " +
-            "Feel free to browse through the cards, and check back after sundown on " + date +
+            "Feel free to browse through the cards, and check back before sundown on " + date +
             ".\n" +
             "\n" +
             "\n" +

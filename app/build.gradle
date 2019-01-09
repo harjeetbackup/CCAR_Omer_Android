@@ -40,4 +40,6 @@ dependencies {
     // Joda Date & Time
     implementation 'net.danlew:android.joda:2.10.1'
     implementation('org.shredzone.commons:commons-suncalc:2.3')
+    // EasyFlip view
+    implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
 }
