@@ -22,11 +22,10 @@
   <component name="ChangeListManager">
     <list default="true" id="f13baf64-47ef-4b3f-a2ba-6721a71fcaf9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/flip_back.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/flip_back.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/flip_front.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/flip_front.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/carddetail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/carddetail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/AfterOmer.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/AfterOmer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/CardDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/CardDetails.java" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,12 +44,115 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <PATH>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
+              </PATH_ELEMENT>
+              <PATH_ELEMENT>
+                <option name="myItemId" value="omer-android" />
+                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
+              </PATH_ELEMENT>
+            </PATH>
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CardDetails.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/CardDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2592">
+              <caret line="1137" column="69" lean-forward="false" selection-start-line="1137" selection-start-column="69" selection-end-line="1137" selection-end-column="69" />
+              <folding>
+                <element signature="e#3568#3577#0" expanded="true" />
+                <element signature="e#10154#10733#0" expanded="true" />
+                <element signature="e#10732#10733#0" expanded="true" />
+                <element signature="e#10788#11371#0" expanded="true" />
+                <element signature="e#11370#11371#0" expanded="true" />
+                <element signature="e#11427#12077#0" expanded="true" />
+                <element signature="e#12076#12077#0" expanded="true" />
+                <element signature="e#12134#12797#0" expanded="true" />
+                <element signature="e#12796#12797#0" expanded="true" />
+                <element signature="e#12852#13210#0" expanded="true" />
+                <element signature="e#13209#13210#0" expanded="true" />
+                <element signature="e#13266#13627#0" expanded="true" />
+                <element signature="e#13626#13627#0" expanded="true" />
+                <element signature="e#13683#14007#0" expanded="true" />
+                <element signature="e#14006#14007#0" expanded="true" />
+                <element signature="e#14064#14397#0" expanded="true" />
+                <element signature="e#14396#14397#0" expanded="true" />
+                <element signature="e#16680#16817#0" expanded="true" />
+                <element signature="e#16816#16817#0" expanded="true" />
+                <element signature="e#16885#17835#0" expanded="true" />
+                <element signature="e#17834#17835#0" expanded="true" />
+                <element signature="e#17891#18014#0" expanded="true" />
+                <element signature="e#18013#18014#0" expanded="true" />
+                <element signature="e#18078#18201#0" expanded="true" />
+                <element signature="e#18200#18201#0" expanded="true" />
+                <element signature="e#39793#40608#0" expanded="true" />
+                <element signature="e#40607#40608#0" expanded="true" />
+                <element signature="e#40716#41537#0" expanded="true" />
+                <element signature="e#41536#41537#0" expanded="true" />
+                <element signature="e#42916#43107#0" expanded="true" />
+                <element signature="e#43106#43107#0" expanded="true" />
+                <element signature="e#43173#43400#0" expanded="true" />
+                <element signature="e#43399#43400#0" expanded="true" />
+                <element signature="e#43457#43690#0" expanded="true" />
+                <element signature="e#43689#43690#0" expanded="true" />
+                <element signature="e#43742#43945#0" expanded="true" />
+                <element signature="e#43944#43945#0" expanded="true" />
+                <element signature="e#44586#47207#0" expanded="true" />
+                <element signature="e#47206#47207#0" expanded="true" />
+                <element signature="method#runBack#0;class#CardDetails#0" expanded="false" />
+                <element signature="e#47276#47434#0" expanded="true" />
+                <element signature="e#47433#47434#0" expanded="true" />
+                <element signature="method#runFront#0;class#CardDetails#0" expanded="false" />
+                <element signature="e#47511#47665#0" expanded="true" />
+                <element signature="e#47664#47665#0" expanded="true" />
+                <element signature="e#47675#47745#0" expanded="false" />
+                <element signature="method#resetMediaPlayer#0;class#CardDetails#0" expanded="false" />
+                <element signature="method#preapareMediaPlayerData#0;class#CardDetails#0" expanded="false" />
+                <element signature="method#onJsAlert#0;class#CustomWebChromeClient#0;class#CardDetails#0" expanded="false" />
+                <element signature="e#55264#56156#0" expanded="true" />
+                <element signature="e#56155#56156#0" expanded="true" />
+                <element signature="e#58433#58513#0" expanded="true" />
+                <element signature="e#58512#58513#0" expanded="true" />
+                <marker date="1547106079255" expanded="true" signature="51100:51215" ph="//..." />
+                <marker date="1547106079255" expanded="true" signature="51222:51678" ph="//..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Rotate3dAnimation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/Rotate3dAnimation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="carddetail.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/carddetail.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -61,7 +163,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Week One</find>
       <find>Week o</find>
       <find>CardName,CardColor from m_FlashCard</find>
       <find>com.android.flashcard.screen.cardDetail</find>
@@ -91,6 +192,7 @@
       <find>onClick</find>
       <find>mainDeckViewLinear</find>
       <find>createSeqUnderLine</find>
+      <find>ViewGr</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/app/src/main/res/drawable</dir>
@@ -2348,8 +2450,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/pharm.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_list_card_name.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/ListCardName.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/CardDetails.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/AfterOmer.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/carddetail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/anim/rotate.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/CardDetails.java" />
       </list>
     </option>
   </component>
@@ -2374,10 +2478,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2488,6 +2588,62 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="omer-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="omer-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="anim" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="omer-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="omer-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2568,12 +2724,96 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="flashcards" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="omer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notification" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="omer-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="omer-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flashcards" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apputil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="omer-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="omer-android" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="location" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2581,7 +2821,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="device.picker.selection" value="5200a3f05a95c4a5" />
-    <property name="DEBUGGABLE_DEVICE" value="lenovo-lenovo_tb3_850f-62210132HY8164809NV" />
+    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_j701f-5200a3f05a95c4a5" />
     <property name="DEBUGGABLE_PROCESS" value="com.spearheadinc.flashcards.omer" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="DEBUGGER_ID" value="Auto" />
@@ -2690,7 +2930,8 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1546924812184" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1547107182342" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2737,7 +2978,8 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1546924812184" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1547107182342" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2769,6 +3011,27 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2898,7 +3161,8 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1546924812185" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1547107182343" />
       </method>
     </configuration>
     <list size="1">
@@ -2946,8 +3210,9 @@
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2905028" sideWeight="0.50569105" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -2961,7 +3226,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="21" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09896249" sideWeight="0.49430895" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09896249" sideWeight="0.49430895" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -2975,11 +3240,45 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28172386" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2905028" sideWeight="0.50569105" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.01300813" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36312848" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8292683" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40166667" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18036711" sideWeight="0.49430895" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -3030,8 +3329,20 @@
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/CardDetails.java</url>
+          <line>128</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/CardDetails.java</url>
+          <line>1346</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -3093,71 +3404,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/index.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/search_btn.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/indexsearch.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1723">
-          <caret line="189" column="8" lean-forward="false" selection-start-line="189" selection-start-column="8" selection-end-line="189" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/FlashCards.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="131" column="71" lean-forward="true" selection-start-line="131" selection-start-column="71" selection-end-line="131" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/IndexSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="41" column="38" lean-forward="false" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/setting.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="70" column="44" lean-forward="false" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/Setting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="36" column="42" lean-forward="false" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/notification/NotificationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="47" column="44" lean-forward="false" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/apputil/AppPreference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1566">
-          <caret line="95" column="56" lean-forward="false" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/retrofit/GettingResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -3190,23 +3436,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/cardname.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/FCDBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1029">
           <caret line="926" column="48" lean-forward="false" selection-start-line="926" selection-start-column="48" selection-end-line="926" selection-end-column="48" />
-          <folding>
-            <element signature="e#23113#23123#0" expanded="false" />
-            <element signature="e#27141#27157#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3223,13 +3465,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/deckviewcellrow.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-large-hdpi/today_reading.png">
@@ -3278,23 +3520,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw600dp/pharm.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="44" column="43" lean-forward="false" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="43" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large-mdpi/pharm.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large-mdpi/pharm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/hyperspace_in.xml">
@@ -3344,13 +3586,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_list_card_name.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
           <caret line="68" column="50" lean-forward="false" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/ListCardName.java">
@@ -3364,23 +3606,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/pharm.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
           <caret line="384" column="50" lean-forward="false" selection-start-line="384" selection-start-column="33" selection-end-line="384" selection-end-column="50" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw720dp/pharm.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-sw720dp/pharm.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="28" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/bookmarktop_ic.png">
@@ -3394,67 +3636,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-large-hdpi/pharm.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/DeckView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="883">
           <caret line="774" column="94" lean-forward="false" selection-start-line="774" selection-start-column="94" selection-end-line="774" selection-end-column="94" />
-          <folding>
-            <element signature="e#1885#1893#0" expanded="true" />
-            <element signature="e#1946#1954#0" expanded="true" />
-            <element signature="e#2010#2018#0" expanded="true" />
-            <element signature="e#4607#4772#0" expanded="true" />
-            <element signature="e#4771#4772#0" expanded="true" />
-            <element signature="e#4822#4852#0" expanded="true" />
-            <element signature="e#5149#5179#0" expanded="true" />
-            <element signature="e#13863#14190#0" expanded="true" />
-            <element signature="e#14189#14190#0" expanded="true" />
-            <element signature="e#14316#14643#0" expanded="true" />
-            <element signature="e#14642#14643#0" expanded="true" />
-            <element signature="e#14784#16135#0" expanded="true" />
-            <element signature="e#15385#15627#0" expanded="true" />
-            <element signature="e#15626#15627#0" expanded="true" />
-            <element signature="e#16134#16135#0" expanded="true" />
-            <element signature="e#16246#16517#0" expanded="true" />
-            <element signature="e#16516#16517#0" expanded="true" />
-            <element signature="e#16635#16873#0" expanded="true" />
-            <element signature="e#16872#16873#0" expanded="true" />
-            <element signature="e#16987#17259#0" expanded="true" />
-            <element signature="e#17258#17259#0" expanded="true" />
-            <element signature="e#17364#17620#0" expanded="true" />
-            <element signature="e#17619#17620#0" expanded="true" />
-            <element signature="e#17915#18172#0" expanded="true" />
-            <element signature="e#18171#18172#0" expanded="true" />
-            <element signature="e#18302#18521#0" expanded="true" />
-            <element signature="e#18520#18521#0" expanded="true" />
-            <element signature="e#18655#18852#0" expanded="true" />
-            <element signature="e#18851#18852#0" expanded="true" />
-            <element signature="e#18988#19402#0" expanded="true" />
-            <element signature="e#19401#19402#0" expanded="true" />
-            <element signature="e#19546#21283#0" expanded="true" />
-            <element signature="e#20117#20359#0" expanded="true" />
-            <element signature="e#20358#20359#0" expanded="true" />
-            <element signature="e#21282#21283#0" expanded="true" />
-            <element signature="e#21428#23229#0" expanded="true" />
-            <element signature="e#21950#22192#0" expanded="true" />
-            <element signature="e#22191#22192#0" expanded="true" />
-            <element signature="e#23228#23229#0" expanded="true" />
-            <element signature="e#23376#23951#0" expanded="true" />
-            <element signature="e#23950#23951#0" expanded="true" />
-            <element signature="e#24095#24943#0" expanded="true" />
-            <element signature="e#24942#24943#0" expanded="true" />
-            <element signature="e#25084#25626#0" expanded="true" />
-            <element signature="e#25625#25626#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3463,88 +3657,143 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-28/android/view/ViewGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="118" column="9" lean-forward="true" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="43" column="68" lean-forward="true" selection-start-line="43" selection-start-column="68" selection-end-line="43" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/AfterOmer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="133" column="72" lean-forward="false" selection-start-line="133" selection-start-column="72" selection-end-line="133" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/apputil/Alarm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="108" column="48" lean-forward="false" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/notification/NotificationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/notification/AlarmReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="52" column="31" lean-forward="false" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/anim/rotate.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/carddetail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-28/android/view/animation/DecelerateInterpolator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-770">
-          <caret line="484" column="42" lean-forward="false" selection-start-line="484" selection-start-column="42" selection-end-line="484" selection-end-column="42" />
+        <state relative-caret-position="-411">
+          <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/Rotate3dAnimation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/spearheadinc/flashcards/omer/CardDetails.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2880">
-          <caret line="1022" column="4" lean-forward="false" selection-start-line="1022" selection-start-column="4" selection-end-line="1022" selection-end-column="4" />
+        <state relative-caret-position="2592">
+          <caret line="1137" column="69" lean-forward="false" selection-start-line="1137" selection-start-column="69" selection-end-line="1137" selection-end-column="69" />
           <folding>
-            <element signature="docComment;method#onCreate#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#4263#4299#0" expanded="false" />
-            <element signature="method#onCreate#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#7253#7309#0" expanded="false" />
-            <element signature="e#14939#14991#0" expanded="false" />
-            <element signature="e#16069#16167#0" expanded="false" />
-            <element signature="method#recalculateProficiency#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#incrementProficiency#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#decrementProficiency#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#handleIKnowTabButtonEvent#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#handleBookMarkTabButtonEvent#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#21742#21760#0" expanded="false" />
-            <element signature="e#23918#23953#0" expanded="false" />
-            <element signature="method#incrementProficiency#1;class#CardDetails#0" expanded="false" />
-            <element signature="method#decrementProficiency#1;class#CardDetails#0" expanded="false" />
-            <element signature="method#setNextScreenParameters#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#28847#28881#0" expanded="false" />
-            <element signature="method#setPrevScreenParameters#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#29368#29385#0" expanded="false" />
-            <element signature="method#showSoundVisible#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#31148#31213#0" expanded="false" />
-            <element signature="method#manageCurrentCardStatus#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#32748#32760#0" expanded="false" />
-            <element signature="e#33176#33219#0" expanded="false" />
-            <element signature="method#hideSoundIcon#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#36801#36867#0" expanded="false" />
-            <element signature="method#showSoundIcon#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#37238#37302#0" expanded="false" />
-            <element signature="method#setiKnowPramsVisible#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#37676#37729#0" expanded="false" />
-            <element signature="method#setiKnowPramsINVisible#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#37995#38050#0" expanded="false" />
-            <element signature="method#setBookMarkPramsVisible#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#setBookMarkPramsINVisible#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#manageUpdateKnowInDB#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#manageUpdateBookMarkInDB#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#onPause#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#setScreenData#0;class#CardDetails#0" expanded="false" />
-            <element signature="e#44279#44371#0" expanded="false" />
+            <element signature="e#3568#3577#0" expanded="true" />
+            <element signature="e#10154#10733#0" expanded="true" />
+            <element signature="e#10732#10733#0" expanded="true" />
+            <element signature="e#10788#11371#0" expanded="true" />
+            <element signature="e#11370#11371#0" expanded="true" />
+            <element signature="e#11427#12077#0" expanded="true" />
+            <element signature="e#12076#12077#0" expanded="true" />
+            <element signature="e#12134#12797#0" expanded="true" />
+            <element signature="e#12796#12797#0" expanded="true" />
+            <element signature="e#12852#13210#0" expanded="true" />
+            <element signature="e#13209#13210#0" expanded="true" />
+            <element signature="e#13266#13627#0" expanded="true" />
+            <element signature="e#13626#13627#0" expanded="true" />
+            <element signature="e#13683#14007#0" expanded="true" />
+            <element signature="e#14006#14007#0" expanded="true" />
+            <element signature="e#14064#14397#0" expanded="true" />
+            <element signature="e#14396#14397#0" expanded="true" />
+            <element signature="e#16680#16817#0" expanded="true" />
+            <element signature="e#16816#16817#0" expanded="true" />
+            <element signature="e#16885#17835#0" expanded="true" />
+            <element signature="e#17834#17835#0" expanded="true" />
+            <element signature="e#17891#18014#0" expanded="true" />
+            <element signature="e#18013#18014#0" expanded="true" />
+            <element signature="e#18078#18201#0" expanded="true" />
+            <element signature="e#18200#18201#0" expanded="true" />
+            <element signature="e#39793#40608#0" expanded="true" />
+            <element signature="e#40607#40608#0" expanded="true" />
+            <element signature="e#40716#41537#0" expanded="true" />
+            <element signature="e#41536#41537#0" expanded="true" />
+            <element signature="e#42916#43107#0" expanded="true" />
+            <element signature="e#43106#43107#0" expanded="true" />
+            <element signature="e#43173#43400#0" expanded="true" />
+            <element signature="e#43399#43400#0" expanded="true" />
+            <element signature="e#43457#43690#0" expanded="true" />
+            <element signature="e#43689#43690#0" expanded="true" />
+            <element signature="e#43742#43945#0" expanded="true" />
+            <element signature="e#43944#43945#0" expanded="true" />
+            <element signature="e#44586#47207#0" expanded="true" />
+            <element signature="e#47206#47207#0" expanded="true" />
             <element signature="method#runBack#0;class#CardDetails#0" expanded="false" />
+            <element signature="e#47276#47434#0" expanded="true" />
+            <element signature="e#47433#47434#0" expanded="true" />
             <element signature="method#runFront#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#rotateToBack#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#rotateTOFront#0;class#CardDetails#0" expanded="false" />
+            <element signature="e#47511#47665#0" expanded="true" />
+            <element signature="e#47664#47665#0" expanded="true" />
+            <element signature="e#47675#47745#0" expanded="false" />
             <element signature="method#resetMediaPlayer#0;class#CardDetails#0" expanded="false" />
             <element signature="method#preapareMediaPlayerData#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#applyRotation#0;class#CardDetails#0" expanded="false" />
-            <element signature="class#DisplayNextView#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#DisplayNextView#0;class#DisplayNextView#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#onAnimationStart#0;class#DisplayNextView#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#onAnimationEnd#0;class#DisplayNextView#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#onAnimationRepeat#0;class#DisplayNextView#0;class#CardDetails#0" expanded="false" />
-            <element signature="class#SwapViews#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#SwapViews#0;class#SwapViews#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#run#0;class#SwapViews#0;class#CardDetails#0" expanded="false" />
-            <element signature="class#DemoJavaScriptInterface#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#DemoJavaScriptInterface#0;class#DemoJavaScriptInterface#0;class#CardDetails#0" expanded="false" />
-            <element signature="class#CustomWebChromeClient#0;class#CardDetails#0" expanded="false" />
             <element signature="method#onJsAlert#0;class#CustomWebChromeClient#0;class#CardDetails#0" expanded="false" />
-            <element signature="class#JavaScriptInterface#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#onSearchSelectionClick#0;class#JavaScriptInterface#0;class#CardDetails#0" expanded="false" />
-            <element signature="class#MyWebChromeClient#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#onJsAlert#0;class#MyWebChromeClient#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#onProgressChanged#0;class#MyWebChromeClient#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#changeOptionIcon#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#onResume#0;class#CardDetails#0" expanded="false" />
-            <element signature="method#closeActivity#0;class#CardDetails#0" expanded="false" />
+            <element signature="e#55264#56156#0" expanded="true" />
+            <element signature="e#56155#56156#0" expanded="true" />
+            <element signature="e#58433#58513#0" expanded="true" />
+            <element signature="e#58512#58513#0" expanded="true" />
+            <marker date="1547106079255" expanded="true" signature="51100:51215" ph="//..." />
+            <marker date="1547106079255" expanded="true" signature="51222:51678" ph="//..." />
           </folding>
         </state>
       </provider>

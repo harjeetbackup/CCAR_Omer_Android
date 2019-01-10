@@ -1136,44 +1136,6 @@ public class CardDetails extends Activity//  implements OnTouchListener
 	    flipcardDetail_Front_But = (ImageView) findViewById(R.id.carddetail_front_footer_flip);
 	    flipcardDetail_Front_But.setOnClickListener(mOnClickListener);
 	    flipcardDetail_Back_But.setOnClickListener(mOnClickListener);
-	    
-//	    soundSpeakercardDetail_Front_ = (TextView) findViewById(R.id.carddetail_front_sound);
-//	    soundSpeakercardDetail_Back_ = (TextView) findViewById(R.id.carddetail_back_sound);
-//	    soundSpeakercardDetail_Front_Icon = (ImageView) findViewById(R.id.carddetail_frontsound_icon);
-//	    soundSpeakercardDetail_Back_Icon = (ImageView) findViewById(R.id.carddetail_back_sound_icon);
-//	    
-//	    soundSpeakercardDetail_Front_.setOnClickListener(new OnClickListener() 
-//        {
-//			@Override
-//			public void onClick(View v) 
-//			{
-//				try
-//				{
-//					preapareMediaPlayerData();
-//					if(mp != null)
-//					{
-//						mp.start();
-//						mp.setVolume(300, 300);
-//					}
-//				}catch(Exception e){}
-//			}
-//		});
-//	    soundSpeakercardDetail_Back_.setOnClickListener(new OnClickListener() 
-//        {
-//			@Override
-//			public void onClick(View v) 
-//			{
-//				try
-//				{
-//					preapareMediaPlayerData();
-//					if(mp != null)
-//					{
-//						mp.start();
-//						mp.setVolume(300, 300);
-//					}
-//				}catch(Exception e){}
-//			}
-//		});
 
         mContainer=(ViewGroup)findViewById(R.id.relative_carddetail_main);
         cardDetail_Front_View = (RelativeLayout)findViewById(R.id.relativecarddetail_front);
@@ -1193,7 +1155,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 			{
 				resetMediaPlayer();
 				currentView = "Trade";
-				applyRotation(-1, 0, 0, 1);
+				applyRotation(-1, 0, 180, 1);
 				preapareMediaPlayerData();
 
 		    	String htmlName = "";
@@ -1226,7 +1188,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 				else
 					hideSoundIcon();
 		    	mFCDbHelper.close();
-				applyRotation(1, 0, 0, 1);
+				applyRotation(1, 180, 0, 1);
 			}
 			
 			if(mSearchString != null && !mSearchString.equals(""))
@@ -1236,7 +1198,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
 			
 		}
 	};
-	public void runBack(final String scriptSrc) { 
+	public void runBack(final String scriptSrc) {
 		mWebViewBack.post(new Runnable() {
             @Override
             public void run() { 
@@ -1380,20 +1342,21 @@ public class CardDetails extends Activity//  implements OnTouchListener
 		}
 	}
 	
+	
 	private void applyRotation(int position, float start, float end, int i) {
-        final float centerX = mContainer.getWidth() / 3.0f;
-        final float centerY = mContainer.getHeight() / 3.0f;
+        final float centerX = mContainer.getWidth() / 2.0f;
+        final float centerY = mContainer.getHeight() / 2.0f;
 
         final Rotate3dAnimation rotation =
-                new Rotate3dAnimation(start, end, centerX, centerY, 2.0f, true);
+                new Rotate3dAnimation(start, end, centerX, centerY, 0.0f, false);
 //        if(i == 1)
 //            rotation.setDuration(2);
 //        else
-        	rotation.setDuration(200);
-        
+        	rotation.setDuration(500);
+
         rotation.setFillAfter(true);
         rotation.setInterpolator(new AccelerateInterpolator());
-        
+
         rotation.setAnimationListener(new DisplayNextView(position, i));
         mContainer.startAnimation(rotation);
     }
@@ -1441,19 +1404,19 @@ public class CardDetails extends Activity//  implements OnTouchListener
             	cardDetail_Back_View.setVisibility(View.VISIBLE);
             	mWebViewBack.setVisibility(View.VISIBLE);
             	cardDetail_Back_View.requestFocus();
-                rotation = new Rotate3dAnimation(90, 0, centerX, centerY, 320.0f, false);
+                rotation = new Rotate3dAnimation(0, 0, centerX, centerY, 2.0f, false);
             } 
             else 
             {
             	cardDetail_Back_View.setVisibility(View.GONE);
                 cardDetail_Front_View.setVisibility(View.VISIBLE);
                 cardDetail_Front_View.requestFocus();
-                rotation = new Rotate3dAnimation(90, 0, centerX, centerY, 320.0f, false);
+                rotation = new Rotate3dAnimation(0, 0, centerX, centerY, 2.0f, false);
             }
 //            if(side == 1)
 //            	rotation.setDuration(2);
 //            else
-            	rotation.setDuration(400);
+            	rotation.setDuration(300);
             rotation.setFillAfter(true);
             rotation.setInterpolator(new DecelerateInterpolator());
             mContainer.startAnimation(rotation);
@@ -1461,26 +1424,26 @@ public class CardDetails extends Activity//  implements OnTouchListener
     }
 	
 //	@Override
-//	public boolean onTouch(View v, MotionEvent event) 
+//	public boolean onTouch(View v, MotionEvent event)
 //	{
-//		switch (event.getAction() & MotionEvent.ACTION_MASK) 
+//		switch (event.getAction() & MotionEvent.ACTION_MASK)
 //	    {
 //	    	case MotionEvent.ACTION_DOWN: //1
 ////	    		startPointx = event.getX();
 ////	    		startPointy = event.getY();
 ////	    		Log.d("TAG ACTION_DOWN ", startPointx + "   mode=NONE   " + startPointy);
 //    		break;
-//	    		
+//
 //	      	case MotionEvent.ACTION_POINTER_DOWN:
 //	        break;
-//	    		
+//
 //	    	case MotionEvent.ACTION_UP:  //3
 ////	    		if(startPointx - endPointx > 10 && startPointy - endPointy < 10 && (mStartCardNoBookMark +1) < mLastCardNo)
 ////		    		setNextScreenParameters();
 ////		    	if(startPointx - endPointx < -10 && startPointy - endPointy < 10 && mStartCardNoBookMark > 0)
 ////	    			setPrevScreenParameters();
 //    		break;
-//	    	case MotionEvent.ACTION_POINTER_UP: 
+//	    	case MotionEvent.ACTION_POINTER_UP:
 //    		break;
 //	    	case MotionEvent.ACTION_MOVE: //2
 ////	    		endPointx = event.getX();
@@ -1488,14 +1451,14 @@ public class CardDetails extends Activity//  implements OnTouchListener
 ////	    		mWebViewBack.scrollBy(x, y)
 //    		break;
 //      	}
-//	    return true; 
+//	    return true;
 //	}
-    
-    final class DemoJavaScriptInterface 
-    { 
+
+    final class DemoJavaScriptInterface
+    {
     	DemoJavaScriptInterface()
-    	{ 
-    	} 
+    	{
+    	}
 	}
 
 	final class CustomWebChromeClient extends WebChromeClient { 
