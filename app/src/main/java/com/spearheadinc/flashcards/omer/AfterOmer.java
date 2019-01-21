@@ -33,7 +33,9 @@ public class AfterOmer extends Activity {
     private RelativeLayout backBtnRelative;
     private TextView tvDate;
     private String lastDate = "";
+    private String startDate = "";
     private String finalDateString;
+    private String finalStartDateString;
     private String str = "";
 
     public static AfterOmer getScreen() {
@@ -73,9 +75,10 @@ public class AfterOmer extends Activity {
         ArrayList<ItemsBean> omarDates = AppPreference.getInstance(AfterOmer.this).getList();
 
         if (omarDates != null && omarDates.size() > 1) {
-
+            startDate = omarDates.get(0).getDate();
             lastDate = omarDates.get(omarDates.size()-1).getDate();
             String strDate = lastDate;
+            String starDate = startDate;
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date convertedDate = new Date();
             try {
@@ -86,14 +89,24 @@ public class AfterOmer extends Activity {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
+            Date convertedDate1 = new Date();
+            try {
+                convertedDate1 = dateFormat.parse(starDate);
+                SimpleDateFormat sdfnewformat = new SimpleDateFormat("MMM dd yyyy");
+                finalStartDateString = sdfnewformat.format(convertedDate1);
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
 
 
-            mWebView.loadDataWithBaseURL("file:///android_asset/" + "aftercard.html", afterOmateDate(finalDateString), "text/html", "UTF-8", null);
+
+            mWebView.loadDataWithBaseURL("file:///android_asset/" + "aftercard.html", afterOmateDate(finalDateString,finalStartDateString), "text/html", "UTF-8", null);
 
         }
 
     }
-    private String afterOmateDate(String date) {
+    private String afterOmateDate(String date ,String date1) {
     String str = "<html>\n" +
             "<head>\n" +
             "\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n" +
@@ -130,8 +143,8 @@ public class AfterOmer extends Activity {
             "<div class=\"dInner\" style=\"height:auto;\">\n" +
             "<div class=\"dContentsBox\" style=\"height:auto;overflow-y:none;\">\n" +
             "<table class=\"dContents\" style=\"height:95%;\"><tr><td>\n" +
-            "Unfortunately, the counting of the Omer has ended for this year.  " +
-            "Feel free to browse through the cards, and check back after sundown on " + date +
+            "It's not currently the time to count the Omer.  " +
+            "Feel free to browse through the cards until then.This year, the dates of the Omer are  " + date1 + " through " + date + ".  You can set an alarm to remember to count by tapping the alarm bell on the main menu screen at the bottom" +
             ".\n" +
             "\n" +
             "\n" +

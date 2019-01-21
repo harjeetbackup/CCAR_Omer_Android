@@ -32,6 +32,8 @@ public class BeforeOmer extends Activity {
 	private WebSettings localWebView;
 	private RelativeLayout backBtn_before_omar;
     private String statDate = "";
+    private String lastDate = "";
+    private String finalLastDateString;
     private String finalDateString;
     public static BeforeOmer getScreen()
     {
@@ -64,7 +66,10 @@ public class BeforeOmer extends Activity {
         if (omarDates != null && omarDates.size() > 1) {
 
             statDate = omarDates.get(0).getDate();
+            lastDate = omarDates.get(omarDates.size()-1).getDate();
+
             String strDate = statDate;
+            String lasDate = lastDate;
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date convertedDate = new Date();
             try {
@@ -75,11 +80,21 @@ public class BeforeOmer extends Activity {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            mWebView.loadDataWithBaseURL("file:///android_asset/" + "beforecard.html", showBeforeStr(finalDateString), "text/html", "UTF-8", null);
+
+            Date convertedDate1 = new Date();
+            try {
+                convertedDate1 = dateFormat.parse(lasDate);
+                SimpleDateFormat sdfnewformat = new SimpleDateFormat("MMM dd yyyy");
+                finalLastDateString = sdfnewformat.format(convertedDate1);
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            mWebView.loadDataWithBaseURL("file:///android_asset/" + "beforecard.html", showBeforeStr(finalDateString,finalLastDateString), "text/html", "UTF-8", null);
         }
 
     }
-    private String showBeforeStr(String date) {
+    private String showBeforeStr(String date,String date1) {
         String str = "<html>\n" +
                 "<head>\n" +
                 "\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n" +
@@ -117,9 +132,8 @@ public class BeforeOmer extends Activity {
                 "<div class=\"dInner\" style=\"height:auto;\">\n" +
                 "<div class=\"dContentsBox\" style=\"height:auto;overflow-y:none;\">\n" +
                 "<table class=\"dContents\" style=\"height:95%;\"><tr><td>\n" +
-                "You’re early! The counting of the Omer has not yet begun.  Feel free to browse through the cards, " +
-                "and check back after sundown on " +
-                date +
+                "It's not currently the time to count the Omer.Feel free to browse through the cards until then.This year, the dates of the Omer are  " +
+                date + " through " + date1 + ".  You can set an alarm to remember to count by tapping the alarm bell on the main menu screen at the bottom"+
                 ".\n" +
                 "\n" +
                 "</td></tr></table>\n" +
