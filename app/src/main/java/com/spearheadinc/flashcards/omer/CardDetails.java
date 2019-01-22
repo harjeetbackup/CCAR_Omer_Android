@@ -1235,15 +1235,15 @@ public class CardDetails extends Activity//  implements OnTouchListener
                 cardDetail_Back_View.setVisibility(View.VISIBLE);
                 mWebViewBack.setVisibility(View.VISIBLE);
                 cardDetail_Back_View.requestFocus();
-                rotation = new Rotate3dAnimation(0, 0, centerX, centerY, 0.0f, false);
+                rotation = new Rotate3dAnimation(0, 0, centerX, centerY, 2.0f, false);
             } else {
                 cardDetail_Back_View.setVisibility(View.GONE);
                 cardDetail_Front_View.setVisibility(View.VISIBLE);
                 cardDetail_Front_View.requestFocus();
                 mWebView.setVisibility(View.VISIBLE);
-                rotation = new Rotate3dAnimation(0, 0, centerX, centerY, 0.0f, false);
+                rotation = new Rotate3dAnimation(0, 0, centerX, centerY, 2.0f, false);
             }
-            rotation.setDuration(900);
+            rotation.setDuration(800);
             rotation.setFillAfter(true);
             rotation.setInterpolator(new DecelerateInterpolator());
             mWebView.startAnimation(rotation);
