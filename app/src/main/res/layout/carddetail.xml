@@ -9,22 +9,22 @@
 
     <RelativeLayout
         android:id="@+id/carddetail_back_relativetop"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="#e5e5e5"
         android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/web_backlin"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginBottom="0dp"
             android:layout_marginTop="0dp">
 
             <WebView
                 android:id="@+id/web_back"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="0dp"
                 android:scrollbarSize="0dp"
                 android:scrollbars="none" />
@@ -264,6 +264,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:background="@android:color/transparent"
             android:scaleType="fitXY"
             android:src="@drawable/next_btn" />
@@ -314,20 +315,20 @@
 
         <RelativeLayout
             android:id="@+id/carddetail_frontrelandroid"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/contents"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="0px">
 
                 <WebView
                     android:id="@+id/web_front"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_marginBottom="0dp"
                     android:scrollbarSize="0dp"
                     android:scrollbars="none" />
