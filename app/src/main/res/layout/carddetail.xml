@@ -320,7 +320,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/contents"
+                android:id="@+id/llFrontcontents"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="0px">
@@ -348,7 +348,8 @@
                     android:layout_height="50dp"
                     android:background="#e5e5e5"
                     android:scaleType="fitXY"
-                    android:visibility="gone" />
+                    android:visibility="gone"
+                    />
 
                 <RelativeLayout
                     android:id="@+id/carddetail_front_back"

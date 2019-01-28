@@ -132,7 +132,7 @@ public class BeforeOmer extends Activity {
                 "<div class=\"dInner\" style=\"height:auto;\">\n" +
                 "<div class=\"dContentsBox\" style=\"height:auto;overflow-y:none;\">\n" +
                 "<table class=\"dContents\" style=\"height:95%;\"><tr><td>\n" +
-                "It's not currently the time to count the Omer.Feel free to browse through the cards until then.This year, the dates of the Omer are  " +
+                "It's not currently the time to count the Omer. Feel free to browse through the cards until then. This year, the dates of the Omer are  " +
                 date + " through " + date1 + ".  You can set an alarm to remember to count by tapping the alarm bell on the main menu screen at the bottom"+
                 ".\n" +
                 "\n" +

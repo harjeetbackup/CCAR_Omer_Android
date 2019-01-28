@@ -41,7 +41,6 @@ public class AfterOmer extends Activity {
     public static AfterOmer getScreen() {
         return screen;
     }
-//	private FCDBHelper mFCDbHelper;
 
     /**
      * Called when the activity is first created.
@@ -52,14 +51,11 @@ public class AfterOmer extends Activity {
         screen = this;
         setContentView(R.layout.aftercard);
 
-
-//        TextView tv = (TextView) findViewById(R.id.trade_title);
         backBtnRelative = findViewById(R.id.backBut_after_omar);
         backBtnRelative.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
-                //overridePendingTransition(R.anim.hold, R.anim.push_up_out);
             }
         });
         tvDate = findViewById(R.id.textViewDate);
@@ -143,8 +139,8 @@ public class AfterOmer extends Activity {
             "<div class=\"dInner\" style=\"height:auto;\">\n" +
             "<div class=\"dContentsBox\" style=\"height:auto;overflow-y:none;\">\n" +
             "<table class=\"dContents\" style=\"height:95%;\"><tr><td>\n" +
-            "It's not currently the time to count the Omer.  " +
-            "Feel free to browse through the cards until then.This year, the dates of the Omer are  " + date1 + " through " + date + ".  You can set an alarm to remember to count by tapping the alarm bell on the main menu screen at the bottom" +
+            "It's not currently the time to count the Omer. " +" "+
+            "Feel free to browse through the cards until then. This year, the dates of the Omer are  " + date1 + " through " + date + ".  You can set an alarm to remember to count by tapping the alarm bell on the main menu screen at the bottom" +
             ".\n" +
             "\n" +
             "\n" +

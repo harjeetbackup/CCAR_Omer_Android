@@ -31,7 +31,7 @@ public class AlarmReceiver extends BroadcastReceiver {
         }
         Map<String, String> data = new HashMap<>();
         data.put("title", mTitle);
-        data.put("body", "Tap to see today's omar Reading");
+        data.put("body", "Tap to see today's Omer reading");
 
         //It creates the notification
         Alarm.createNotification(context, data);

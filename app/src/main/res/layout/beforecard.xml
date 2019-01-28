@@ -1,108 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
- 	xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-	android:background="@drawable/background">
-<LinearLayout
-    	android:id="@+id/webviewLinear"    		
-        android:layout_width="fill_parent" 
-        android:layout_marginBottom="0dp"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/webviewLinear"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_marginTop="0dp"
-        android:layout_height="fill_parent">
-			
-		<WebView
-	    	android:id="@+id/webview" 
-	        android:layout_width="fill_parent" 
-	        android:layout_height="fill_parent"
-	        android:layout_marginBottom="0dp"
-	        android:scrollbarSize="0dp"
-	        android:scrollbars="none"/>
-	        
+        android:layout_marginBottom="0dp">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="0dp"
+            android:scrollbarSize="0dp"
+            android:scrollbars="none" />
+
     </LinearLayout>
 
-	<RelativeLayout
-	    android:layout_width="fill_parent"
-	    android:id="@+id/info_title"
-	    android:layout_height="50dp"
-		android:background="#CC000000">
-		<RelativeLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:id="@+id/trade_title"
-			android:layout_centerVertical="true">
-			<ImageView
-				android:layout_width="25dp"
-				android:layout_height="20dp"
-				android:src="@drawable/arrow_left_white"
-				android:id="@+id/iv_back" />
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="#ffffff"
-				android:text="Back"
-				android:textSize="16dp"
-				android:layout_toRightOf="@id/iv_back"/>
+    <RelativeLayout
+        android:id="@+id/info_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#CC000000">
 
-		</RelativeLayout>
-	
+        <RelativeLayout
+            android:id="@+id/trade_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
 
-	
-	    <TextView 
-	        android:layout_width="fill_parent"
-	        android:layout_height="50dp"
-	    	android:text="Before Omer"
-			android:textColor="#ffffff"
-	    	android:textSize="23dp"
-			android:textStyle="bold"
-			android:gravity="center"
-			android:layout_centerHorizontal="true"/>
-		
-	</RelativeLayout>
-		
-<!--	<TextView  -->
-<!--	    android:layout_width="75dp" -->
-<!--	    android:layout_height="50dp"-->
-<!--	    android:id="@+id/trade_title"-->
-<!--		android:textSize="4px"-->
-<!--		android:layout_marginTop="4px"-->
-<!--		android:textStyle="bold"-->
-<!--		android:layout_marginLeft="3px"-->
-<!--	    android:text=""/>-->
-	    
-   
-	    
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:src="@drawable/arrow_left_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/iv_back"
+                android:text="Back"
+                android:textColor="#ffffff"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="Not Omer"
+            android:textColor="#ffffff"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
     </RelativeLayout>
+
+
+</RelativeLayout>
 		
-		
-<!--	<TextView  -->
-<!--		android:id="@+id/info_text"-->
-<!--	    android:layout_width="fill_parent" -->
-<!--	    android:layout_height="fill_parent"-->
-<!--		android:textSize="15px"-->
-<!--		android:layout_marginTop="14px"-->
-<!--		android:layout_marginLeft="30px"-->
-<!--		android:textColor="@android:color/black"-->
-<!--		android:layout_below="@+id/info_title"    -->
-<!--	    android:text="Back"/>-->
-		
-<!--	<TextView  -->
-<!--	    android:layout_width="wrap_content" -->
-<!--	    android:layout_height="wrap_content"-->
-<!--		android:textSize="16px"-->
-<!--		android:textStyle="bold"-->
-<!--		android:layout_marginTop="15px"-->
-<!--		android:textColor="@android:color/white"-->
-<!--		android:layout_centerHorizontal="true"	    -->
-<!--	    android:text="Info"/>-->
-<!---->
-<!--	<ImageView-->
-<!--	    android:id="@+id/trade_title"-->
-<!--	    android:layout_width="75px"-->
-<!--	    android:src="@drawable/but_back"-->
-<!--		android:layout_marginTop="6px"-->
-<!--		android:layout_marginLeft="14px"-->
-<!--	    android:background="@android:color/transparent"-->
-<!--	    android:layout_height="32px"-->
-<!--	    android:scaleType="fitXY"/> -->
