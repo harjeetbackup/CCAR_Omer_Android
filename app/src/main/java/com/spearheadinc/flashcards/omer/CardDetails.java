@@ -1,37 +1,24 @@
 package com.spearheadinc.flashcards.omer;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.spearheadinc.flashcards.apputil.DBManager;
-import com.spearheadinc.flashcards.omer.R;
-import com.spearheadinc.flashcards.omer.ListCardName.CustomAdapter;
-
-import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
 import android.database.Cursor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
@@ -43,6 +30,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.spearheadinc.flashcards.apputil.DBManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CardDetails extends Activity//  implements OnTouchListener
 {
@@ -79,7 +71,6 @@ public class CardDetails extends Activity//  implements OnTouchListener
 
     private ImageView cardDetail_Front_Prev;
     private ImageView cardDetail_Back_Prev;
-    //	private ImageView videoBut;
     private MediaPlayer mp;
     private String cardTypeSelected = "";
     private int profSelAllCard = 0;
@@ -136,7 +127,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
         highlightingJS = "javascript:var call = 0;var mp3FileName; var updateAudioSrcs = function UpdateSrcOfAudios() { var audios = document.getElementsByTagName('audio'); for( var i = 0; i<audios.length; ++i ){ var sources = audios[ i ].getElementsByTagName('source'); for( var j =0; j<sources.length; ++j ) { mp3FileName =sources[j].src.split('/');sources[j].src = \"" + externalPath + "\" + mp3FileName[mp3FileName.length-1];} if( mp3FileName.length ==5 ){ audios[i].src =\"" + externalPath + "\" + mp3FileName[mp3FileName.length-1]; } } };updateAudioSrcs();";
         stopAudio = "javascript:var call = 0;var mp3FileName; var updateAudioSrcs = function UpdateSrcOfAudios() { var audios = document.getElementsByTagName('audio'); for( var i = 0; i<audios.length; ++i ){ audios[ i ].pause(); audios[ i ].currentTime = 0; }};updateAudioSrcs();";
 
-        mStartCardNo = 0;//DeckView.total;
+        mStartCardNo = 0;
 
         mFCDbHelper = DBManager.getInstance(this).getMyFCDbHelper();
 
@@ -150,7 +141,6 @@ public class CardDetails extends Activity//  implements OnTouchListener
             myPrefs = DeckView.getScreen().getSharedPreferences("StrBookMarkPrefsGenericcd", Context.MODE_PRIVATE);
             profSelBookMark = myPrefs.getInt("STRBOOKMARKGENERICcd", 0);
             List<String> listPreferenceValue = DeckView.getScreen().getListCardsPreferenceValue();
-//    		int indx = listPreferenceName.indexOf(cardTypeSelected);
             for (int i = 0; i < listPreferenceName.size(); i++) {
                 myPrefs = DeckView.getScreen().getSharedPreferences(listPreferenceName.get(i), Context.MODE_PRIVATE);
                 profSelGastro[i] = myPrefs.getInt(listPreferenceValue.get(i), 0);
@@ -171,10 +161,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
         String totalCardstr = "";
         mFCDbHelper.openDataBase();
         if (extras != null) {
-            mFromClass = extras.getString("FROM");//getStringExtra
-            //	if(mFromClass != null && mFromClass.equals("SEARCH"))
-            //{
-
+            mFromClass = extras.getString("FROM");
             positionstr = extras.getString("POSITION");
             totalCardstr = extras.getString("TOTALCARDS");
             mSearchString = extras.getString("SEARCHSTRING");
@@ -183,7 +170,6 @@ public class CardDetails extends Activity//  implements OnTouchListener
             mStartCardNoBookMark = mStartCardNo;
             mLastCardNo = Integer.parseInt(totalCardstr);
 
-            //	mFCDbHelper.openDataBase();
             if (Search.getInstance() != null && searchStr.equals("NORMALSEARCH")) {
                 isBookmark = extras.getBoolean("isBookmarked");
                 listSearchCardid = Search.getInstance().getListSearchCardid();//Searchpk_FlashCardFrontBackDetailId();
@@ -340,6 +326,8 @@ public class CardDetails extends Activity//  implements OnTouchListener
         webSettingsFront = mWebView.getSettings();
         webSettingsFront.setJavaScriptEnabled(true);
         webSettingsFront.setLoadWithOverviewMode(true);
+        webSettingsFront.setRenderPriority(WebSettings.RenderPriority.HIGH);
+        webSettingsFront.setCacheMode(WebSettings.LOAD_NO_CACHE);
         webSettingsFront.setUseWideViewPort(true);
         mWebView.addJavascriptInterface(new JavaScriptInterface(this), "android");
         mWebView.setWebChromeClient(new MyWebChromeClient());
@@ -353,8 +341,9 @@ public class CardDetails extends Activity//  implements OnTouchListener
         webSettingsBack.setJavaScriptEnabled(true);
         webSettingsBack.setLoadWithOverviewMode(true);
         webSettingsBack.setUseWideViewPort(true);
+        webSettingsBack.setRenderPriority(WebSettings.RenderPriority.HIGH);
+        webSettingsBack.setCacheMode(WebSettings.LOAD_NO_CACHE);
         mWebViewBack.addJavascriptInterface(new JavaScriptInterface(this), "android");
-
         webSettingsBack.setBuiltInZoomControls(true);
         webSettingsBack.setSupportZoom(true);
 
@@ -364,9 +353,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
         bookMarkcardDetail_Back_Button.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 handleBookMarkTabButtonEvent();
-
             }
         });
 
@@ -413,71 +400,20 @@ public class CardDetails extends Activity//  implements OnTouchListener
 
         manageCurrentCardStatus();
     }
-//	String mFlashCardId;
 
     private static final FrameLayout.LayoutParams ZOOM_PARAMS = new FrameLayout.LayoutParams(
-            ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.RIGHT);
-
-
-    private void recalculateProficiency(int i) {
-        mFCDbHelper.openDataBase();
-        String strBookMark = mFCDbHelper.getDeckID("" + mFlashCardId);
-        int k = Integer.parseInt(strBookMark);
-        mFCDbHelper.close();
-        if (i == 1) {
-            incrementProficiency(k);
-        } else
-            decrementProficiency(k);
-    }
-
-    private void incrementProficiency(int i) {
-        mFCDbHelper.openDataBase();
-        profSelGastro[i]++;
-        int total = mFCDbHelper.getDeksTotalNumOfCards("" + i);
-        DeckView.getScreen().setProfSelGastro(profSelGastro[i], total, i);
-        DeckView.getScreen().storeDataInPreferences(profSelGastro[i], i);
-        mFCDbHelper.close();
-        profSelAllCard = 0;
-        for (int j = 0; j < profSelGastro.length; j++) {
-            profSelAllCard += profSelGastro[j];
-        }
-        DeckView.getScreen().setStrAllCard(profSelAllCard);
-        DeckView.getScreen().storeDataInPreferences(profSelAllCard, "StrAllCardPrefsGenericcd", "STRALLCARDGENERICcd");
-    }
-
-    private void decrementProficiency(int i) {
-        mFCDbHelper.openDataBase();
-        profSelGastro[i]--;
-        int total = mFCDbHelper.getDeksTotalNumOfCards("0");
-        DeckView.getScreen().setProfSelGastro(profSelGastro[i], total, i);
-        DeckView.getScreen().storeDataInPreferences(profSelGastro[i], i);
-        mFCDbHelper.close();
-        profSelAllCard = 0;
-        for (int j = 0; j < profSelGastro.length; j++) {
-            profSelAllCard += profSelGastro[j];
-        }
-        DeckView.getScreen().setStrAllCard(profSelAllCard);
-        DeckView.getScreen().storeDataInPreferences(profSelAllCard, "StrAllCardPrefsGenericcd", "STRALLCARDGENERICcd");
-    }
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.BOTTOM | Gravity.RIGHT);
 
     private void handleIKnowTabButtonEvent() {
         mFCDbHelper.openDataBase();
         String i = mFCDbHelper.getKnownCardStatus("" + mFlashCardId);
         mFCDbHelper.close();
-        if (i.equals("1"))//currentiKnow.equals("1")
-        {
+        if (i.equals("1")) {
             setiKnowPramsINVisible();
             manageUpdateKnowInDB("0");
             profSelAllCard = profSelAllCard - 1;
             DeckView.getScreen().setStrAllCard(profSelAllCard);
             DeckView.getScreen().storeDataInPreferences(profSelAllCard, "StrAllCardPrefsGenericcd", "STRALLCARDGENERICcd");
-            /*if(cardTypeSelected.equals("all_cards"))
-	    	{
-            	recalculateProficiency(0);
-	    	}
-            decrementProficiency();
-            if(isBookmark)
-            	recalculateProficiency(0);*/
         } else {
 
             setiKnowPramsVisible();
@@ -485,13 +421,6 @@ public class CardDetails extends Activity//  implements OnTouchListener
             profSelAllCard = profSelAllCard + 1;
             DeckView.getScreen().setStrAllCard(profSelAllCard);
             DeckView.getScreen().storeDataInPreferences(profSelAllCard, "StrAllCardPrefsGenericcd", "STRALLCARDGENERICcd");
-	    	/*if(cardTypeSelected.equals("all_cards"))
-	    	{
-            	recalculateProficiency(1);
-	    	}
-            incrementProficiency();
-            if(isBookmark)
-            	recalculateProficiency(1);*/
         }
     }
 
@@ -509,15 +438,12 @@ public class CardDetails extends Activity//  implements OnTouchListener
                 isDelete = true;
 
         }
-        //	if(!isBookmark)
-        //{
         if (i.equals("1")) {
             setBookMarkPramsINVisible();
         } else {
             setBookMarkPramsVisible();
             manageUpdateBookMarkInDB("1");
         }
-        //}
         mFCDbHelper.openDataBase();
 
         if (isBookmark) {
@@ -528,8 +454,6 @@ public class CardDetails extends Activity//  implements OnTouchListener
         }
 
         List<String> listpk_FlashCardId = mFCDbHelper.getBookMarkedCardStatus();
-        //listpk_FlashCardId.remove(mStartCardNoBookMark);
-
         bookMarkProfcardStatus = mFCDbHelper.getKnownBookMarkedCardStatus();
         profSelBookMark = listpk_FlashCardId.size();
         DeckView.getScreen().setStrBookMark(bookMarkProfcardStatus, profSelBookMark);
@@ -542,125 +466,39 @@ public class CardDetails extends Activity//  implements OnTouchListener
             listSearchCardid.remove(mStartCardNoBookMark);
             listSearchCardName.remove(mStartCardNoBookMark);
             if (mCursorFlashCards != null && mCursorFlashCards.getCount() == 0)
-//	    	if(listpk_FlashCardId.size() == 0)
             {
                 finish();
-
             }
-//	    	else if(listpk_FlashCardId.size() == 1)
-	    	/*else if(mCursorFlashCards != null && mCursorFlashCards.getCount() == 1)
-	    	{
-	    		mLastCardNo = 1;
-	    		mStartCardNoBookMark = 0;
-//				String cardIDNo = listpk_FlashCardId.get(mStartCardNoBookMark);
-//	    		mStartCardNo = Integer.parseInt(cardIDNo);
-			    manageCurrentCardStatus();
-	    		cardDetail_Back_Prev.setEnabled(false);
-	    		cardDetail_Front_Prev.setEnabled(false);
-	    	}*/
             else {
                 mLastCardNo = profSelBookMark;
                 if (mStartCardNoBookMark == 0) {
                     mStartCardNoBookMark = 1;
                     mStartCardNo = 1;
                 }
-                //if(mStartCardNo>0)
 
                 setPrevScreenParameters();
-                //else if(mStartCardNo<mLastCardNo)
-                //setNextScreenParameters();
             }
 
         }
     }
-
-    public int getmLastCardNo() {
-        return mLastCardNo;
-    }
-
-    private void incrementProficiency() {
-        int totals = getmLastCardNo();
-        if (cardTypeSelected.equals("all_cards")) {
-            DeckView.getScreen().storeDataInPreferences(profSelAllCard, "StrAllCardPrefsGenericcd", "STRALLCARDGENERICcd");
-        } else if (cardTypeSelected.equals("bookmarked_cards")) {
-            DeckView.getScreen().storeDataInPreferences(profSelBookMark, "StrBookMarkPrefsGenericcd", "STRBOOKMARKGENERICcd");
-        } else //if(cardTypeSelected.equals("clickGastro"))
-        {
-            List<String> strArrPreferenceValue = DeckView.getScreen().getListDeckPreferenceValue();
-            int indx = strArrPreferenceValue.indexOf(cardTypeSelected);
-            profSelGastro[indx]++;
-            DeckView.getScreen().setProfSelGastro(profSelGastro[indx], totals, indx);
-            DeckView.getScreen().storeDataInPreferences(profSelGastro[indx], indx);
-        }
-        profSelAllCard = 0;
-        for (int i = 0; i < profSelGastro.length; i++) {
-            profSelAllCard += profSelGastro[i];
-        }
-        mFCDbHelper.openDataBase();
-        List<String> listpk_FlashCardId = mFCDbHelper.getBookMarkedCardStatus();
-        bookMarkProfcardStatus = mFCDbHelper.getKnownBookMarkedCardStatus();
-        mFCDbHelper.close();
-        profSelBookMark = listpk_FlashCardId.size();
-        DeckView.getScreen().setStrBookMark(bookMarkProfcardStatus, profSelBookMark);
-        DeckView.getScreen().setStrAllCard(profSelAllCard);
-        DeckView.getScreen().storeDataInPreferences(profSelAllCard, "StrAllCardPrefsGenericcd", "STRALLCARDGENERICcd");
-    }
-
-    private void decrementProficiency() {
-        int totals = getmLastCardNo();
-        if (cardTypeSelected.equals("all_cards")) {
-            DeckView.getScreen().storeDataInPreferences(profSelAllCard, "StrAllCardPrefsGenericcd", "STRALLCARDGENERICcd");
-        } else if (cardTypeSelected.equals("bookmarked_cards")) {
-            DeckView.getScreen().storeDataInPreferences(profSelBookMark, "StrBookMarkPrefsGenericcd", "STRBOOKMARKGENERICcd");
-        } else //if(cardTypeSelected.equals("clickGastro"))
-        {
-            List<String> strArrPreferenceValue = DeckView.getScreen().getListDeckPreferenceValue();
-            int indx = strArrPreferenceValue.indexOf(cardTypeSelected);
-            profSelGastro[indx]--;
-            DeckView.getScreen().setProfSelGastro(profSelGastro[indx], totals, indx);
-            DeckView.getScreen().storeDataInPreferences(profSelGastro[indx], indx);
-        }
-        profSelAllCard = 0;
-        for (int i = 0; i < profSelGastro.length; i++) {
-            profSelAllCard += profSelGastro[i];
-        }
-        mFCDbHelper.openDataBase();
-        List<String> listpk_FlashCardId = mFCDbHelper.getBookMarkedCardStatus();
-        bookMarkProfcardStatus = mFCDbHelper.getKnownBookMarkedCardStatus();
-        mFCDbHelper.close();
-        profSelBookMark = listpk_FlashCardId.size();
-        DeckView.getScreen().setStrBookMark(bookMarkProfcardStatus, profSelBookMark);
-        DeckView.getScreen().setStrAllCard(profSelAllCard);
-        DeckView.getScreen().storeDataInPreferences(profSelAllCard, "StrAllCardPrefsGenericcd", "STRALLCARDGENERICcd");
-    }
-
     private void setNextScreenParameters() {
         mWebViewBack.setVisibility(View.GONE);
         if (currentView.equals("Trade")) {
             cardDetail_Back_View.setVisibility(View.GONE);
-
             cardDetail_Front_View.setVisibility(View.VISIBLE);
-
             cardDetail_Front_View.requestFocus();
         }
-//    	cardDetail_Back_Prev.setEnabled(true);
         cardDetail_Front_Prev.setEnabled(true);
         cardDetail_Front_Prev.setClickable(true);
-        //cardDetail_Front_Prev.setImageResource(R.drawable.prev);
-
         ++mStartCardNo;
-        //mStartCardNo++;
         mStartCardNoBookMark++;
-//	    manageCurrentCardStatus();
 
         if (mStartCardNoBookMark + 1 >= mLastCardNo) {
-            //cardDetail_Front_Next.setImageResource(R.drawable.next_d);
             cardDetail_Front_Next.setEnabled(true);
             cardDetail_Back_Next.setEnabled(true);
             cardDetail_Front_Next.setClickable(true);
             cardDetail_Back_Next.setClickable(true);
         } else {
-            //cardDetail_Front_Next.setImageResource(R.drawable.next);
             cardDetail_Front_Next.setEnabled(true);
             cardDetail_Front_Next.setEnabled(true);
             cardDetail_Front_Next.setClickable(true);
@@ -677,15 +515,9 @@ public class CardDetails extends Activity//  implements OnTouchListener
                 mCursorFlashCards.moveToLast();
         }
         manageCurrentCardStatus();
-
-        //Log.e("*********  ", mStartCardNo + "             " + mLastCardNo + "       "  + mFlashCardId );
     }
 
     private RelativeLayout front_Animatable_View = null;
-//	private ImageView videoButBack;
-//	private ImageView soundSpeakercardDetail_Front_Icon;
-//	private ImageView soundSpeakercardDetail_Back_Icon;
-
     private void setPrevScreenParameters() {
         mWebViewBack.setVisibility(View.GONE);
         if (currentView.equals("Trade")) {
@@ -696,30 +528,24 @@ public class CardDetails extends Activity//  implements OnTouchListener
         }
         --mStartCardNo;
         --mStartCardNoBookMark;
-        //mStartCardNo--;
-        //mStartCardNoBookMark--;
 
         if (mStartCardNoBookMark <= 0) {
-            //cardDetail_Front_Prev.setImageResource(R.drawable.prev_d);
             cardDetail_Front_Prev.setEnabled(true);
             cardDetail_Back_Prev.setEnabled(true);
             cardDetail_Front_Prev.setClickable(true);
             cardDetail_Back_Prev.setClickable(true);
         } else {
-            //cardDetail_Front_Prev.setImageResource(R.drawable.prev);
             cardDetail_Front_Prev.setEnabled(true);
             cardDetail_Back_Prev.setEnabled(true);
             cardDetail_Front_Prev.setClickable(true);
             cardDetail_Back_Prev.setClickable(true);
         }
         if (mStartCardNoBookMark + 1 >= mLastCardNo) {
-            //cardDetail_Front_Next.setImageResource(R.drawable.next_d);
             cardDetail_Front_Next.setEnabled(true);
             cardDetail_Back_Next.setEnabled(true);
             cardDetail_Front_Next.setClickable(true);
             cardDetail_Back_Next.setClickable(true);
         } else {
-            //cardDetail_Front_Next.setImageResource(R.drawable.next);
             cardDetail_Front_Next.setEnabled(true);
             cardDetail_Back_Next.setEnabled(true);
             cardDetail_Front_Next.setClickable(true);
@@ -728,7 +554,6 @@ public class CardDetails extends Activity//  implements OnTouchListener
 
         fadeIn = AnimationUtils.loadAnimation(DeckView.getScreen(), R.anim.push_left_out);
         front_Animatable_View.startAnimation(fadeIn);
-//	    	    if(!isBookmark)
         if (mCursorFlashCards != null) {
             boolean isCursordata = mCursorFlashCards.moveToPrevious();
             if (!isCursordata)
@@ -737,21 +562,10 @@ public class CardDetails extends Activity//  implements OnTouchListener
         manageCurrentCardStatus();
 
     }
-
-
-    FrameLayout mContentView;
-
-    private void showSoundVisible(String frorbk) {
-//	  		soundSpeakercardDetail_Front_.setVisibility(View.VISIBLE);
-//	  		soundSpeakercardDetail_Front_Icon.setVisibility(View.VISIBLE);
-//	  		soundSpeakercardDetail_Back_.setVisibility(View.VISIBLE);
-//	  		soundSpeakercardDetail_Back_Icon.setVisibility(View.VISIBLE);
-    }
-
     private String mFlashCardId = "";
 
-    private void manageCurrentCardStatus(/*String [] str*/) {
-        showSoundVisible("1");
+    private void manageCurrentCardStatus() {
+
         mFCDbHelper.openDataBase();
         if (mFromClass.equals("TodaysReading")) {
             cardDetail_Front_HeaderCountText.setText("Today's Reading");
@@ -775,30 +589,19 @@ public class CardDetails extends Activity//  implements OnTouchListener
                 List<String> listDeckPreferenceValue = DeckView.getScreen().getListDeckPreferenceValue();
                 cardTypeSelected = listDeckPreferenceValue.get(deckNo - 1);
             }
-//	    	
         }
-//    
         else
-//        	{
-//        		if(mCursorFlashCards.)
             mFlashCardId = mCursorFlashCards.getString(mCursorFlashCards.getColumnIndex(FCDBHelper.PK_FLASHCARDID));
-        //mFlashCardId = ""+ mStartCardNo+1;
         String soundName = mFCDbHelper.getSoundFileNme("" + (mFlashCardId));
         if (soundName != null && !soundName.equalsIgnoreCase("")) {
-            showSoundIcon();
         } else
-            hideSoundIcon();
-//        		mCursorFlashCards.moveToNext();
-//    			mFlashCardId = mFCDbHelper.getFlashCardId(mStartCardNo, mDeckIndex);
-        hasValueVoice = mFCDbHelper.hasVoiceNotes("" + mFlashCardId);
+            hasValueVoice = mFCDbHelper.hasVoiceNotes("" + mFlashCardId);
         hasValueComment = mFCDbHelper.hasCommentNotes("" + mFlashCardId);
 
         strBookMark = mFCDbHelper.getBookMarkedCardStatus("" + mFlashCardId);
         striKnow = mFCDbHelper.getKnownCardStatus("" + mFlashCardId);
-
-//        		mCurrentCardID = ""+ mFlashCardId;
-
         htmlName = mFCDbHelper.getHTMLName("" + mFlashCardId, true);
+        String htmlNameBack = mFCDbHelper.getHTMLName("" + mFlashCardId, false);
         if (hasValueVoice || hasValueComment) {
             cardTopNotesBack.setBackgroundResource(R.drawable.bottom_noted_btn);
             cardTopNotesFront.setBackgroundResource(R.drawable.bottom_noted_btn);
@@ -809,14 +612,11 @@ public class CardDetails extends Activity//  implements OnTouchListener
         mFCDbHelper.close();
 
         mWebView.loadUrl("file:///android_asset/" + htmlName);
+        mWebViewBack.loadUrl("file:///android_asset/" + htmlNameBack);
 
         if (mSearchString != null && !mSearchString.equals("")) {
-            //runFront("javascript:var removehighlights=function MyApp_RemoveAllHighlightsForElement(element) { if (element) {    if (element.nodeType == 1) {if (element.getAttribute(\"class\") == \"MyAppHighlight\") {var text = element.removeChild(element.firstChild);  element.parentNode.insertBefore(text,element); element.parentNode.removeChild(element);  return true;   } else {  var normalize = false;  for (var i=element.childNodes.length-1; i>=0; i--) { if (MyApp_RemoveAllHighlightsForElement(element.childNodes[i])) {   normalize = true;      }  } if (normalize) { element.normalize();  }} }} return false;}");
             runFront("javascript:var highlightWords = function MyApp_HighlightAllOccurencesOfStringForElement(element,keyword) { var MyApp_SearchResultCount = 0; if (element) {if (element.nodeType == 3) {        while (true) {var value = element.nodeValue;  var idx = value.toLowerCase().indexOf(keyword);if (idx < 0) break;var span = document.createElement(\"span\");var text = document.createTextNode(value.substr(idx,keyword.length)); span.appendChild(text);span.setAttribute(\"class\",\"MyAppHighlight\");span.style.backgroundColor=\"yellow\";span.style.color=\"black\";text = document.createTextNode(value.substr(idx+keyword.length));element.deleteData(idx, value.length - idx);var next = element.nextSibling;element.parentNode.insertBefore(span, next);element.parentNode.insertBefore(text, next);element = text;MyApp_SearchResultCount++;	}} else if (element.nodeType == 1) { if (element.style.display != \"none\" && element.nodeName.toLowerCase() != 'select') {for (var i=element.childNodes.length-1; i>=0; i--) {MyApp_HighlightAllOccurencesOfStringForElement(element.childNodes[i],keyword);}}}}};highlightWords(document.body, \"" + mSearchString + "\".toLowerCase());");
-
-
         }
-//        mWebView.reload();
         if (strBookMark != null && !strBookMark.equals("")) {
             if (strBookMark.equals("1")) {
                 setBookMarkPramsVisible();
@@ -837,30 +637,18 @@ public class CardDetails extends Activity//  implements OnTouchListener
         }
     }
 
-    private void hideSoundIcon() {
-
-    }
-
-    private void showSoundIcon() {
-
-    }
-
     private void setiKnowPramsVisible() {
         iKnowcardDetail_Front_Button.setImageResource(R.drawable.dnt_knw);
         iKnowcardDetail_Back_Button.setImageResource(R.drawable.dnt_knw);
     }
 
     private void setiKnowPramsINVisible() {
-        //iKnowcardDetail_Front_.setVisibility(View.INVISIBLE);
-        //iKnowcardDetail_Back_.setVisibility(View.INVISIBLE);
         iKnowcardDetail_Front_Button.setImageResource(R.drawable.know);
         iKnowcardDetail_Back_Button.setImageResource(R.drawable.know);
     }
 
     private void setBookMarkPramsVisible() {
-        //bookMarkcardDetail_Front_.setVisibility(View.VISIBLE);
         bookMarkcardDetail_Front_Button.setImageResource(R.drawable.unmark);
-        //bookMarkcardDetail_Back_.setVisibility(View.VISIBLE);
         bookMarkcardDetail_Back_Button.setImageResource(R.drawable.unmark);
     }
 
@@ -1010,19 +798,17 @@ public class CardDetails extends Activity//  implements OnTouchListener
             if (v.getId() == (R.id.carddetail_front_footer_flip)) {
                 resetMediaPlayer();
                 currentView = "Trade";
-                applyRotation(-1, 0, 180, 1, true);
                 preapareMediaPlayerData();
                 String htmlName = "";
                 mFCDbHelper.openDataBase();
                 String soundName = mFCDbHelper.getSoundFileNme("" + (mFlashCardId));
                 if (soundName != null && !soundName.equalsIgnoreCase("")) {
-                    showSoundIcon();
                 } else
-                    hideSoundIcon();
-                htmlName = mFCDbHelper.getHTMLName("" + mFlashCardId, false);
+                    htmlName = mFCDbHelper.getHTMLName("" + mFlashCardId, false);
                 mFCDbHelper.close();
                 mWebViewBack.removeAllViews();
                 mWebViewBack.loadUrl("file:///android_asset/" + htmlName);
+                applyRotation(-1, 0, 180, 1, true);
 
             } else if (v.getId() == (R.id.carddetail_back_rotatetrde_footer)) {
                 resetMediaPlayer();
@@ -1031,15 +817,14 @@ public class CardDetails extends Activity//  implements OnTouchListener
                 String htmlName = "";
                 String soundName = mFCDbHelper.getSoundFileNme("" + (mFlashCardId));
                 if (soundName != null && !soundName.equalsIgnoreCase("")) {
-                    showSoundIcon();
                 } else
-                    hideSoundIcon();
 
-                htmlName = mFCDbHelper.getHTMLName("" + mFlashCardId, true);
+                    htmlName = mFCDbHelper.getHTMLName("" + mFlashCardId, true);
                 mFCDbHelper.close();
-                mWebView.removeAllViews();
+                 mWebView.removeAllViews();
                 mWebView.loadUrl("file:///android_asset/" + htmlName);
                 applyRotation(1, 0, 180, 1, false);
+
             }
 
             if (mSearchString != null && !mSearchString.equals("")) {
@@ -1066,69 +851,6 @@ public class CardDetails extends Activity//  implements OnTouchListener
             }
         });
     }
-//	View.OnClickListener mOnClickListener = new View.OnClickListener() 
-//	{
-//		public void onClick(View v) 
-//		{
-//		    sliderFront.clearAnimation();
-//		    sliderFront.setVisibility(View.GONE);
-//		    sliderBack.clearAnimation();
-//		    sliderBack.setVisibility(View.GONE);
-//			if(v.getId() == (R.id.carddetail_front_footer_flip))
-//			{
-//				rotateToBack();
-//			}
-//			else if (v.getId() == (R.id.carddetail_back_rotatetrde_footer))// TODO  BACK
-//			{
-//				rotateTOFront();
-//			}
-//		}
-//	};
-
-    private void rotateToBack() {
-        resetMediaPlayer();
-//		DeckView.getScreen().closeSliderView();
-        currentView = "Trade";
-//		applyRotation(-1, 180, 90, 0);
-        //applyRotation(-1, 0, 90, 0);
-//    	showSoundVisible("2");
-//		preapareMediaPlayerData();
-
-        String htmlName = "";
-        mFCDbHelper.openDataBase();
-        String soundName = mFCDbHelper.getSoundFileNme("" + (mFlashCardId));
-        if (soundName != null && !soundName.equalsIgnoreCase("")) {
-            showSoundIcon();
-        } else
-            hideSoundIcon();
-//    	else
-        {
-//    		mCurrentCardID = ""+ mFlashCardId;
-            htmlName = mFCDbHelper.getHTMLName("" + mFlashCardId, false);
-        }
-        mFCDbHelper.close();
-        mWebViewBack.removeAllViews();
-        mWebViewBack.loadUrl("file:///android_asset/" + htmlName);
-
-//    	mWebViewBack.reload();
-//    	mFCDbHelper.close();
-    }
-
-    private void rotateTOFront() {
-        resetMediaPlayer();
-        currentView = "Generic";
-        mFCDbHelper.openDataBase();
-        String soundName = mFCDbHelper.getSoundFileNme("" + (mFlashCardId));
-        if (soundName != null && !soundName.equalsIgnoreCase("")) {
-            showSoundIcon();
-        } else
-            hideSoundIcon();
-        mFCDbHelper.close();
-//    	showSoundVisible("1");
-//		applyRotation(0, 0, 90, 0);
-       // applyRotation(1, 0, 90, 0);
-    }
-
     public void resetMediaPlayer() {
         if (mp != null) {
             mp.stop();
@@ -1145,32 +867,11 @@ public class CardDetails extends Activity//  implements OnTouchListener
         try {
             mFCDbHelper.openDataBase();
             String soundName = "";
-//        	if(mFromClass != null && mFromClass.equals("SEARCH"))
-//    		{
-//    	    	if(listSearchCardid != null && listSearchCardid.size() > 0)
-//    			{
-//    	    		String str = listSearchCardid.get(mStartCardNo);
-//    	    		mFlashCardId = ""+ str;
-//    	    		int i = Integer.parseInt(str);
-////    	    		if(i % 2 != 0)
-////    	    			i++;
-////    	    		i = i * 2 ;
-//    	    		Log.e("listback.get(mStartCardNo)", "" + i);
-//    	    		soundName = mFCDbHelper.getSoundFileNme(""+i);
-//    			}
-//    		}
-//        	else
-            {
-//    	    	String flashCardId = mFCDbHelper.getFlashCardId(mStartCardNo);
-                soundName = mFCDbHelper.getSoundFileNme("" + (mFlashCardId));
-                if (soundName != null && !soundName.equalsIgnoreCase("")) {
-                    showSoundIcon();
-                } else
-                    hideSoundIcon();
-            }
-            System.out.println(soundName + " : " + "FrontOrBackSound");
+            soundName = mFCDbHelper.getSoundFileNme("" + (mFlashCardId));
+            if (soundName != null && !soundName.equalsIgnoreCase("")) {
+            } else
+                System.out.println(soundName + " : " + "FrontOrBackSound");
             mFCDbHelper.close();
-            //http://stackoverflow.com/questions/3289038/play-audio-file-from-the-assets-directory    "abacavir.mp3"
             AssetFileDescriptor afd = getAssets().openFd(soundName);
             mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
             mp.prepare();
@@ -1180,17 +881,17 @@ public class CardDetails extends Activity//  implements OnTouchListener
     }
 
 
-    private void applyRotation(int position, float start, float end, int i, boolean isFront) {
+    private void applyRotation(int position, float start, float end, int i, final boolean isFront) {
         final float centerX = mContainer.getWidth() / 2.0f;
         final float centerY = mContainer.getHeight() / 2.0f;
 
         final Rotate3dAnimation rotation =
-                new Rotate3dAnimation(start, end, centerX, centerY, 0.0f, false);
-        rotation.setDuration(800);
+                new Rotate3dAnimation(start, 90, centerX, centerY, 100.0f, false);
+        rotation.setDuration(500);
         rotation.setFillAfter(false);
         rotation.setInterpolator(new AccelerateInterpolator());
-
         rotation.setAnimationListener(new DisplayNextView(position, i));
+
         if (isFront) {
             mWebView.startAnimation(rotation);
         } else {
@@ -1208,55 +909,27 @@ public class CardDetails extends Activity//  implements OnTouchListener
             side = i;
         }
 
-        public void onAnimationStart(Animation animation) {
-        }
+        public void onAnimationStart(Animation animation) { }
 
         public void onAnimationEnd(Animation animation) {
-            mWebView.post(new SwapViews(mPosition/*, side*/));
-        }
-
-        public void onAnimationRepeat(Animation animation) {
-        }
-    }
-
-    private final class SwapViews implements Runnable {
-        private final int mPosition;
-
-        public SwapViews(int position/*, int i*/) {
-            mPosition = position;
-        }
-
-        public void run() {
-            final float centerX = mContainer.getWidth() / 2.0f;
-            final float centerY = mContainer.getHeight() / 2.0f;
-            Rotate3dAnimation rotation;
             if (mPosition == -1) {
                 cardDetail_Front_View.setVisibility(View.GONE);
+                mWebView.setVisibility(View.GONE);
                 cardDetail_Back_View.setVisibility(View.VISIBLE);
                 mWebViewBack.setVisibility(View.VISIBLE);
-                cardDetail_Back_View.requestFocus();
-                rotation = new Rotate3dAnimation(0, 0, centerX, centerY, 2.0f, false);
+                AnimationHelper helper = new AnimationHelper();
+                helper.animate(-90,0, mWebViewBack);
             } else {
                 cardDetail_Back_View.setVisibility(View.GONE);
+                mWebViewBack.setVisibility(View.GONE);
                 cardDetail_Front_View.setVisibility(View.VISIBLE);
-                cardDetail_Front_View.requestFocus();
                 mWebView.setVisibility(View.VISIBLE);
-                rotation = new Rotate3dAnimation(0, 0, centerX, centerY, 2.0f, false);
+                AnimationHelper helper = new AnimationHelper();
+                helper.animate(-90,0, mWebView);
             }
-            rotation.setDuration(800);
-            rotation.setFillAfter(true);
-            rotation.setInterpolator(new DecelerateInterpolator());
-            mWebView.startAnimation(rotation);
         }
-    }
 
-    final class CustomWebChromeClient extends WebChromeClient {
-        @Override
-        public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-            Log.d("LOG_TAG", message);
-            result.confirm();
-            return true;
-        }
+        public void onAnimationRepeat(Animation animation) { }
     }
 
     public class JavaScriptInterface {
@@ -1276,7 +949,6 @@ public class CardDetails extends Activity//  implements OnTouchListener
                             mWebViewBack.loadUrl("javascript:highlightSearchTerms('" + mSearchString + "');");
                         } catch (Throwable ignored) {
                         }
-                        // TODO  BACK
                     }
                 }
             });
@@ -1293,9 +965,7 @@ public class CardDetails extends Activity//  implements OnTouchListener
         public void onProgressChanged(WebView view, int newProgress) {
             CardDetails.screen.mWebView.loadUrl(CardDetails.screen.highlightingJS);
             System.out.println(newProgress);
-
             return;
-
         }
     }
 
@@ -1307,12 +977,9 @@ public class CardDetails extends Activity//  implements OnTouchListener
         cardTopNotesBack.setBackgroundResource(R.drawable.bottom_noted_btn);
     }
 
-
     @Override
     protected void onResume() {
-
         super.onResume();
-
 
         if (mStartCardNoBookMark + 1 >= mLastCardNo) {
             cardDetail_Front_Next.setEnabled(false);
