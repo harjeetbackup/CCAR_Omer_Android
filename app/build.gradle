@@ -5,7 +5,7 @@ android {
     buildToolsVersion "28.0.3"
 
     defaultConfig {
-        applicationId "com.spearheadinc.flashcards.omer"
+        applicationId "org.ccar.omer"
         minSdkVersion 17
         targetSdkVersion 28
     }
