@@ -6,7 +6,16 @@
           <option name="url" value="http://bitbucket.org" />
           <option name="userName" value="prakash_ambig" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://13.127.27.243:8080/gitbucket/git/keyur.patel/CrashMealDriverApp.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://13.127.27.243:8080" />
+          <option name="userName" value="Prakash.ambig" />
+        </UrlAndUserName>
       </list>
     </option>
+    <option name="cloneParentDir" value="$USER_HOME$/Office_Project" />
   </component>
 </application>
