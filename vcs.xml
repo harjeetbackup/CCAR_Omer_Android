@@ -14,6 +14,10 @@
           <option name="url" value="http://13.127.27.243:8080" />
           <option name="userName" value="Prakash.ambig" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://216.244.85.18:8080" />
+          <option name="userName" value="Prakash.ambig" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Office_Project" />
