@@ -1,6 +1,7 @@
 package com.spearheadinc.flashcards.omer.retrofit;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
@@ -12,7 +13,9 @@ public class ApiDataManager {
 
     public static final String TAG = ApiDataManager.class.getCanonicalName();
     public static final Disposable getMyThings(final CallbackContext callbackContext, String url){
-        url = "https://www.hebcal.com/hebcal/?v=1&cfg=json&maj=off&min=off&mod=off&nx=off&year=2019&month=x&ss=off&mf=off&c=off&geo=none&m=0&s=off&o=on";
+        Calendar calendar = Calendar.getInstance();
+        String year = String.valueOf(calendar.get(Calendar.YEAR));
+        url = "https://www.hebcal.com/hebcal/?v=1&cfg=json&maj=off&min=off&mod=off&nx=off&year="+year+"&month=x&ss=off&mf=off&c=off&geo=none&m=0&s=off&o=on";
 
         return ServiceFactory.getServiceAPIs().getCards(url)
                 .subscribeOn(Schedulers.newThread())

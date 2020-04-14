@@ -21,14 +21,6 @@
         android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LicencingMainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".FlashCards"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
@@ -71,14 +63,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.fadavis.pharmphlashfc.phone.Info"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".Search"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
@@ -96,14 +80,6 @@
         </activity>
         <activity
             android:name=".CardNotesDetail"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".CommentDetails"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
@@ -149,21 +125,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.social.share.twitter.PrepareRequestTokenActivity"
-            android:launchMode="singleTask">
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="callback"
-                    android:scheme="x-oauthflow-twitter" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".Introduction"
             android:screenOrientation="portrait"
