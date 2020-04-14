@@ -17,9 +17,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Notification;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,7 +29,7 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 import android.text.Html;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -716,7 +714,7 @@ public class DeckView extends Activity implements LocationListener {
     public void callTodaysReading() {
 
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-//				// getting GPS status
+        // getting GPS status
         boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 
 
@@ -725,8 +723,6 @@ public class DeckView extends Activity implements LocationListener {
         if (!isGPSEnabled && !isNetworkEnabled) {
             // no network provider is enabled
         } else {
-
-
             ArrayList<ItemsBean> omarDates = AppPreference.getInstance(DeckView.this).getList();
             String lastDate = "";
             String statDate = "";
@@ -785,8 +781,8 @@ public class DeckView extends Activity implements LocationListener {
                 // for ActivityCompat#requestPermissions for more details.
                 return;
             }
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10, 10, DeckView.this);
-        android.location.Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 10, 10, DeckView.this);
+            android.location.Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         Location location1 = new Location(AppPreference.getInstance(DeckView.this).getLatitude(), AppPreference.getInstance(DeckView.this).getLatitude());
 
         SunriseSunsetCalculator calculator = new SunriseSunsetCalculator(location1, location.getProvider());

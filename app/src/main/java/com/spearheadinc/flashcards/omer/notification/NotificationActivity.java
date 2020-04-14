@@ -2,8 +2,8 @@ package com.spearheadinc.flashcards.omer.notification;
 
 
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +19,6 @@ import org.shredzone.commons.suncalc.SunTimes;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 
 public class NotificationActivity extends AppCompatActivity {

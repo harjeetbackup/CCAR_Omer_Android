@@ -1,15 +1,6 @@
 package com.spearheadinc.flashcards.omer.retrofit;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
-
-import com.spearheadinc.flashcards.apputil.AppPreference;
-import com.spearheadinc.flashcards.omer.R;
-
-import java.util.ArrayList;
-
-import io.reactivex.disposables.CompositeDisposable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class GettingResponse extends AppCompatActivity {
 //    private CompositeDisposable mDisposable = new CompositeDisposable();

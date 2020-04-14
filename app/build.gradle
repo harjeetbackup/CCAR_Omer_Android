@@ -1,13 +1,22 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
 
     defaultConfig {
         applicationId "org.ccar.omer"
         minSdkVersion 17
-        targetSdkVersion 28
+        targetSdkVersion 29
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    allprojects {
+        repositories {
+            maven { url "https://oss.jfrog.org/libs-snapshot" }
+        }
     }
 
     buildTypes {
@@ -21,12 +30,12 @@ android {
 dependencies {
 
     //noinspection GradleCompatible
-    implementation 'com.android.support:support-compat:28.0.0'
-    implementation 'com.android.support:design:28.0.0'
+    implementation 'androidx.core:core:1.2.0'
+    implementation 'com.google.android.material:material:1.1.0'
 
     // This is Location
-    implementation 'com.google.android.gms:play-services-location:16.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     // Retrofit Depandancy
 
     implementation deps.rxjava2
@@ -38,8 +47,8 @@ dependencies {
     implementation 'org.jetbrains:annotations-java5:15.0'
 
     // Joda Date & Time
-    implementation 'net.danlew:android.joda:2.10.1'
-    implementation('org.shredzone.commons:commons-suncalc:2.3')
+    implementation 'net.danlew:android.joda:2.10.3'
+    implementation('org.shredzone.commons:commons-suncalc:2.5')
     // EasyFlip view
     implementation 'com.wajahatkarim3.EasyFlipView:EasyFlipView:2.1.2'
 }

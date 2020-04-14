@@ -3,11 +3,7 @@ package com.spearheadinc.flashcards.omer;
 //http://developer.android.com/guide/webapps/targeting.html
 
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import com.location.callbacks.AppLocationListener;
 import com.location.getaddress.AppLocationActivity;
@@ -28,11 +24,11 @@ import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.text.format.DateFormat;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
